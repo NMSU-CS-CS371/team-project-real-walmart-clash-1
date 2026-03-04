@@ -1,13 +1,25 @@
-[gd_scene format=3 uid="uid://xfhj2a1y1qb1"]
+[gd_scene format=4 uid="uid://xfhj2a1y1qb1"]
 
-[sub_resource type="Environment" id="Environment_mwb40"]
+[ext_resource type="Texture2D" uid="uid://cgai7cvlvvbps" path="res://Assets/Isometric/dirt_S.png" id="1_80nbo"]
 
-[node name="Game" type="Node2D" unique_id=818907557]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
+texture = ExtResource("1_80nbo")
+texture_region_size = Vector2i(256, 512)
+0:2/0 = 0
+0:3/0 = 0
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 182)
 
-[node name="Node3D" type="Node3D" parent="." unique_id=74697376]
+[sub_resource type="TileSet" id="TileSet_feb5d"]
+tile_shape = 1
+tile_size = Vector2i(256, 128)
+sources/2 = SubResource("TileSetAtlasSource_e2o6t")
 
-[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=129661621]
-transform = Transform3D(0.9657026, 0.2284712, 0.12336736, -0.25861883, 0.8886804, 0.37863344, -0.023127317, -0.39755246, 0.91728806, -1.9073486e-06, -7.2680798, 7.5006237)
+[node name="game" type="Node2D" unique_id=891573283]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=94596687]
-environment = SubResource("Environment_mwb40")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=334625425]
+tile_map_data = PackedByteArray("AAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAD//wMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAABAAMAAgAAAAAAAAACAAQAAgAAAAAAAAAAAAEAAgAAAAAAAAD//wQAAgAAAAAAAAD//wUAAgAAAAAAAAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAUAAgAAAAAAAAABAAgAAgAAAAAAAAABAAQAAgAAAAAAAAABAAYAAgAAAAAAAAABAAUAAgAAAAAAAAACAAYAAgAAAAAAAAABAAIAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_feb5d")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1192161875]
+position = Vector2(324, 352)
