@@ -1,0 +1,10 @@
+# Godot editor/cache files
+.godot/
+godot_files/.godot/
+
+# Godot import cache (optional but common)
+.import/
+
+# OS junk
+Thumbs.db
+desktop.ini
