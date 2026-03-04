@@ -36,3 +36,4 @@ offset_bottom = 115.0
 text = "Exit"
 
 [connection signal="pressed" from="Options/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Options/Button2" to="." method="_on_button_2_pressed"]
