@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://xfhj2a1y1qb1"]
 
+[sub_resource type="Environment" id="Environment_mwb40"]
+
 [node name="Game" type="Node2D" unique_id=818907557]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=74697376]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=129661621]
+transform = Transform3D(0.9657026, 0.2284712, 0.12336736, -0.25861883, 0.8886804, 0.37863344, -0.023127317, -0.39755246, 0.91728806, -1.9073486e-06, -7.2680798, 7.5006237)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=94596687]
+environment = SubResource("Environment_mwb40")
