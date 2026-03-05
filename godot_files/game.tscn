@@ -2023,7 +2023,7 @@ script = ExtResource("1_80cx4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=55490957]
 sprite_frames = SubResource("SpriteFrames_aaiba")
 animation = &"Idle_W"
-frame_progress = 0.81078297
+frame_progress = 0.6016299
 
 [node name="FeetShape2D" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D" unique_id=1190868535]
 position = Vector2(-2, 48)
