@@ -4,3 +4,5 @@ godot_files/.godot/
 
 # Optional
 .import/
+.DS_Store
+
