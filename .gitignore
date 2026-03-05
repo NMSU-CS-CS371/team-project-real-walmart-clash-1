@@ -1,0 +1,6 @@
+# Godot cache
+.godot/
+godot_files/.godot/
+
+# Optional
+.import/
