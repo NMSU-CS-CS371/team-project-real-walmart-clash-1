@@ -1,39 +1,121 @@
 [gd_scene format=3 uid="uid://8eqbk4bnw8sa"]
 
 [ext_resource type="Script" uid="uid://3cumxul1l2h4" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://ba8vx80hy6kp1" path="res://Assets/Sample.png" id="2_ouk20"]
+[ext_resource type="FontFile" uid="uid://cw4hhsjsgh37h" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="3_mae5d"]
 
-[node name="Menu" type="Node2D" unique_id=1866252329]
+[node name="Menu" type="Control" unique_id=67099285]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_lti8b")
 
-[node name="Options" type="Control" parent="." unique_id=1507620919]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1603228648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -690.0
+offset_top = -374.5
+offset_right = 690.0
+offset_bottom = 374.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_ouk20")
 
-[node name="Button1" type="Button" parent="Options" unique_id=1504858717]
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=1512004865]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 7.0
-offset_right = 104.0
-offset_bottom = 38.0
-text = "Start"
+offset_left = -124.0
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 29.0
+pivot_offset = Vector2(102, 19.5)
 
-[node name="Button2" type="Button" parent="Options" unique_id=885853525]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 45.0
-offset_right = 134.0
-offset_bottom = 76.0
-text = "Leaderboard"
-
-[node name="Button3" type="Button" parent="Options" unique_id=1861650604]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 84.0
-offset_right = 102.0
-offset_bottom = 115.0
+[node name="Label3" type="Label" parent="TextureButton3" unique_id=434680817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_mae5d")
+theme_override_font_sizes/font_size = 45
 text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="Options/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="Options/Button2" to="." method="_on_button_2_pressed"]
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=143027859]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = -41.0
+grow_horizontal = 2
+pivot_offset = Vector2(102, 19.5)
+
+[node name="Label2" type="Label" parent="TextureButton2" unique_id=1603386577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_mae5d")
+theme_override_font_sizes/font_size = 45
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton1" type="TextureButton" parent="." unique_id=1841455887]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = -150.0
+offset_right = 80.0
+offset_bottom = -111.0
+grow_horizontal = 2
+pivot_offset = Vector2(102, 19.5)
+
+[node name="Label1" type="Label" parent="TextureButton1" unique_id=1492192737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_mae5d")
+theme_override_font_sizes/font_size = 45
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="TextureButton3" to="." method="_on_texture_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton3" to="." method="_on_texture_button_3_mouse_exited"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="mouse_entered" from="TextureButton2" to="." method="_on_texture_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton2" to="." method="_on_texture_button_2_mouse_exited"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="mouse_entered" from="TextureButton1" to="." method="_on_texture_button_1_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton1" to="." method="_on_texture_button_1_mouse_exited"]
+[connection signal="pressed" from="TextureButton1" to="." method="_on_texture_button_1_pressed"]
