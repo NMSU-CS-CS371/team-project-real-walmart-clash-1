@@ -1,10 +1,11 @@
-# Godot editor/cache files
+# Godot cache/editor files
 .godot/
 godot_files/.godot/
 
-# Godot import cache (optional but common)
+# Godot import cache
 .import/
 
 # OS junk
 Thumbs.db
 desktop.ini
+.DS_Store
