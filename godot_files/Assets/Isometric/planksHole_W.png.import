@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpt26h542ts5t"
-path="res://.godot/imported/planksHole_W.png-fe4751c4fef4f1f1902f6db732890062.ctex"
+path="res://.godot/imported/planksHole_W.png-7b60ab5998d089731ad397c4f3632d8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/planksHole_W.png"
-dest_files=["res://.godot/imported/planksHole_W.png-fe4751c4fef4f1f1902f6db732890062.ctex"]
+source_file="res://assets/Isometric/planksHole_W.png"
+dest_files=["res://.godot/imported/planksHole_W.png-7b60ab5998d089731ad397c4f3632d8e.ctex"]
 
 [params]
 

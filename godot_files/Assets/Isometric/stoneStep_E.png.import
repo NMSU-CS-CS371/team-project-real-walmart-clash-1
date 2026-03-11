@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cje1wwb0sv5mu"
-path="res://.godot/imported/stoneStep_E.png-57ba2a10f4975b1b5fdabf92140a7c49.ctex"
+path="res://.godot/imported/stoneStep_E.png-eea2ae6d98a1e2e3b8c4d3ec12122b51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneStep_E.png"
-dest_files=["res://.godot/imported/stoneStep_E.png-57ba2a10f4975b1b5fdabf92140a7c49.ctex"]
+source_file="res://assets/Isometric/stoneStep_E.png"
+dest_files=["res://.godot/imported/stoneStep_E.png-eea2ae6d98a1e2e3b8c4d3ec12122b51.ctex"]
 
 [params]
 

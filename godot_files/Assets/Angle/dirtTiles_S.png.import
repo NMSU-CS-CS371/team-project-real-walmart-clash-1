@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chfmh55oe7jty"
-path="res://.godot/imported/dirtTiles_S.png-608bae1b0923345411a223b42fc1bbfc.ctex"
+path="res://.godot/imported/dirtTiles_S.png-2c45740b261cf6c78503e8a1b38b1b88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/dirtTiles_S.png"
-dest_files=["res://.godot/imported/dirtTiles_S.png-608bae1b0923345411a223b42fc1bbfc.ctex"]
+source_file="res://assets/Angle/dirtTiles_S.png"
+dest_files=["res://.godot/imported/dirtTiles_S.png-2c45740b261cf6c78503e8a1b38b1b88.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cidispqkm84w2"
-path="res://.godot/imported/woodenSupports_S.png-4141be19e636be0e4dd0c75bcae0cb2f.ctex"
+path="res://.godot/imported/woodenSupports_S.png-5653dc15978f30b3f09eb250f01d3d5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/woodenSupports_S.png"
-dest_files=["res://.godot/imported/woodenSupports_S.png-4141be19e636be0e4dd0c75bcae0cb2f.ctex"]
+source_file="res://assets/Isometric/woodenSupports_S.png"
+dest_files=["res://.godot/imported/woodenSupports_S.png-5653dc15978f30b3f09eb250f01d3d5c.ctex"]
 
 [params]
 

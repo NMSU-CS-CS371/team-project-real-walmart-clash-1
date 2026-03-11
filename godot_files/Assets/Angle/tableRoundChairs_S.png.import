@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkgcrjja7fa4c"
-path="res://.godot/imported/tableRoundChairs_S.png-2ef8ed66d0011f2e576023ef6599d849.ctex"
+path="res://.godot/imported/tableRoundChairs_S.png-f9284c0b92c66360397a0eedab238899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/tableRoundChairs_S.png"
-dest_files=["res://.godot/imported/tableRoundChairs_S.png-2ef8ed66d0011f2e576023ef6599d849.ctex"]
+source_file="res://assets/Angle/tableRoundChairs_S.png"
+dest_files=["res://.godot/imported/tableRoundChairs_S.png-f9284c0b92c66360397a0eedab238899.ctex"]
 
 [params]
 

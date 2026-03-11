@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csv3bfcj06gpk"
-path="res://.godot/imported/stoneSide_E.png-d779ba529dd29f65470335cf21dd54ff.ctex"
+path="res://.godot/imported/stoneSide_E.png-ed75bbe984706357a4e5d245b7a72a19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stoneSide_E.png"
-dest_files=["res://.godot/imported/stoneSide_E.png-d779ba529dd29f65470335cf21dd54ff.ctex"]
+source_file="res://assets/Angle/stoneSide_E.png"
+dest_files=["res://.godot/imported/stoneSide_E.png-ed75bbe984706357a4e5d245b7a72a19.ctex"]
 
 [params]
 

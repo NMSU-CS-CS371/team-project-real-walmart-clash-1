@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bydxxr63hd4hw"
-path="res://.godot/imported/barrelsStacked_W.png-7b6275dc1657208aae2128be77f4b802.ctex"
+path="res://.godot/imported/barrelsStacked_W.png-35c250a493d0bcb977c857a7591c5183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/barrelsStacked_W.png"
-dest_files=["res://.godot/imported/barrelsStacked_W.png-7b6275dc1657208aae2128be77f4b802.ctex"]
+source_file="res://assets/Isometric/barrelsStacked_W.png"
+dest_files=["res://.godot/imported/barrelsStacked_W.png-35c250a493d0bcb977c857a7591c5183.ctex"]
 
 [params]
 

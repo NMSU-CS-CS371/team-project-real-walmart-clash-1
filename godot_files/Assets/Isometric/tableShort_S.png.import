@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3o2x3e1hg3lj"
-path="res://.godot/imported/tableShort_S.png-1a1e492568e4dad1588f47766b7cb361.ctex"
+path="res://.godot/imported/tableShort_S.png-0022bd6d546a5c3322116d5ded98d7e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/tableShort_S.png"
-dest_files=["res://.godot/imported/tableShort_S.png-1a1e492568e4dad1588f47766b7cb361.ctex"]
+source_file="res://assets/Isometric/tableShort_S.png"
+dest_files=["res://.godot/imported/tableShort_S.png-0022bd6d546a5c3322116d5ded98d7e8.ctex"]
 
 [params]
 

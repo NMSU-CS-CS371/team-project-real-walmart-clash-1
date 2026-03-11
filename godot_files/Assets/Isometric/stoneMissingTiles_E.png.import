@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnbagp08p4n3o"
-path="res://.godot/imported/stoneMissingTiles_E.png-89f76cf9daac5f6aecaadb7a94f21816.ctex"
+path="res://.godot/imported/stoneMissingTiles_E.png-617bb7151857450b2e0cc627f171a910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneMissingTiles_E.png"
-dest_files=["res://.godot/imported/stoneMissingTiles_E.png-89f76cf9daac5f6aecaadb7a94f21816.ctex"]
+source_file="res://assets/Isometric/stoneMissingTiles_E.png"
+dest_files=["res://.godot/imported/stoneMissingTiles_E.png-617bb7151857450b2e0cc627f171a910.ctex"]
 
 [params]
 

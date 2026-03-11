@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpb7ykgxnl055"
-path="res://.godot/imported/stoneUneven_N.png-67e841bea29c6185d16df71a0a8c9545.ctex"
+path="res://.godot/imported/stoneUneven_N.png-40e266aa871d46525efcc81c5bb99f30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneUneven_N.png"
-dest_files=["res://.godot/imported/stoneUneven_N.png-67e841bea29c6185d16df71a0a8c9545.ctex"]
+source_file="res://assets/Isometric/stoneUneven_N.png"
+dest_files=["res://.godot/imported/stoneUneven_N.png-40e266aa871d46525efcc81c5bb99f30.ctex"]
 
 [params]
 

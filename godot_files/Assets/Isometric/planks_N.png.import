@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhcfce262h63i"
-path="res://.godot/imported/planks_N.png-5974d29a7f6665f5dd115d46275b00a3.ctex"
+path="res://.godot/imported/planks_N.png-8eab11e1dba11b1eb7ba6fa65a49bf3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/planks_N.png"
-dest_files=["res://.godot/imported/planks_N.png-5974d29a7f6665f5dd115d46275b00a3.ctex"]
+source_file="res://assets/Isometric/planks_N.png"
+dest_files=["res://.godot/imported/planks_N.png-8eab11e1dba11b1eb7ba6fa65a49bf3f.ctex"]
 
 [params]
 

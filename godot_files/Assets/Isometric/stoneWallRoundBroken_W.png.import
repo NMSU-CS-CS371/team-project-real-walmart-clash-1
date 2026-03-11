@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be6br65y6gai"
-path="res://.godot/imported/stoneWallRoundBroken_W.png-e790b0bdff3bbdbc3d2fabf3de98cd77.ctex"
+path="res://.godot/imported/stoneWallRoundBroken_W.png-c9834bb3d903d472ea9ca408a72cde80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneWallRoundBroken_W.png"
-dest_files=["res://.godot/imported/stoneWallRoundBroken_W.png-e790b0bdff3bbdbc3d2fabf3de98cd77.ctex"]
+source_file="res://assets/Isometric/stoneWallRoundBroken_W.png"
+dest_files=["res://.godot/imported/stoneWallRoundBroken_W.png-c9834bb3d903d472ea9ca408a72cde80.ctex"]
 
 [params]
 

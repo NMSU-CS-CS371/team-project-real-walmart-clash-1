@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c47cubtsmmghm"
-path="res://.godot/imported/chair_S.png-4443c3fe7eefdab2c73a26361ad5bb47.ctex"
+path="res://.godot/imported/chair_S.png-c96dd79c10b08d963c0c36b015a67fa1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/chair_S.png"
-dest_files=["res://.godot/imported/chair_S.png-4443c3fe7eefdab2c73a26361ad5bb47.ctex"]
+source_file="res://assets/Angle/chair_S.png"
+dest_files=["res://.godot/imported/chair_S.png-c96dd79c10b08d963c0c36b015a67fa1.ctex"]
 
 [params]
 

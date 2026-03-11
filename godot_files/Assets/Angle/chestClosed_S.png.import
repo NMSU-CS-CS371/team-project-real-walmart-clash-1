@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr2vy6or1usaj"
-path="res://.godot/imported/chestClosed_S.png-4323d1ae6e187a0a7f33f8a8933993eb.ctex"
+path="res://.godot/imported/chestClosed_S.png-f66e3613518129759c54b1955c5dd4ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/chestClosed_S.png"
-dest_files=["res://.godot/imported/chestClosed_S.png-4323d1ae6e187a0a7f33f8a8933993eb.ctex"]
+source_file="res://assets/Angle/chestClosed_S.png"
+dest_files=["res://.godot/imported/chestClosed_S.png-f66e3613518129759c54b1955c5dd4ef.ctex"]
 
 [params]
 

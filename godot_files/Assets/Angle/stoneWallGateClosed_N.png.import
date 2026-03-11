@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du5i03fnbpucs"
-path="res://.godot/imported/stoneWallGateClosed_N.png-fa2eb9f44db50bdd3933169c8ea8a5e7.ctex"
+path="res://.godot/imported/stoneWallGateClosed_N.png-969b132144452ba987225e750ba9f8b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stoneWallGateClosed_N.png"
-dest_files=["res://.godot/imported/stoneWallGateClosed_N.png-fa2eb9f44db50bdd3933169c8ea8a5e7.ctex"]
+source_file="res://assets/Angle/stoneWallGateClosed_N.png"
+dest_files=["res://.godot/imported/stoneWallGateClosed_N.png-969b132144452ba987225e750ba9f8b9.ctex"]
 
 [params]
 

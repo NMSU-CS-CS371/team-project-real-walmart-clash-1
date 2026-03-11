@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" uid="uid://bb5lpmqebn4km" path="res://character_body_2d.gd" id="1_80cx4"]
 [ext_resource type="Texture2D" uid="uid://bhvimaib8y2yk" path="res://Ground.png" id="1_rvswv"]
-[ext_resource type="Texture2D" uid="uid://b773fn7uuckcg" path="res://Assets/Character/HAZI/idle/E-ezgif.com-gif-to-sprite-converter.png" id="2_e8heu"]
-[ext_resource type="Texture2D" uid="uid://tvicgkc3f6xc" path="res://Assets/Character/HAZI/idle/N-ezgif.com-gif-to-sprite-converter.png" id="3_rvswv"]
-[ext_resource type="Texture2D" uid="uid://di8mppwkbjmme" path="res://Assets/Character/HAZI/idle/NE-ezgif.com-gif-to-sprite-converter.png" id="4_boyg6"]
-[ext_resource type="Texture2D" uid="uid://bm51lem2wh5ug" path="res://Assets/Character/HAZI/idle/NW-ezgif.com-gif-to-sprite-converter.png" id="5_e36ub"]
-[ext_resource type="Texture2D" uid="uid://del3anhw1x1rk" path="res://Assets/Character/HAZI/idle/S-ezgif.com-gif-to-sprite-converter.png" id="6_hb5m1"]
-[ext_resource type="Texture2D" uid="uid://c6a5hiinx6had" path="res://Assets/Character/HAZI/idle/SE-ezgif.com-gif-to-sprite-converter.png" id="7_x5p1p"]
-[ext_resource type="Texture2D" uid="uid://b8ns6d2mo15xj" path="res://Assets/Character/HAZI/idle/SW-ezgif.com-gif-to-sprite-converter.png" id="8_qhcbd"]
-[ext_resource type="Texture2D" uid="uid://djop4i4cbjqhj" path="res://Assets/Character/HAZI/idle/W-ezgif.com-gif-to-sprite-converter.png" id="9_f1jbl"]
-[ext_resource type="Texture2D" uid="uid://dxmek5m0gnprk" path="res://Assets/Character/HAZI/walk/NE-ezgif.com-gif-to-sprite-converter.png" id="10_vaj68"]
-[ext_resource type="Texture2D" uid="uid://ko8c48jlx2rs" path="res://Assets/Character/HAZI/walk/NW-ezgif.com-gif-to-sprite-converter.png" id="11_i2p71"]
-[ext_resource type="Texture2D" uid="uid://d1y6f0v705snp" path="res://Assets/Character/HAZI/walk/SE-ezgif.com-gif-to-sprite-converter.png" id="12_xa8c5"]
-[ext_resource type="Texture2D" uid="uid://bqdapty5kx62e" path="res://Assets/Character/HAZI/walk/S-ezgif.com-gif-to-sprite-converter.png" id="13_5b14r"]
-[ext_resource type="Texture2D" uid="uid://buj5i8rix0bmf" path="res://Assets/Character/HAZI/walk/SW-ezgif.com-gif-to-sprite-converter.png" id="13_e8heu"]
-[ext_resource type="Texture2D" uid="uid://c5ldkv2jmv6kf" path="res://Assets/Character/HAZI/walk/E-ezgif.com-gif-to-sprite-converter.png" id="14_bnpwn"]
-[ext_resource type="Texture2D" uid="uid://le18djpta4if" path="res://Assets/Character/HAZI/walk/N-ezgif.com-gif-to-sprite-converter.png" id="15_36jdj"]
-[ext_resource type="Texture2D" uid="uid://b4evx641oewni" path="res://Assets/Character/HAZI/walk/W-ezgif.com-gif-to-sprite-converter.png" id="16_xfvwf"]
+[ext_resource type="Texture2D" uid="uid://b773fn7uuckcg" path="res://assets/Character/HAZI/idle/E-ezgif.com-gif-to-sprite-converter.png" id="2_e8heu"]
+[ext_resource type="Texture2D" uid="uid://tvicgkc3f6xc" path="res://assets/Character/HAZI/idle/N-ezgif.com-gif-to-sprite-converter.png" id="3_rvswv"]
+[ext_resource type="Texture2D" uid="uid://di8mppwkbjmme" path="res://assets/Character/HAZI/idle/NE-ezgif.com-gif-to-sprite-converter.png" id="4_boyg6"]
+[ext_resource type="Texture2D" uid="uid://bm51lem2wh5ug" path="res://assets/Character/HAZI/idle/NW-ezgif.com-gif-to-sprite-converter.png" id="5_e36ub"]
+[ext_resource type="Texture2D" uid="uid://del3anhw1x1rk" path="res://assets/Character/HAZI/idle/S-ezgif.com-gif-to-sprite-converter.png" id="6_hb5m1"]
+[ext_resource type="Texture2D" uid="uid://c6a5hiinx6had" path="res://assets/Character/HAZI/idle/SE-ezgif.com-gif-to-sprite-converter.png" id="7_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://b8ns6d2mo15xj" path="res://assets/Character/HAZI/idle/SW-ezgif.com-gif-to-sprite-converter.png" id="8_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://djop4i4cbjqhj" path="res://assets/Character/HAZI/idle/W-ezgif.com-gif-to-sprite-converter.png" id="9_f1jbl"]
+[ext_resource type="Texture2D" uid="uid://dxmek5m0gnprk" path="res://assets/Character/HAZI/walk/NE-ezgif.com-gif-to-sprite-converter.png" id="10_vaj68"]
+[ext_resource type="Texture2D" uid="uid://ko8c48jlx2rs" path="res://assets/Character/HAZI/walk/NW-ezgif.com-gif-to-sprite-converter.png" id="11_i2p71"]
+[ext_resource type="Texture2D" uid="uid://d1y6f0v705snp" path="res://assets/Character/HAZI/walk/SE-ezgif.com-gif-to-sprite-converter.png" id="12_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://bqdapty5kx62e" path="res://assets/Character/HAZI/walk/S-ezgif.com-gif-to-sprite-converter.png" id="13_5b14r"]
+[ext_resource type="Texture2D" uid="uid://buj5i8rix0bmf" path="res://assets/Character/HAZI/walk/SW-ezgif.com-gif-to-sprite-converter.png" id="13_e8heu"]
+[ext_resource type="Texture2D" uid="uid://c5ldkv2jmv6kf" path="res://assets/Character/HAZI/walk/E-ezgif.com-gif-to-sprite-converter.png" id="14_bnpwn"]
+[ext_resource type="Texture2D" uid="uid://le18djpta4if" path="res://assets/Character/HAZI/walk/N-ezgif.com-gif-to-sprite-converter.png" id="15_36jdj"]
+[ext_resource type="Texture2D" uid="uid://b4evx641oewni" path="res://assets/Character/HAZI/walk/W-ezgif.com-gif-to-sprite-converter.png" id="16_xfvwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_boyg6"]
 texture = ExtResource("1_rvswv")
@@ -2181,9 +2181,9 @@ motion_mode = 1
 script = ExtResource("1_80cx4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=55490957]
+position = Vector2(-16, -36)
 sprite_frames = SubResource("SpriteFrames_aaiba")
-animation = &"Idle_W"
-frame_progress = 0.6016299
+animation = &"Idle_E"
 
 [node name="FeetShape2D" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D" unique_id=1190868535]
 position = Vector2(-2, 48)
@@ -2193,9 +2193,13 @@ shape = SubResource("CapsuleShape2D_l8uqv")
 position = Vector2(1, 6)
 
 [node name="BodyShape2D" type="CollisionShape2D" parent="CharacterBody2D/AnimatedSprite2D/FeetShape2D/Area2D Hitbox" unique_id=414149275]
-position = Vector2(0, -57)
+position = Vector2(1, -54)
 shape = SubResource("CapsuleShape2D_5d0hg")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2084474113]
 position_smoothing_enabled = true
 position_smoothing_speed = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=850473719]
+position = Vector2(0, -1)
+rotation = -1.0471976

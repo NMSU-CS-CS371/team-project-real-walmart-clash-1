@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bylue55qa5pcl"
-path="res://.godot/imported/stoneWallDoor_N.png-4687df7398ebb05445349acdbaa5d755.ctex"
+path="res://.godot/imported/stoneWallDoor_N.png-578bace4a6529383b1a16c7a0e231e8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneWallDoor_N.png"
-dest_files=["res://.godot/imported/stoneWallDoor_N.png-4687df7398ebb05445349acdbaa5d755.ctex"]
+source_file="res://assets/Isometric/stoneWallDoor_N.png"
+dest_files=["res://.godot/imported/stoneWallDoor_N.png-578bace4a6529383b1a16c7a0e231e8d.ctex"]
 
 [params]
 

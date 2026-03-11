@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5r0meu1vd20p"
-path="res://.godot/imported/planksHole_S.png-3be59c4630c7bf1b7478bb64fdc145f2.ctex"
+path="res://.godot/imported/planksHole_S.png-434658e3d7c872972282ed6bae691dda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/planksHole_S.png"
-dest_files=["res://.godot/imported/planksHole_S.png-3be59c4630c7bf1b7478bb64fdc145f2.ctex"]
+source_file="res://assets/Angle/planksHole_S.png"
+dest_files=["res://.godot/imported/planksHole_S.png-434658e3d7c872972282ed6bae691dda.ctex"]
 
 [params]
 

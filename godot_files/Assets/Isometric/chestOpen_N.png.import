@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyh2ss6fdxhfg"
-path="res://.godot/imported/chestOpen_N.png-9a23076ccde24b4360e3e1cd0aa78fdf.ctex"
+path="res://.godot/imported/chestOpen_N.png-610a22a99874f8a82863bdf127f04f9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/chestOpen_N.png"
-dest_files=["res://.godot/imported/chestOpen_N.png-9a23076ccde24b4360e3e1cd0aa78fdf.ctex"]
+source_file="res://assets/Isometric/chestOpen_N.png"
+dest_files=["res://.godot/imported/chestOpen_N.png-610a22a99874f8a82863bdf127f04f9f.ctex"]
 
 [params]
 

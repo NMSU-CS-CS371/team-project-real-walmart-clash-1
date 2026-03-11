@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://63gwttfassfp"
-path="res://.godot/imported/stoneWallAgedRight_S.png-c34ec503499ba6c62e8141fc109998fa.ctex"
+path="res://.godot/imported/stoneWallAgedRight_S.png-17be3ac2241ab3b371d9b4a3d69d72f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneWallAgedRight_S.png"
-dest_files=["res://.godot/imported/stoneWallAgedRight_S.png-c34ec503499ba6c62e8141fc109998fa.ctex"]
+source_file="res://assets/Isometric/stoneWallAgedRight_S.png"
+dest_files=["res://.godot/imported/stoneWallAgedRight_S.png-17be3ac2241ab3b371d9b4a3d69d72f6.ctex"]
 
 [params]
 

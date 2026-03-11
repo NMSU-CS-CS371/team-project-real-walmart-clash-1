@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jiv23vn31y5v"
-path="res://.godot/imported/stoneWallArchway_S.png-4e1cd1e73e6ca6efb39012f219daacbd.ctex"
+path="res://.godot/imported/stoneWallArchway_S.png-2d6d248b3a9c3bf1b73cf596aa87de89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneWallArchway_S.png"
-dest_files=["res://.godot/imported/stoneWallArchway_S.png-4e1cd1e73e6ca6efb39012f219daacbd.ctex"]
+source_file="res://assets/Isometric/stoneWallArchway_S.png"
+dest_files=["res://.godot/imported/stoneWallArchway_S.png-2d6d248b3a9c3bf1b73cf596aa87de89.ctex"]
 
 [params]
 

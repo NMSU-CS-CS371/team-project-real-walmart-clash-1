@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dguouvvfdksbx"
-path="res://.godot/imported/woodenPile_E.png-92a9e5225e8a568545dc9eb0f36c83e4.ctex"
+path="res://.godot/imported/woodenPile_E.png-4a16ede80a8c5fc1dc7c4ff1a847919e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/woodenPile_E.png"
-dest_files=["res://.godot/imported/woodenPile_E.png-92a9e5225e8a568545dc9eb0f36c83e4.ctex"]
+source_file="res://assets/Angle/woodenPile_E.png"
+dest_files=["res://.godot/imported/woodenPile_E.png-4a16ede80a8c5fc1dc7c4ff1a847919e.ctex"]
 
 [params]
 

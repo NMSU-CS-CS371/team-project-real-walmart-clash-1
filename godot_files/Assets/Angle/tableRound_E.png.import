@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3d7ok5474fud"
-path="res://.godot/imported/tableRound_E.png-bc1451f94f2b1c0cdf5e5bdc504d3522.ctex"
+path="res://.godot/imported/tableRound_E.png-fead58b37c9e992ec3abdec9a2f8c393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/tableRound_E.png"
-dest_files=["res://.godot/imported/tableRound_E.png-bc1451f94f2b1c0cdf5e5bdc504d3522.ctex"]
+source_file="res://assets/Angle/tableRound_E.png"
+dest_files=["res://.godot/imported/tableRound_E.png-fead58b37c9e992ec3abdec9a2f8c393.ctex"]
 
 [params]
 

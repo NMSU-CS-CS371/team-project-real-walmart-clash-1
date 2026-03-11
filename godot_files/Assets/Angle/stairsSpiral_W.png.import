@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dacbtyjfy3tk7"
-path="res://.godot/imported/stairsSpiral_W.png-46054e66cc71442d8e9d1bd0ceb58b28.ctex"
+path="res://.godot/imported/stairsSpiral_W.png-cfaeb54ba6ed7e2b8b446114f1697f31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stairsSpiral_W.png"
-dest_files=["res://.godot/imported/stairsSpiral_W.png-46054e66cc71442d8e9d1bd0ceb58b28.ctex"]
+source_file="res://assets/Angle/stairsSpiral_W.png"
+dest_files=["res://.godot/imported/stairsSpiral_W.png-cfaeb54ba6ed7e2b8b446114f1697f31.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cal7080s04ifx"
-path="res://.godot/imported/stairsAged_S.png-a4facf369cd6e08b0cb37ba1cd41c48a.ctex"
+path="res://.godot/imported/stairsAged_S.png-65eca7534ea4203d6952c1ff767fb660.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stairsAged_S.png"
-dest_files=["res://.godot/imported/stairsAged_S.png-a4facf369cd6e08b0cb37ba1cd41c48a.ctex"]
+source_file="res://assets/Angle/stairsAged_S.png"
+dest_files=["res://.godot/imported/stairsAged_S.png-65eca7534ea4203d6952c1ff767fb660.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n6udutfr8ikq"
-path="res://.godot/imported/planksBroken_W.png-be597c3dfd7502d170e63d5a4aaadf59.ctex"
+path="res://.godot/imported/planksBroken_W.png-a8fe7ab68000f9712e8da8a039b31c74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/planksBroken_W.png"
-dest_files=["res://.godot/imported/planksBroken_W.png-be597c3dfd7502d170e63d5a4aaadf59.ctex"]
+source_file="res://assets/Angle/planksBroken_W.png"
+dest_files=["res://.godot/imported/planksBroken_W.png-a8fe7ab68000f9712e8da8a039b31c74.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b84hy5oqlobx0"
-path="res://.godot/imported/bridgeBroken_S.png-e4e69a047ee224dd07178d1d23076f03.ctex"
+path="res://.godot/imported/bridgeBroken_S.png-fb8869588d212eb92807dbae976925fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/bridgeBroken_S.png"
-dest_files=["res://.godot/imported/bridgeBroken_S.png-e4e69a047ee224dd07178d1d23076f03.ctex"]
+source_file="res://assets/Angle/bridgeBroken_S.png"
+dest_files=["res://.godot/imported/bridgeBroken_S.png-fb8869588d212eb92807dbae976925fd.ctex"]
 
 [params]
 

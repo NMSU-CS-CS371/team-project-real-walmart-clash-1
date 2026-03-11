@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bie51tusiltv0"
-path="res://.godot/imported/stoneWallDoorBars_E.png-25ff148de9450af61903f0680d8d05f9.ctex"
+path="res://.godot/imported/stoneWallDoorBars_E.png-101cf7c561e7e53609c57ab46f3a48a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneWallDoorBars_E.png"
-dest_files=["res://.godot/imported/stoneWallDoorBars_E.png-25ff148de9450af61903f0680d8d05f9.ctex"]
+source_file="res://assets/Isometric/stoneWallDoorBars_E.png"
+dest_files=["res://.godot/imported/stoneWallDoorBars_E.png-101cf7c561e7e53609c57ab46f3a48a4.ctex"]
 
 [params]
 

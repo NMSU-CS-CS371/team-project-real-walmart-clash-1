@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxt6xcjb8ruqb"
-path="res://.godot/imported/tableChairsBroken_W.png-7ed3dcd6e20a90b1abbe163f4a011952.ctex"
+path="res://.godot/imported/tableChairsBroken_W.png-010b4ffb9e1a278b59484c590526d190.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/tableChairsBroken_W.png"
-dest_files=["res://.godot/imported/tableChairsBroken_W.png-7ed3dcd6e20a90b1abbe163f4a011952.ctex"]
+source_file="res://assets/Angle/tableChairsBroken_W.png"
+dest_files=["res://.godot/imported/tableChairsBroken_W.png-010b4ffb9e1a278b59484c590526d190.ctex"]
 
 [params]
 

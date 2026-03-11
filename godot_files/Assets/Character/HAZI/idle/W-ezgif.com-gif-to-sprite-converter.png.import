@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djop4i4cbjqhj"
-path="res://.godot/imported/W-ezgif.com-gif-to-sprite-converter.png-a0b03d818c321d7d9de59d7855d05248.ctex"
+path="res://.godot/imported/W-ezgif.com-gif-to-sprite-converter.png-6520bc5c3864d7d4742eb3a625e8f394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/HAZI/idle/W-ezgif.com-gif-to-sprite-converter.png"
-dest_files=["res://.godot/imported/W-ezgif.com-gif-to-sprite-converter.png-a0b03d818c321d7d9de59d7855d05248.ctex"]
+source_file="res://assets/Character/HAZI/idle/W-ezgif.com-gif-to-sprite-converter.png"
+dest_files=["res://.godot/imported/W-ezgif.com-gif-to-sprite-converter.png-6520bc5c3864d7d4742eb3a625e8f394.ctex"]
 
 [params]
 

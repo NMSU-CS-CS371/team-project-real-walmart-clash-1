@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbnxtgw56ioal"
-path="res://.godot/imported/stoneWallHole_N.png-1f75208d7a30e1853c0b3006d249b117.ctex"
+path="res://.godot/imported/stoneWallHole_N.png-acf5e38b1adc5425037f9e305042c7de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stoneWallHole_N.png"
-dest_files=["res://.godot/imported/stoneWallHole_N.png-1f75208d7a30e1853c0b3006d249b117.ctex"]
+source_file="res://assets/Angle/stoneWallHole_N.png"
+dest_files=["res://.godot/imported/stoneWallHole_N.png-acf5e38b1adc5425037f9e305042c7de.ctex"]
 
 [params]
 

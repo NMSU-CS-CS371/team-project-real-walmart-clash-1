@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wk1entvrt0bs"
-path="res://.godot/imported/Male_5_Run5.png-ccdd17104b6fc5b7c597554fb854edd7.ctex"
+path="res://.godot/imported/Male_5_Run5.png-a67af7f8ea1fd1c11fe84112a37c157d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Male/Male_5_Run5.png"
-dest_files=["res://.godot/imported/Male_5_Run5.png-ccdd17104b6fc5b7c597554fb854edd7.ctex"]
+source_file="res://assets/Characters/Male/Male_5_Run5.png"
+dest_files=["res://.godot/imported/Male_5_Run5.png-a67af7f8ea1fd1c11fe84112a37c157d.ctex"]
 
 [params]
 

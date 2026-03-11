@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tt6oeqt2vogu"
-path="res://.godot/imported/stoneSide_S.png-fe586298a6b239da6a4c49db81f3cb39.ctex"
+path="res://.godot/imported/stoneSide_S.png-dc068b17bc459887c36cb79c08f05b76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneSide_S.png"
-dest_files=["res://.godot/imported/stoneSide_S.png-fe586298a6b239da6a4c49db81f3cb39.ctex"]
+source_file="res://assets/Isometric/stoneSide_S.png"
+dest_files=["res://.godot/imported/stoneSide_S.png-dc068b17bc459887c36cb79c08f05b76.ctex"]
 
 [params]
 

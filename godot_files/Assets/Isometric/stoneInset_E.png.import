@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvg6rqj5vvmj5"
-path="res://.godot/imported/stoneInset_E.png-3a5d30221c321071c2782b9d8bce4454.ctex"
+path="res://.godot/imported/stoneInset_E.png-85c1775669e29b9d1ce57e33bcf825f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneInset_E.png"
-dest_files=["res://.godot/imported/stoneInset_E.png-3a5d30221c321071c2782b9d8bce4454.ctex"]
+source_file="res://assets/Isometric/stoneInset_E.png"
+dest_files=["res://.godot/imported/stoneInset_E.png-85c1775669e29b9d1ce57e33bcf825f3.ctex"]
 
 [params]
 

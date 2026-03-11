@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deafqy4wuenm6"
-path="res://.godot/imported/stoneColumnWood_W.png-62485ee3e9977f83de246a1178af142f.ctex"
+path="res://.godot/imported/stoneColumnWood_W.png-d28a2a6c7cf26b8465d82f71ccc64ad3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stoneColumnWood_W.png"
-dest_files=["res://.godot/imported/stoneColumnWood_W.png-62485ee3e9977f83de246a1178af142f.ctex"]
+source_file="res://assets/Isometric/stoneColumnWood_W.png"
+dest_files=["res://.godot/imported/stoneColumnWood_W.png-d28a2a6c7cf26b8465d82f71ccc64ad3.ctex"]
 
 [params]
 

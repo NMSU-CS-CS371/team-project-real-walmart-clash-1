@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c424risttbdbi"
-path="res://.godot/imported/stoneUneven_E.png-6ca187c53a70cb100cfa3e038db1c751.ctex"
+path="res://.godot/imported/stoneUneven_E.png-9a1b858a8445f424f307b178f3706da1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stoneUneven_E.png"
-dest_files=["res://.godot/imported/stoneUneven_E.png-6ca187c53a70cb100cfa3e038db1c751.ctex"]
+source_file="res://assets/Angle/stoneUneven_E.png"
+dest_files=["res://.godot/imported/stoneUneven_E.png-9a1b858a8445f424f307b178f3706da1.ctex"]
 
 [params]
 

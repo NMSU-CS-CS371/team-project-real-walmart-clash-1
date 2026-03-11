@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dan4d8px5p8mv"
-path="res://.godot/imported/woodenSupportsBlock_E.png-ff0101eb901ce0b0dc1c1b744d1abebc.ctex"
+path="res://.godot/imported/woodenSupportsBlock_E.png-b2a55f1591420248b84ee9b38761713c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/woodenSupportsBlock_E.png"
-dest_files=["res://.godot/imported/woodenSupportsBlock_E.png-ff0101eb901ce0b0dc1c1b744d1abebc.ctex"]
+source_file="res://assets/Angle/woodenSupportsBlock_E.png"
+dest_files=["res://.godot/imported/woodenSupportsBlock_E.png-b2a55f1591420248b84ee9b38761713c.ctex"]
 
 [params]
 

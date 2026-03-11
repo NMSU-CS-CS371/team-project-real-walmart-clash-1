@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxbyj37pbykhe"
-path="res://.godot/imported/stairsSpiral_N.png-5af5d7808e03b5c59d5df46c5c3e88b6.ctex"
+path="res://.godot/imported/stairsSpiral_N.png-d081b9e984271611b3699015e69e1c0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/stairsSpiral_N.png"
-dest_files=["res://.godot/imported/stairsSpiral_N.png-5af5d7808e03b5c59d5df46c5c3e88b6.ctex"]
+source_file="res://assets/Isometric/stairsSpiral_N.png"
+dest_files=["res://.godot/imported/stairsSpiral_N.png-d081b9e984271611b3699015e69e1c0e.ctex"]
 
 [params]
 

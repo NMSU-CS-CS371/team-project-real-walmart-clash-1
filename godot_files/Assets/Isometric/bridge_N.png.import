@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4evofjxkyht2"
-path="res://.godot/imported/bridge_N.png-6d0513ac8ca0d077f4970fdd44a99ebd.ctex"
+path="res://.godot/imported/bridge_N.png-2dbaef2d0ecb0c9c5585485bf41e5647.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/bridge_N.png"
-dest_files=["res://.godot/imported/bridge_N.png-6d0513ac8ca0d077f4970fdd44a99ebd.ctex"]
+source_file="res://assets/Isometric/bridge_N.png"
+dest_files=["res://.godot/imported/bridge_N.png-2dbaef2d0ecb0c9c5585485bf41e5647.ctex"]
 
 [params]
 

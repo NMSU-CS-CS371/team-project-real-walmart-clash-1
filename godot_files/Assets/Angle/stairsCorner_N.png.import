@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnccxg1bpgrmg"
-path="res://.godot/imported/stairsCorner_N.png-b24adc9fa36df049a7c340b2c23bcd5a.ctex"
+path="res://.godot/imported/stairsCorner_N.png-bdf0cc69fce086bfd51bcc9b63892762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Angle/stairsCorner_N.png"
-dest_files=["res://.godot/imported/stairsCorner_N.png-b24adc9fa36df049a7c340b2c23bcd5a.ctex"]
+source_file="res://assets/Angle/stairsCorner_N.png"
+dest_files=["res://.godot/imported/stairsCorner_N.png-bdf0cc69fce086bfd51bcc9b63892762.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mmhtgrv8jays"
-path="res://.godot/imported/tableRoundChairs_W.png-8bab3efc6472c9b81a5f35730d2cfd7f.ctex"
+path="res://.godot/imported/tableRoundChairs_W.png-37ec99ee66e16ca27fb7460a0b39c7b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isometric/tableRoundChairs_W.png"
-dest_files=["res://.godot/imported/tableRoundChairs_W.png-8bab3efc6472c9b81a5f35730d2cfd7f.ctex"]
+source_file="res://assets/Isometric/tableRoundChairs_W.png"
+dest_files=["res://.godot/imported/tableRoundChairs_W.png-37ec99ee66e16ca27fb7460a0b39c7b3.ctex"]
 
 [params]
 
