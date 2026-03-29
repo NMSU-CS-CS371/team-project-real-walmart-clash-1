@@ -6,7 +6,7 @@ var player_in_area = false
 func _ready():
 	$Label.visible = false
 
-func _process(delta):
+func _process(_delta):
 	if player_in_area and Input.is_action_just_pressed("Interact"):
 		interact()
 
@@ -28,3 +28,6 @@ func interact():
 	match crate_type: 
 		"Start": 
 			get_tree().change_scene_to_file("res://Battleground.tscn")
+		
+		"Shop":
+			print("Player opened shop")

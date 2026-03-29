@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bloojw0i6ssb3"]
 
-[ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/area_2d.gd" id="1_5mbob"]
-[ext_resource type="Texture2D" uid="uid://cey5yyxr26dse" path="res://New_Assets/crate_slice_2_3.png" id="2_32snd"]
+[ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/Game_Script/area_2d.gd" id="1_5mbob"]
+[ext_resource type="Texture2D" uid="uid://cey5yyxr26dse" path="res://New_Assets/Crate_Assets/crate_slice_2_3.png" id="2_32snd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(143, 162.5)
@@ -27,11 +27,11 @@ shape = SubResource("RectangleShape2D_0hol4")
 texture = ExtResource("2_32snd")
 
 [node name="Label" type="Label" parent="Area2D" unique_id=1680118926]
-offset_left = -23.0
-offset_top = -153.0
-offset_right = 32.0
-offset_bottom = -130.0
-text = "Press E"
+offset_left = -116.0
+offset_top = -161.0
+offset_right = 112.0
+offset_bottom = -138.0
+text = "Press E to Open Battleground"
 label_settings = SubResource("LabelSettings_q6r6c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=548316784]

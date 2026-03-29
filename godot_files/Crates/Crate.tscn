@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crn8d6cptqmwa"]
 
-[ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/area_2d.gd" id="1_e34xa"]
-[ext_resource type="Texture2D" uid="uid://md0eslckcx4g" path="res://New_Assets/crate_slice_0_0.png" id="2_p8q6l"]
+[ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/Game_Script/area_2d.gd" id="1_e34xa"]
+[ext_resource type="Texture2D" uid="uid://md0eslckcx4g" path="res://New_Assets/Crate_Assets/crate_slice_0_0.png" id="2_p8q6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(143, 162.5)
@@ -17,6 +17,7 @@ size = Vector2(125, 71)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2070724420]
 script = ExtResource("1_e34xa")
+crate_type = "Shop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1392329153]
 position = Vector2(1, 9.75)

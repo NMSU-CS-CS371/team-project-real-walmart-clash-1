@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxtva87iix0dv"]
 
-[ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/area_2d.gd" id="1_r162y"]
-[ext_resource type="Texture2D" uid="uid://bxt314j3okpg5" path="res://New_Assets/crate_slice_3_5.png" id="2_r162y"]
+[ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/Game_Script/area_2d.gd" id="1_r162y"]
+[ext_resource type="Texture2D" uid="uid://bxt314j3okpg5" path="res://New_Assets/Crate_Assets/crate_slice_3_5.png" id="2_r162y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(143, 162.5)

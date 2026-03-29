@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://xfhj2a1y1qb1"]
 
-[ext_resource type="Script" uid="uid://bb5lpmqebn4km" path="res://GDScript/character_body_2d.gd" id="1_80cx4"]
-[ext_resource type="Script" uid="uid://cth4qv21vx0f5" path="res://GDScript/game.gd" id="1_x5p1p"]
+[ext_resource type="Script" uid="uid://bb5lpmqebn4km" path="res://GDScript/Game_Script/character_body_2d.gd" id="1_80cx4"]
+[ext_resource type="Script" uid="uid://cth4qv21vx0f5" path="res://GDScript/Game_Script/game.gd" id="1_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://b773fn7uuckcg" path="res://Assets/Character/HAZI/idle/E-ezgif.com-gif-to-sprite-converter.png" id="2_e8heu"]
 [ext_resource type="Texture2D" uid="uid://cioerhm4u61kd" path="res://Assets/Walls.png" id="3_e36ub"]
 [ext_resource type="Texture2D" uid="uid://tvicgkc3f6xc" path="res://Assets/Character/HAZI/idle/N-ezgif.com-gif-to-sprite-converter.png" id="3_rvswv"]
@@ -19,10 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://c5ldkv2jmv6kf" path="res://Assets/Character/HAZI/walk/E-ezgif.com-gif-to-sprite-converter.png" id="14_bnpwn"]
 [ext_resource type="Texture2D" uid="uid://le18djpta4if" path="res://Assets/Character/HAZI/walk/N-ezgif.com-gif-to-sprite-converter.png" id="15_36jdj"]
 [ext_resource type="Texture2D" uid="uid://b4evx641oewni" path="res://Assets/Character/HAZI/walk/W-ezgif.com-gif-to-sprite-converter.png" id="16_xfvwf"]
-[ext_resource type="Script" uid="uid://j3uywtnvnlec" path="res://GDScript/camera_2d.gd" id="21_hb5m1"]
+[ext_resource type="Script" uid="uid://j3uywtnvnlec" path="res://GDScript/Game_Script/camera_2d.gd" id="21_hb5m1"]
 [ext_resource type="PackedScene" uid="uid://crn8d6cptqmwa" path="res://Crates/Crate.tscn" id="23_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://btiifvbxya43n" path="res://New_Assets/Floor_Brick_02-256x128_transparent.png" id="23_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://bloojw0i6ssb3" path="res://Crates/Crate2.tscn" id="24_f1jbl"]
+[ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="25_i2p71"]
 [ext_resource type="PackedScene" uid="uid://bxtva87iix0dv" path="res://Crates/Crate3.tscn" id="25_vaj68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1jbl"]
@@ -2511,8 +2512,41 @@ radius = 12.0
 height = 26.0
 
 [node name="Game" type="Node2D" unique_id=818907557]
+process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_x5p1p")
+
+[node name="Menu" type="Node" parent="." unique_id=798079058]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Menu" unique_id=494613715]
+process_mode = 3
+
+[node name="Panel" type="Panel" parent="Menu/CanvasLayer" unique_id=1706518338]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu/CanvasLayer/Panel" unique_id=672700995]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 178.0
+offset_right = 840.0
+offset_bottom = 201.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Menu/CanvasLayer/Panel" unique_id=563240845]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 31.0
+offset_right = 1098.0
+offset_bottom = 112.0
+focus_mode = 0
+text = "Menu"
+script = ExtResource("25_i2p71")
+metadata/_edit_use_anchors_ = true
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1394908903]
 tile_map_data = PackedByteArray("AAD//wIAAQACAAIAAAD8////AQACAAIAAAD9/wAAAQACAAIAAAD9/wIAAQACAAIAAAD9/wEAAQACAAIAAAD8/wEAAQACAAIAAAD8/wAAAQACAAIAAAD9//7/AQACAAIAAAD9//3/AQACAAIAAAD+//z/AQACAAIAAAD+//v/AQACAAIAAAD///r/AQACAAIAAAD///n/AQACAAIAAAAAAPj/AQACAAIAAAAAAPn/AQACAAIAAAABAPr/AQACAAIAAAABAPv/AQACAAIAAAACAPz/AQACAAIAAAACAP3/AQACAAIAAAADAP7/AQACAAIAAAACAP//AQACAAIAAAACAP7/AQACAAIAAAABAP3/AQACAAIAAAABAPz/AQACAAIAAAAAAPv/AQACAAIAAAAAAPr/AQACAAIAAAD///v/AQACAAIAAAD///z/AQACAAIAAAD+//3/AQACAAIAAAD+//7/AQACAAIAAAD9////AQACAAIAAAD///7/AQACAAIAAAD///3/AQACAAIAAAAAAPz/AQACAAIAAAD+////AQACAAIAAAD+/wAAAQACAAIAAAD+/wIAAQACAAIAAAD9/wMAAQACAAIAAAD+/wQAAQACAAIAAAD+/wMAAQACAAIAAAD+/wEAAQACAAIAAAD//wAAAQACAAIAAAD/////AQACAAIAAAAAAP7/AQACAAIAAAAAAP3/AQACAAIAAAABAP7/AQACAAIAAAABAP//AQACAAIAAAABAAAAAQACAAIAAAABAAEAAQACAAIAAAACAAAAAQACAAIAAAAAAP//AQACAAIAAAAAAAAAAQACAAIAAAD//wEAAQACAAIAAAD//wQAAQACAAIAAAD//wUAAQACAAIAAAAAAAYAAQACAAIAAAAAAAUAAQACAAIAAAABAAQAAQACAAIAAAAAAAMAAQACAAIAAAABAAIAAQACAAIAAAAAAAEAAQACAAIAAAAAAAIAAQACAAIAAAD//wMAAQACAAIAAAAAAAQAAQACAAIAAAABAAMAAQACAAIAAAACAAIAAQACAAIAAAADAAAAAQACAAIAAAACAAEAAQACAAIAAAA=")
@@ -2539,6 +2573,7 @@ motion_mode = 1
 platform_wall_layers = 1
 safe_margin = 0.001
 script = ExtResource("1_80cx4")
+speed = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=55490957]
 position = Vector2(1, 1)
@@ -2554,6 +2589,7 @@ one_way_collision = true
 limit_enabled = false
 position_smoothing_enabled = true
 script = ExtResource("21_hb5m1")
+target_path = NodePath("..")
 
 [node name="Crate" parent="." unique_id=1485478183 instance=ExtResource("23_f1jbl")]
 z_index = 2
@@ -2566,3 +2602,5 @@ position = Vector2(442, 140)
 [node name="Crate3" parent="." unique_id=1495999845 instance=ExtResource("25_vaj68")]
 z_index = 2
 position = Vector2(-127, 24)
+
+[connection signal="pressed" from="Menu/CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
