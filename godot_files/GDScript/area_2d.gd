@@ -1,5 +1,5 @@
 extends Area2D
-
+@export var crate_type : String = "default"
 
 var player_in_area = false
 
@@ -23,3 +23,8 @@ func _on_Area2D_body_exited(body):
 # Interaction Function
 func interact():
 	print("Interacted with crate!")
+	
+	# Choose which crate is interacted with
+	match crate_type: 
+		"Start": 
+			get_tree().change_scene_to_file("res://Battleground.tscn")

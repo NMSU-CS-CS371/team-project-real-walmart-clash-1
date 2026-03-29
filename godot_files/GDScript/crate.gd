@@ -1,5 +1,5 @@
 extends Area2D
-@export var crate_texture: Texture2D
+@export var crate_type : String = "default"
 
 var player_in_area = false
 
