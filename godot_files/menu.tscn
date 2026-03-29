@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8eqbk4bnw8sa"]
 
-[ext_resource type="Script" uid="uid://3cumxul1l2h4" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://3cumxul1l2h4" path="res://GDScript/menu.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://ba8vx80hy6kp1" path="res://Assets/Sample.png" id="2_ouk20"]
 [ext_resource type="FontFile" uid="uid://cw4hhsjsgh37h" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="3_mae5d"]
 

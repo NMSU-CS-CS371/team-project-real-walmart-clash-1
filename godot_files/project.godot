@@ -13,7 +13,6 @@ config_version=5
 config/name="Tower_Defense"
 run/main_scene="uid://8eqbk4bnw8sa"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [input]
 
@@ -54,3 +53,4 @@ Interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 0)
