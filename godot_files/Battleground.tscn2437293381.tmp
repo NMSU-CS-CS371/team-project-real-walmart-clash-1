@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://dhahlsvje1yph" path="res://GDScript/Battleground_Script/battleground.gd" id="3_a0rqo"]
 [ext_resource type="Script" uid="uid://djlo6hfjtl8kb" path="res://builder.gd" id="4_lhvob"]
 [ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="4_q2k36"]
-[ext_resource type="Texture2D" uid="uid://qommuuuoe7c3" path="res://New_Assets/Towers/tile_0_0.png" id="5_6g4ul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_st6r5"]
 texture = ExtResource("1_ykhue")
@@ -74,7 +73,6 @@ y_sort_enabled = true
 script = ExtResource("4_lhvob")
 
 [node name="CursorPreview" type="Sprite2D" parent="Builder" unique_id=303892620]
-texture = ExtResource("5_6g4ul")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180188100]
 position = Vector2(303, 184)
