@@ -80,8 +80,13 @@ script = ExtResource("4_lhvob")
 texture = ExtResource("5_6g4ul")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180188100]
-position = Vector2(303, 184)
 zoom = Vector2(0.35, 0.3)
+drag_horizontal_offset = 1.0
+drag_vertical_offset = 1.0
+drag_left_margin = 0.62
+drag_top_margin = 0.14
+drag_right_margin = 0.29
+drag_bottom_margin = 0.44
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=635158485]
 process_mode = 3
