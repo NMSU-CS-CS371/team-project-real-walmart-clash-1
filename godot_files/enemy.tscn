@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://dly3jbh8ce2tt"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xaro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
+size = Vector2(30.5, 25)
+
 [node name="Enemy" type="Node2D" unique_id=303183927]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1467651432]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1430089679]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1887002428]
+sprite_frames = SubResource("SpriteFrames_7xaro")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143697350]
+shape = SubResource("RectangleShape2D_7k104")
