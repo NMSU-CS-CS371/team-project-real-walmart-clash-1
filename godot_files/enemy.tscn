@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dly3jbh8ce2tt"]
 
+[ext_resource type="Script" uid="uid://47hd5fdavxya" path="res://enemy.gd" id="1_q1k2d"]
 [ext_resource type="Texture2D" uid="uid://cbst6rnalbd7h" path="res://Assets/Enemys/zombie/WALK/E/0001.png" id="1_ur4u1"]
 [ext_resource type="Texture2D" uid="uid://bdk2o6uh5hm0b" path="res://Assets/Enemys/zombie/WALK/E/0002.png" id="2_q1k2d"]
 [ext_resource type="Texture2D" uid="uid://b5px1ke3r64u4" path="res://Assets/Enemys/zombie/WALK/E/0003.png" id="3_wuu8u"]
@@ -844,17 +845,31 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
-size = Vector2(30.5, 25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur4u1"]
+radius = 25.0
+height = 166.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ur4u1"]
+radius = 410.82358
 
 [node name="Enemy" type="Node2D" unique_id=303183927]
+script = ExtResource("1_q1k2d")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1467651432]
+motion_mode = 1
+script = ExtResource("1_q1k2d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1887002428]
 sprite_frames = SubResource("SpriteFrames_7xaro")
 animation = &"Walk_E"
-frame_progress = 0.3020011
+frame_progress = 0.3968618
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143697350]
-shape = SubResource("RectangleShape2D_7k104")
+position = Vector2(23, -27)
+shape = SubResource("CapsuleShape2D_ur4u1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1290575165]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538637369]
+position = Vector2(11, -44)
+shape = SubResource("CircleShape2D_ur4u1")
