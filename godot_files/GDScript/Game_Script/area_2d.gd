@@ -9,11 +9,17 @@ func _ready():
 func _process(_delta):
 	if not player_in_area: 
 		return 
-	if Input.is_action_just_pressed("Interact"): # Pressed E
-		open_battleground("build")
-	
-	if Input.is_action_just_pressed("start_round"):
-		open_battleground("round")
+	match crate_type: 
+		"Start": 
+			if Input.is_action_just_pressed("Interact"): # Pressed E
+				open_battleground("build")
+			
+			if Input.is_action_just_pressed("start_round"):
+				open_battleground("round")
+		"Shop": 
+			if Input.is_action_just_pressed("Interact"): 
+				print("Shop opened")
+		
 		
 func _on_Area2D_body_entered(body):
 	if body.name == "CharacterBody2D":
@@ -35,20 +41,5 @@ func open_battleground(mode: String):
 	get_tree().root.add_child(battleground)
 	get_tree().current_scene.queue_free()
 	get_tree().current_scene = battleground
-# Interaction Function
-func interact():
-	print("Interacted with crate!")
-	var battleground_scene = preload("res://Battleground.tscn").instantiate()
 
-	match crate_type:
-		"Start":
-			battleground_scene.mode = "round"   # ← tell scene to enter ROUND mode
-
-		"Shop":
-			battleground_scene.mode = "build"   # ← use build mode (E)
-
-	# Switch to scene
-	get_tree().root.add_child(battleground_scene)
-	get_tree().current_scene.queue_free()
-	get_tree().current_scene = battleground_scene
 	
