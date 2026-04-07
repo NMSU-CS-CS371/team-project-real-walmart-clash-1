@@ -126,4 +126,15 @@ text = "Back to hub"
 script = ExtResource("4_q2k36")
 metadata/_edit_use_anchors_ = true
 
+[node name="RoundLabel" type="Label" parent="CanvasLayer" unique_id=1232053087]
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=270391861]
+process_mode = 1
+wait_time = 10.0
+one_shot = true
+
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
