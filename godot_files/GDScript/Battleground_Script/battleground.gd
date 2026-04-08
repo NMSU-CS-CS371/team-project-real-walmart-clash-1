@@ -26,6 +26,9 @@ func _ready():
 	else: 
 		enter_round_mode()
 
+func is_round_mode():
+	return mode == "round"
+
 func _process(delta):
 	if round_timer.is_stopped():
 		return
@@ -39,6 +42,7 @@ func restore_towers():
 	for pos in positions:
 		var tower = tower_scene.instantiate()
 		tower.global_position = pos
+		tower.add_to_group("tower")
 		towers.add_child(tower)
 		
 func _unhandled_input(event):

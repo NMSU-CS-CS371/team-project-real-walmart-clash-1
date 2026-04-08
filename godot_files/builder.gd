@@ -92,4 +92,5 @@ func place_tower():
 	var t = tower_scene.instantiate()
 	t.global_position = cursor_preview.global_position
 	towers.add_child(t)
+	t.add_to_group("tower") #for tower targeting
 	print("Placed tower at: ", current_tile)
