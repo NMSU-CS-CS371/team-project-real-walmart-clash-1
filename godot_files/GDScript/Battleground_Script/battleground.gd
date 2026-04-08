@@ -92,9 +92,12 @@ func enter_round_mode():
 
 func start_round():
 	print("Round started!")
+	# Increment round counter 
+	GameState.round_counter += 1 
 	round_label.visible = true # Show label 
 	update_round_label() # Show value 
 	$RoundTimer.start()
+	print("Round: ", GameState.round_counter)
 
 func enter_build_mode():
 	builder.visible = true
