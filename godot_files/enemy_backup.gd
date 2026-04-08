@@ -85,7 +85,7 @@ func update_animation(direction: Vector2):
 		dir = "ne"
 	
 	last_direction = dir
-	play_anim("walk_" + dir)
+	play_anim("Robot_idle_" + dir)
 	
 func play_anim(anim_name: String):
 	if $AnimatedSprite2D.animation != anim_name:
