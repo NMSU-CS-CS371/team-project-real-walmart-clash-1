@@ -3891,7 +3891,7 @@ process_mode = 1
 wait_time = 20.0
 one_shot = true
 
-[node name="enemy_backup" type="CharacterBody2D" parent="." unique_id=245808196]
+[node name="enemy_backup" type="CharacterBody2D" parent="." unique_id=245808196 groups=["enemy"]]
 position = Vector2(1300, 750)
 scale = Vector2(2, 2)
 script = ExtResource("7_id2hr")
