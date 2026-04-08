@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 @export var speed := 100.0
-@export var attack_range := 20.0
-@export var damage := 1.0
+@export var attack_range := 100.0
+@export var damage := 30.0
 @export var health := 20.0
 
+@onready var attack_timer = $attack_timer
 
+var attacking = false
 var target = null
 var last_direction := "s"
 
@@ -46,6 +48,7 @@ func _physics_process(delta: float) -> void:
 	var distance = direction.length()
 
 	if distance > attack_range:
+		stop_attacking()
 		velocity = direction.normalized() * speed
 		move_and_slide()
 		update_animation(direction.normalized())
@@ -55,13 +58,34 @@ func _physics_process(delta: float) -> void:
 
 func attack_target():
 	if target and is_instance_valid(target):
-		play_anim("attack_" + last_direction)
-		$AnimatedSprite2D.speed_scale = 2.0
-		print("Enemy is attacking: ", target.name)
+		if target and target.has_method("take_damage"):
+			start_attacking(target)
+			play_anim("attack_" + last_direction)
+			$AnimatedSprite2D.speed_scale = 2.0
+			print("Enemy is attacking: ", target.name)
+
+func start_attacking(turret):
+	if attacking:
+		return
+
+	attacking = true
+	target = turret
+	attack_timer.start()
+
+func stop_attacking():
+	attacking = false
+	attack_timer.stop()
+
+func take_damage(amount): 
+	health -= amount
+	print("Enemy health: ", health)
+	
+	if health <= 0:
+		is_dead()
 
 func is_dead():
-	if health == 0:
-		play_anim("nohp_" + last_direction)
+	play_anim("nohp_" + last_direction)
+	queue_free()
 
 func update_animation(direction: Vector2):
 	var angle = rad_to_deg(direction.angle())
@@ -85,8 +109,16 @@ func update_animation(direction: Vector2):
 		dir = "ne"
 	
 	last_direction = dir
-	play_anim("Robot_idle_" + dir)
+	play_anim("walk_" + last_direction)
 	
 func play_anim(anim_name: String):
 	if $AnimatedSprite2D.animation != anim_name:
 		$AnimatedSprite2D.play(anim_name)
+
+
+func _on_attack_timer_timeout():
+	if target and target.has_method("take_damage"):
+		target.take_damage(damage)
+	else:
+		stop_attacking()
+	

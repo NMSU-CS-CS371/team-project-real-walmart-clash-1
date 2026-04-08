@@ -953,7 +953,7 @@ animations = [{
 radius = 359.02228
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmg31"]
-size = Vector2(121, 165)
+size = Vector2(70, 154)
 
 [node name="Turret" type="Node2D" unique_id=199271723 groups=["tower"]]
 script = ExtResource("1_n42ok")
@@ -961,9 +961,8 @@ script = ExtResource("1_n42ok")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285809894]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nca1q")
-animation = &"Robot_idle_sw"
+animation = &"Robot_Idle_e"
 autoplay = "Robot_idle_nw"
-frame_progress = 0.15018056
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
 
@@ -973,7 +972,7 @@ shape = SubResource("CircleShape2D_1v1ej")
 [node name="StaticBody2D (blockenemy))" type="StaticBody2D" parent="." unique_id=838125861 groups=["tower"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (blockenemy))" unique_id=805427762]
-position = Vector2(-1.5, 6.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_hmg31")
 
 [connection signal="body_entered" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_entered"]

@@ -3904,5 +3904,8 @@ animation = &"attack_sw"
 position = Vector2(0, 29)
 shape = SubResource("CapsuleShape2D_jx5rp")
 
+[node name="attack_timer" type="Timer" parent="enemy_backup" unique_id=1239429738]
+
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
+[connection signal="timeout" from="enemy_backup/attack_timer" to="enemy_backup" method="_on_attack_timer_timeout"]

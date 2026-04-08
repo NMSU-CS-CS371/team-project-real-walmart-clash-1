@@ -2,6 +2,8 @@ extends Node2D
 
 var enemies_in_range = []
 var last_direction = ""
+var max_health = 100.0
+var health = max_health
 
 func _ready():
 	add_to_group("tower")
@@ -52,6 +54,13 @@ func update_direction_animation(target_pos: Vector2):
 	if anim != last_direction:
 		last_direction = anim
 		$AnimatedSprite2D.play(anim)
+
+func take_damage(amount):
+	health -= amount
+	print("Turret health: ", health)
+	
+	if health <= 0:
+		queue_free()
 
 func _on_area_2d_detection_body_entered(body):
 	if body.is_in_group("enemy"):
