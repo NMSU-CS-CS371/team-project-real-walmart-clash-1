@@ -6,7 +6,7 @@ extends Node2D
 @onready var cursor_preview := $CursorPreview  # Holds the tower sprite ## FIX FIX: Need to be able to scroll through different sprites 
 @onready var root := get_parent()   # Node containing menu_open
 # Variables
-var tower_scene := preload("res://Towers/basic_tower.tscn") # Tower scene to place
+var tower_scene := preload("res://turret.tscn") # Tower scene to place
 var current_tile := Vector2i.ZERO                           # Tracks the tile the mouse is over
 
 

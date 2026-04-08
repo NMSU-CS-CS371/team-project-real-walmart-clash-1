@@ -8,7 +8,7 @@ extends Node2D
 # Vars
 var menu := false
 var escCount = 0 
-var tower_scene := preload("res://Towers/basic_tower.tscn")
+var tower_scene := preload("res://turret.tscn")
 var menu_open := false				# Checks menu open 
 var mode := "build" # Default build mode 
 

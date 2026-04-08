@@ -954,21 +954,22 @@ radius = 359.02228
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmg31"]
 size = Vector2(121, 165)
 
-[node name="Turret" type="Node2D" unique_id=199271723]
+[node name="Turret" type="Node2D" unique_id=199271723 groups=["turret"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285809894]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_nca1q")
-animation = &"Robot_Idle_E"
+animation = &"Robot_idle_NW"
+autoplay = "Robot_idle_NW"
+frame_progress = 0.2735923
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D (detection)" unique_id=1201551472]
 shape = SubResource("CircleShape2D_1v1ej")
 
-[node name="StaticBody2D (blockenemy))" type="StaticBody2D" parent="." unique_id=838125861]
-visible = false
+[node name="StaticBody2D (blockenemy))" type="StaticBody2D" parent="." unique_id=838125861 groups=["turret"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (blockenemy))" unique_id=805427762]
-visible = false
 position = Vector2(-1.5, 6.5)
 shape = SubResource("RectangleShape2D_hmg31")
