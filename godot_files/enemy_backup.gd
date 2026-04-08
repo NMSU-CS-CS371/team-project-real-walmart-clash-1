@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed := 100.0
 @export var attack_range := 100.0
 @export var damage := 30.0
-@export var health := 20.0
+@export var health := 50.0
 
 @onready var attack_timer = $attack_timer
 

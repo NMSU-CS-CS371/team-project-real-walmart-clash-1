@@ -975,5 +975,8 @@ shape = SubResource("CircleShape2D_1v1ej")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_hmg31")
 
+[node name="Timer" type="Timer" parent="." unique_id=1362710777]
+
 [connection signal="body_entered" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_entered"]
 [connection signal="body_exited" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

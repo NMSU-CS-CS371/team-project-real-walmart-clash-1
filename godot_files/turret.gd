@@ -4,6 +4,11 @@ var enemies_in_range = []
 var last_direction = ""
 var max_health = 100.0
 var health = max_health
+var damage = 20.0
+var attacking = false
+var target = null
+
+@onready var attack_timer = $Timer
 
 func _ready():
 	add_to_group("tower")
@@ -62,9 +67,28 @@ func take_damage(amount):
 	if health <= 0:
 		queue_free()
 
+func start_attacking(turret):
+	if attacking:
+		return
+
+	attacking = true
+	target = turret
+	attack_timer.start()
+
+func stop_attacking():
+	attacking = false
+	attack_timer.stop()
+
+func _on_timer_timeout():
+	if target and target.has_method("take_damage"):
+		target.take_damage(damage)
+	else:
+		stop_attacking()
+
 func _on_area_2d_detection_body_entered(body):
 	if body.is_in_group("enemy"):
 		enemies_in_range.append(body)
+		start_attacking(body)
 
 func _on_area_2d_detection_body_exited(body):
 	if body.is_in_group("enemy"):
