@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0sify6xyovsn" path="res://New_Assets/Battleground_Assets/StoneTiles.png" id="1_ykhue"]
 [ext_resource type="Texture2D" uid="uid://d0kgmkyvqftu3" path="res://New_Assets/Battleground_Assets/GrassTiles.png" id="2_st6r5"]
 [ext_resource type="Script" uid="uid://dhahlsvje1yph" path="res://GDScript/Battleground_Script/battleground.gd" id="3_a0rqo"]
-[ext_resource type="Script" path="res://builder.gd" id="4_lhvob"]
+[ext_resource type="Script" uid="uid://djlo6hfjtl8kb" path="res://builder.gd" id="4_lhvob"]
 [ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="4_q2k36"]
 [ext_resource type="Texture2D" uid="uid://qommuuuoe7c3" path="res://New_Assets/Towers/tile_0_0.png" id="5_6g4ul"]
 

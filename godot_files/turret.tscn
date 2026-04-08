@@ -957,8 +957,11 @@ size = Vector2(121, 165)
 [node name="Turret" type="Node2D" unique_id=199271723 groups=["turret"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285809894]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_nca1q")
-animation = &"Robot_idle_WS"
+animation = &"Robot_idle_NW"
+autoplay = "Robot_idle_NW"
+frame_progress = 0.2735923
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
 
