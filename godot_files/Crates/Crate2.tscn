@@ -31,7 +31,8 @@ offset_left = -116.0
 offset_top = -161.0
 offset_right = 112.0
 offset_bottom = -138.0
-text = "Press E to Open Battleground"
+text = "Press E to Open Battleground
+Press Y to Start Round "
 label_settings = SubResource("LabelSettings_q6r6c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=548316784]
@@ -42,6 +43,6 @@ physics_material_override = SubResource("PhysicsMaterial_e34xa")
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_p8q6l")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]

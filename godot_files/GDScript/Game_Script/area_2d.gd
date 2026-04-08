@@ -7,9 +7,20 @@ func _ready():
 	$Label.visible = false
 
 func _process(_delta):
-	if player_in_area and Input.is_action_just_pressed("Interact"):
-		interact()
-
+	if not player_in_area: 
+		return 
+	match crate_type: 
+		"Start": 
+			if Input.is_action_just_pressed("Interact"): # Pressed E
+				open_battleground("build")
+			
+			if Input.is_action_just_pressed("start_round"):
+				open_battleground("round")
+		"Shop": 
+			if Input.is_action_just_pressed("Interact"): 
+				print("Shop opened")
+		
+		
 func _on_Area2D_body_entered(body):
 	if body.name == "CharacterBody2D":
 		player_in_area = true
@@ -20,14 +31,15 @@ func _on_Area2D_body_exited(body):
 		player_in_area = false
 		$Label.visible = false
 
-# Interaction Function
-func interact():
-	print("Interacted with crate!")
+# Open battleground function 
+func open_battleground(mode: String):
+	var battleground = preload("res://Battleground.tscn").instantiate()
+
+	battleground.mode = mode   # <-- Set the mode BEFORE switching scenes
+
+	# Swap scenes properly
+	get_tree().root.add_child(battleground)
+	get_tree().current_scene.queue_free()
+	get_tree().current_scene = battleground
+
 	
-	# Choose which crate is interacted with
-	match crate_type: 
-		"Start": 
-			get_tree().change_scene_to_file("res://Battleground.tscn")
-		
-		"Shop":
-			print("Player opened shop")
