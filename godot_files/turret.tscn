@@ -961,7 +961,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_nca1q")
 animation = &"Robot_idle_NW"
 autoplay = "Robot_idle_NW"
-frame_progress = 0.2735923
+frame_progress = 0.7868926
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
 
