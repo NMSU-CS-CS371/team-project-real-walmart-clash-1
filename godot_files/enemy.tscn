@@ -202,6 +202,9 @@
 [ext_resource type="Texture2D" uid="uid://po7s1s1msylr" path="res://Assets/Enemys/zombie/WALK/W/0024.png" id="199_0sw6a"]
 [ext_resource type="Texture2D" uid="uid://bqeq7kfiubd58" path="res://Assets/Enemys/zombie/WALK/W/0025.png" id="200_eqdtk"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ur4u1"]
+radius = 410.82358
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xaro"]
 animations = [{
 "frames": [{
@@ -849,15 +852,14 @@ animations = [{
 radius = 25.0
 height = 166.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ur4u1"]
-radius = 410.82358
-
-[node name="Enemy" type="Node2D" unique_id=303183927]
+[node name="Enemy" type="CharacterBody2D" unique_id=775183570]
 script = ExtResource("1_q1k2d")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1467651432]
-motion_mode = 1
-script = ExtResource("1_q1k2d")
+[node name="Area2D" type="Area2D" parent="." unique_id=1290575165]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538637369]
+position = Vector2(11, -44)
+shape = SubResource("CircleShape2D_ur4u1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1887002428]
 sprite_frames = SubResource("SpriteFrames_7xaro")
@@ -867,9 +869,3 @@ frame_progress = 0.3968618
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143697350]
 position = Vector2(23, -27)
 shape = SubResource("CapsuleShape2D_ur4u1")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1290575165]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538637369]
-position = Vector2(11, -44)
-shape = SubResource("CircleShape2D_ur4u1")

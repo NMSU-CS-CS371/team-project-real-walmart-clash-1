@@ -11,6 +11,32 @@ var escCount = 0
 var tower_scene := preload("res://turret.tscn")
 var menu_open := false				# Checks menu open 
 var mode := "build" # Default build mode 
+var base_enemy_count := 5 # Initial enemy spawn count 
+var OFFSET_X = 1500
+var OFFSET_Y = 100
+var spawn_tiles = [
+	Vector2i(1,11),
+	Vector2i(2,10),
+	Vector2i(2,9),
+	Vector2i(3,8),
+	Vector2i(3,7),
+	Vector2i(4,6),
+	Vector2i(4,5),
+	Vector2i(5,4),
+	Vector2i(5,3)
+]
+
+var spawn_positions = [
+	Vector2(100, 700),
+	Vector2(200, 650),
+	Vector2(250, 600),
+	Vector2(300, 550),
+	Vector2(350, 500),
+	Vector2(400, 450),
+	Vector2(450, 400),
+	Vector2(500, 350),
+	Vector2(550, 300)
+]
 
 
 func _ready():
@@ -30,7 +56,7 @@ func is_round_mode():
 	return mode == "round"
 
 func _process(delta):
-	if round_timer.is_stopped():
+	if round_timer.is_stopped():	
 		return
 
 	update_round_label()
@@ -102,6 +128,17 @@ func start_round():
 	update_round_label() # Show value 
 	$RoundTimer.start()
 	print("Round: ", GameState.round_counter)
+	
+	# Enemy Spawn  ##### 
+	# Enemy Count changes every round 
+	var enemy_count = base_enemy_count + GameState.round_counter* 2
+	
+	# For every new enemy_count spawn those amonut of enemies 
+	for i in enemy_count: 
+		spawn_enemy()
+		await get_tree().create_timer(0.5).timeout
+		
+	
 
 func enter_build_mode():
 	builder.visible = true
@@ -136,3 +173,31 @@ func _on_round_timer_timeout():
 	GameState.save_towers(positions)
 
 	get_tree().change_scene_to_file("res://game.tscn")
+
+# Get random spawn tile 
+func get_random_spawn_tile() -> Vector2i: 
+	return spawn_tiles.pick_random()
+
+func grid_to_world(x: int, y: int) -> Vector2:
+	var pos = Vector2(
+		(x - y) * 128,
+		(x + y) * 64
+	)
+	pos += Vector2(OFFSET_X, OFFSET_Y)
+	return pos 
+@onready var enemy_scene = preload("res://enemy_backup.tscn")
+
+func spawn_enemy(): 
+	var enemy = enemy_scene.instantiate()
+	
+	var tile = get_random_spawn_tile()
+	var world_pos = grid_to_world(tile.x, tile.y)
+	
+	# Optional: small randomness so enemies don’t stack perfectly
+	world_pos += Vector2(
+		randf_range(-10, 10),
+		randf_range(-5, 5)
+	)
+	
+	enemy.global_position = world_pos
+	add_child(enemy)
