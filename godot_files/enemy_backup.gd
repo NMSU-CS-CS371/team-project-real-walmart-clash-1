@@ -1,15 +1,18 @@
 extends CharacterBody2D
 
+# Exported Vars 
 @export var speed := 100.0
 @export var attack_range := 100.0
 @export var damage := 30.0
 @export var health := 50.0
-
+# On Read vars 
 @onready var attack_timer = $attack_timer
-
+@onready var goal_position = $"../Battleground".map_to_local(goal_tile)
+# Vars 
 var attacking = false
 var target = null
 var last_direction := "s"
+var goal_tile := Vector2i(-3,-5) # Ultimate enemy goal 
 
 func _ready():
 	target = get_closest_tower()
@@ -37,24 +40,28 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 
+	var target_position: Vector2
+
 	if target == null or not is_instance_valid(target):
 		target = get_closest_tower()
-		if target == null:
-			velocity = Vector2.ZERO
-			play_anim("idle_" + last_direction)
-			return
 
-	var direction = target.global_position - global_position
+	# Decide what to move toward
+	if target and is_instance_valid(target):
+		target_position = target.global_position
+	else:
+		target_position = goal_position
+
+	var direction = target_position - global_position
 	var distance = direction.length()
 
-	if distance > attack_range:
+	if target and is_instance_valid(target) and distance <= attack_range:
+		velocity = Vector2.ZERO
+		attack_target()
+	else:
 		stop_attacking()
 		velocity = direction.normalized() * speed
 		move_and_slide()
 		update_animation(direction.normalized())
-	else:
-		velocity = Vector2.ZERO
-		attack_target()
 
 func attack_target():
 	if target and is_instance_valid(target):
