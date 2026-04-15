@@ -8,6 +8,11 @@ extends Node2D
 # Variables
 var tower_scene := preload("res://turret.tscn") # Tower scene to place
 var current_tile := Vector2i.ZERO                           # Tracks the tile the mouse is over
+# Boundary vector tiles 
+var topLeft = Vector2(-4,0)
+var topRight = Vector2(0,-8)
+var bottomLeft = Vector2(1,10)
+var bottomRight = Vector2(5,2)
 
 
 # Called every frame
@@ -17,6 +22,21 @@ func _process(delta):
 	update_tile_under_mouse()
 	
 
+# Check if tower placement is in boundary
+func is_within_bounds(tile: Vector2i) -> bool:
+	var world_pos = tilemap.map_to_local(tile)
+	
+	var poly = PackedVector2Array([
+		tilemap.map_to_local(Vector2i(topLeft)),
+		tilemap.map_to_local(Vector2i(topRight)),
+		tilemap.map_to_local(Vector2i(bottomRight)),
+		tilemap.map_to_local(Vector2i(bottomLeft))
+	])
+	# For tile (-1,7) fix 
+	if tile == Vector2i(-1,7): 
+		return true
+		
+	return Geometry2D.is_point_in_polygon(world_pos, poly)
 
 # Tracks the tile under the mouse and updates preview
 func update_tile_under_mouse():
@@ -32,17 +52,13 @@ func update_tile_under_mouse():
 # Moves the cursor preview sprite to the tile,
 # and changes its color depending on if tower exists or not 
 func move_cursor_preview():
-	var world_pos = tilemap.map_to_local(current_tile)  # Convert tile cords to  world cords
-	cursor_preview.global_position = world_pos          # Move preview to that tile
+	var world_pos = tilemap.map_to_local(current_tile)
+	cursor_preview.global_position = world_pos
 
-	# Get tile info
-	var tile_data = tilemap.get_cell_tile_data(current_tile)
-
-	# No tile = invalid placement (turn red)
-	if tile_data == null:
-		cursor_preview.modulate = Color(1, 0, 0, 0.5)  # Red transparent
+	if can_place_at(current_tile):
+		cursor_preview.modulate = Color(0, 1, 0, 0.5)  # Green
 	else:
-		cursor_preview.modulate = Color(0, 1, 0, 0.5)  # Green transparent
+		cursor_preview.modulate = Color(1, 0, 0, 0.5)  # Redent
 
 
 # Handle input (Mouse click) s
@@ -57,6 +73,22 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			try_remove_tower()
 
+# See if tower can be placed 
+func can_place_at(tile: Vector2i) -> bool: 
+	var tile_data = tilemap.get_cell_tile_data(tile)
+	# No tile = Invalid 
+	if tile_data == null: 
+		return false 
+	
+	#Outside of bounds
+	if not is_within_bounds(tile): 
+		return false 
+	# Tile already has tower 
+	for t in towers.get_children(): 
+		if t.global_position.distance_to(tilemap.map_to_local(tile)) < 1: 
+			return false
+	return true
+	
 # Checks if tower can be removed 
 func try_remove_tower():
 	# Check if a tower exists close to the cursor preview
@@ -70,20 +102,9 @@ func try_remove_tower():
 	
 # Checks whether a tower can be placed
 func try_place_tower():
-	var tile_data = tilemap.get_cell_tile_data(current_tile)
-
-	# Don't place if tile DNE 
-	if tile_data == null:
-		print("Can't build here!")
+	if not can_place_at(current_tile):
+		print("Invalid placement!")
 		return
-
-	# Make sure tile does not already have a tower 
-	for t in towers.get_children():
-		if t.global_position.distance_to(cursor_preview.global_position) < 1:
-			print("Tile already has a tower!")
-			return
-
-	# If tile is valid tile, place tower 
 	place_tower()
 
 

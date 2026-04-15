@@ -4,6 +4,7 @@ extends Node2D
 @onready var builder := $Builder 
 @onready var round_label := $"CanvasLayer/RoundLabel"
 @onready var round_timer := $RoundTimer
+@onready var enemy_scene = preload("res://enemy_backup.tscn")
 
 # Vars
 var menu := false
@@ -11,9 +12,9 @@ var escCount = 0
 var tower_scene := preload("res://turret.tscn")
 var menu_open := false				# Checks menu open 
 var mode := "build" # Default build mode 
-var base_enemy_count := 5 # Initial enemy spawn count 
+var base_enemy_count := 3# Initial enemy spawn count 
 var OFFSET_X = 1500
-var OFFSET_Y = 100
+var OFFSET_Y = 50
 var spawn_tiles = [
 	Vector2i(1,11),
 	Vector2i(2,10),
@@ -24,18 +25,6 @@ var spawn_tiles = [
 	Vector2i(4,5),
 	Vector2i(5,4),
 	Vector2i(5,3)
-]
-
-var spawn_positions = [
-	Vector2(100, 700),
-	Vector2(200, 650),
-	Vector2(250, 600),
-	Vector2(300, 550),
-	Vector2(350, 500),
-	Vector2(400, 450),
-	Vector2(450, 400),
-	Vector2(500, 350),
-	Vector2(550, 300)
 ]
 
 
@@ -185,19 +174,14 @@ func grid_to_world(x: int, y: int) -> Vector2:
 	)
 	pos += Vector2(OFFSET_X, OFFSET_Y)
 	return pos 
-@onready var enemy_scene = preload("res://enemy_backup.tscn")
+
 
 func spawn_enemy(): 
+	# Vars for spawning enemies 
 	var enemy = enemy_scene.instantiate()
-	
 	var tile = get_random_spawn_tile()
 	var world_pos = grid_to_world(tile.x, tile.y)
 	
-	# Optional: small randomness so enemies don’t stack perfectly
-	world_pos += Vector2(
-		randf_range(-10, 10),
-		randf_range(-5, 5)
-	)
-	
+	# Change enemy global position
 	enemy.global_position = world_pos
 	add_child(enemy)

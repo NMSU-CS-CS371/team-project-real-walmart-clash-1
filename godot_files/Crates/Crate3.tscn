@@ -41,6 +41,6 @@ physics_material_override = SubResource("PhysicsMaterial_e34xa")
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_p8q6l")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
