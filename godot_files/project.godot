@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 GameState="*uid://db387siin735r"
+TowerDatabase="*uid://c4716j5u7y280"
+StoreManager="*uid://dj2mbjckchjy"
 
 [input]
 

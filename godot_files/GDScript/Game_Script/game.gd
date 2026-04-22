@@ -2,11 +2,12 @@ extends Node2D
 # Vars
 var menu := false
 var escCount = 0 
-
+var menu_open = false
 func _ready():
 	for crate in get_tree().get_nodes_in_group("interactable"):
 		crate.connect("interacted", Callable(self, "_on_crate_interacted"))
 	$"Menu/CanvasLayer/Panel".visible = false
+	$CanvasLayer/ShopUI.visible = false
 
 # Handle Scene 
 func _on_crate_interacted(type, scene_to_open):
@@ -18,7 +19,8 @@ func _on_crate_interacted(type, scene_to_open):
 # Handle input 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		print("ESC pressed")
+		if menu_open:
+			return  
 		toggle_menu()
 
 func toggle_menu():

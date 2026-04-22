@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bvf1uwy4tiwc5"]
+
+[ext_resource type="Script" uid="uid://gn41w6y1qln7" path="res://shop_ui.gd" id="1_2ga4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ga4l"]
+font_size = 30
+font_color = Color(0.82, 0.106599994, 0.11848982, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=875262449]
+script = ExtResource("1_2ga4l")
+
+[node name="Panel" type="Panel" parent="." unique_id=1075077354]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1139883680]
+layout_mode = 0
+offset_right = 334.0
+offset_bottom = 293.0
+
+[node name="MoneyLabel" type="Label" parent="Panel" unique_id=898020479]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 14.0
+offset_right = 1071.0
+offset_bottom = 57.0
+
+[node name="ErrorLabel" type="Label" parent="Panel" unique_id=800081373]
+visible = false
+layout_mode = 0
+offset_left = 412.0
+offset_top = 288.0
+offset_right = 690.0
+offset_bottom = 334.0
+theme_override_colors/font_color = Color(0.60915625, 0.10363085, 0.21363732, 1)
+text = "Not enough money"
+label_settings = SubResource("LabelSettings_2ga4l")

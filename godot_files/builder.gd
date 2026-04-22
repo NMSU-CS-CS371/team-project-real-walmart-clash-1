@@ -1,56 +1,91 @@
 extends Node2D
 
-# Node references
-@onready var tilemap := $"../Battleground"     # Uses battleground tilemap 
-@onready var towers := $"../Towers"            # Holds Towers 
-@onready var cursor_preview := $CursorPreview  # Holds the tower sprite ## FIX FIX: Need to be able to scroll through different sprites 
-@onready var root := get_parent()   # Node containing menu_open
-# Variables
-var tower_scene := preload("res://turret.tscn") # Tower scene to place
-var current_tile := Vector2i.ZERO                           # Tracks the tile the mouse is over
-# Boundary vector tiles 
-var topLeft = Vector2(-4,0)
-var topRight = Vector2(0,-8)
-var bottomLeft = Vector2(1,10)
-var bottomRight = Vector2(5,2)
+# References 
+@onready var tilemap := $"../Battleground"
+@onready var towers := $"../Towers"
+@onready var cursor_preview := $CursorPreview
+@onready var root := get_parent() # contains menu_open
+@onready var preview_anim = $CursorPreview/AnimatedSprite2D
+@onready var preview_sprite = $CursorPreview/Sprite2D
 
+# Variables 
+var available_items: Array = []
+var selected_index := 0
+var selected_item := ""
 
-# Called every frame
-func _process(delta):
-	if root.menu_open: 
-		return 
+var current_tile := Vector2i.ZERO
+
+# Placement bounds (tile coords)
+var top_left = Vector2(-4, 0)
+var top_right = Vector2(0, -8)
+var bottom_left = Vector2(1, 10)
+var bottom_right = Vector2(5, 2)
+
+# READY
+func _ready():
+	update_available_items()
+
+# MAIN LOOP
+func _process(_delta):
+	if root.menu_open:
+		return
+	
 	update_tile_under_mouse()
-	
 
-# Check if tower placement is in boundary
-func is_within_bounds(tile: Vector2i) -> bool:
-	var world_pos = tilemap.map_to_local(tile)
-	
-	var poly = PackedVector2Array([
-		tilemap.map_to_local(Vector2i(topLeft)),
-		tilemap.map_to_local(Vector2i(topRight)),
-		tilemap.map_to_local(Vector2i(bottomRight)),
-		tilemap.map_to_local(Vector2i(bottomLeft))
-	])
-	# For tile (-1,7) fix 
-	if tile == Vector2i(-1,7): 
-		return true
-		
-	return Geometry2D.is_point_in_polygon(world_pos, poly)
 
-# Tracks the tile under the mouse and updates preview
+################## INPUT HANDLING ####################
+func _input(event):
+	if root.menu_open:
+		return
+
+	if event is InputEventMouseButton and event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_WHEEL_UP:
+				change_selection(1)
+			MOUSE_BUTTON_WHEEL_DOWN:
+				change_selection(-1)
+			MOUSE_BUTTON_LEFT:
+				try_place_tower()
+			MOUSE_BUTTON_RIGHT:
+				try_remove_tower()
+
+
+#################### INVENTORY & SELECTION #####################
+
+func update_available_items():
+	available_items.clear()
+
+	for id in GameState.inventory:
+		if GameState.inventory[id] > 0:
+			available_items.append(id)
+
+	if available_items.is_empty():
+		selected_item = ""
+		return
+
+	selected_index = 0
+	selected_item = available_items[selected_index]
+	update_preview_sprite()
+
+func change_selection(direction: int):
+	if available_items.is_empty():
+		return
+
+	selected_index = (selected_index + direction) % available_items.size()
+	selected_item = available_items[selected_index]
+
+	print("Selected:", selected_item)
+	update_preview_sprite()
+
+#################### TILE + PREVIEW ##########################
 func update_tile_under_mouse():
-	var mouse_pos = get_global_mouse_position()       # Get mouse world position
-	var tile_pos = tilemap.local_to_map(mouse_pos)    # Convert to tile coordinates
+	var mouse_pos = get_global_mouse_position()
+	var tile_pos = tilemap.local_to_map(mouse_pos)
 
-	# Only update when mouse moves to a new tile
 	if tile_pos != current_tile:
 		current_tile = tile_pos
 		move_cursor_preview()
 
-
-# Moves the cursor preview sprite to the tile,
-# and changes its color depending on if tower exists or not 
 func move_cursor_preview():
 	var world_pos = tilemap.map_to_local(current_tile)
 	cursor_preview.global_position = world_pos
@@ -58,60 +93,144 @@ func move_cursor_preview():
 	if can_place_at(current_tile):
 		cursor_preview.modulate = Color(0, 1, 0, 0.5)  # Green
 	else:
-		cursor_preview.modulate = Color(1, 0, 0, 0.5)  # Redent
+		cursor_preview.modulate = Color(1, 0, 0, 0.5)  # Red
 
+################## PLACEMENT LOGIC #####################
+func can_place_at(tile: Vector2i) -> bool:
+	# Must exist on tilemap
+	if tilemap.get_cell_tile_data(tile) == null:
+		return false
 
-# Handle input (Mouse click) s
-func _input(event):
-	if root.menu_open:
-		return  # menu open, no clicks 
-	# Place tower
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			try_place_tower()
+	# Must be inside bounds
+	if not is_within_bounds(tile):
+		return false
 
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			try_remove_tower()
-
-# See if tower can be placed 
-func can_place_at(tile: Vector2i) -> bool: 
-	var tile_data = tilemap.get_cell_tile_data(tile)
-	# No tile = Invalid 
-	if tile_data == null: 
-		return false 
-	
-	#Outside of bounds
-	if not is_within_bounds(tile): 
-		return false 
-	# Tile already has tower 
-	for t in towers.get_children(): 
-		if t.global_position.distance_to(tilemap.map_to_local(tile)) < 1: 
-			return false
-	return true
-	
-# Checks if tower can be removed 
-func try_remove_tower():
-	# Check if a tower exists close to the cursor preview
+	# Must not overlap another tower
 	for t in towers.get_children():
-		if t.global_position.distance_to(cursor_preview.global_position) < 1:
-			print("Tower removed at tile: ", current_tile)
-			t.queue_free()
-			return
-	print("No tower here to remove.")
-	
-	
-# Checks whether a tower can be placed
+		if t.global_position.distance_to(tilemap.map_to_local(tile)) < 1:
+			return false
+
+	return true
+
 func try_place_tower():
 	if not can_place_at(current_tile):
 		print("Invalid placement!")
 		return
+	
 	place_tower()
 
-
-# Place the tower 
 func place_tower():
-	var t = tower_scene.instantiate()
+	if selected_item == "":
+		print("No item selected")
+		return
+
+	if GameState.get_item_count(selected_item) <= 0:
+		print("Out of this item!")
+		return
+
+	var scene = get_scene_from_id(selected_item)
+	if scene == null:
+		print("Invalid item:", selected_item)
+		return
+
+	var t = scene.instantiate()
 	t.global_position = cursor_preview.global_position
 	towers.add_child(t)
-	t.add_to_group("tower") #for tower targeting
-	print("Placed tower at: ", current_tile)
+
+	assign_group(t, selected_item)
+
+	GameState.remove_item(selected_item, 1)
+	update_available_items()
+
+	print("Placed:", selected_item)
+	update_available_items()
+	get_tree().call_group("hotbar", "refresh")
+	
+	
+	
+################## REMOVE LOGIC ################
+func try_remove_tower():
+	for t in towers.get_children():
+		if t.global_position.distance_to(cursor_preview.global_position) < 1:
+			print("Removed at:", current_tile)
+			t.queue_free()
+			
+			update_available_items()
+			get_tree().call_group("hotbar", "refresh")
+			return
+
+	print("No tower here")
+
+################# DATABASE #####################
+func get_scene_from_id(id: String):
+	if TowerDatabase.turrets.has(id):
+		return TowerDatabase.turrets[id].scene
+	elif TowerDatabase.towers.has(id):
+		return TowerDatabase.towers[id].scene
+	return null
+
+func assign_group(node: Node, id: String):
+	if TowerDatabase.turrets.has(id):
+		node.add_to_group("turret")
+	elif TowerDatabase.towers.has(id):
+		node.add_to_group("blocker")
+
+################## PREVIEW VISUAL #############################
+func update_preview_sprite():
+	if selected_item == "":
+		cursor_preview.visible = false
+		return
+
+	cursor_preview.visible = true
+
+	var scene = get_scene_from_id(selected_item)
+	if scene == null:
+		return
+
+	var temp = scene.instantiate()
+
+	var anim_sprite = temp.find_child("AnimatedSprite2D", true, false)
+	var static_sprite = temp.find_child("Sprite2D", true, false)
+
+	# Reset both previews
+	preview_anim.visible = false
+	preview_sprite.visible = false
+
+	if anim_sprite:
+		preview_anim.visible = true
+		preview_anim.sprite_frames = anim_sprite.sprite_frames
+		
+		var anims = anim_sprite.sprite_frames.get_animation_names()
+		if anims.size() > 0:
+			preview_anim.play(anims[0])
+
+	elif static_sprite:
+		preview_sprite.visible = true
+		preview_sprite.texture = static_sprite.texture
+
+	else:
+		print("❌ No valid sprite found in scene:", selected_item)
+
+	temp.queue_free()
+
+	print("Preview:", selected_item)
+	get_tree().call_group("hotbar", "update_selection")
+
+
+############## BOUNDS CHECK #################################
+
+func is_within_bounds(tile: Vector2i) -> bool:
+	var world_pos = tilemap.map_to_local(tile)
+
+	var poly = PackedVector2Array([
+		tilemap.map_to_local(Vector2i(top_left)),
+		tilemap.map_to_local(Vector2i(top_right)),
+		tilemap.map_to_local(Vector2i(bottom_right)),
+		tilemap.map_to_local(Vector2i(bottom_left))
+	])
+
+	# Special case fix
+	if tile == Vector2i(-1, 7):
+		return true
+
+	return Geometry2D.is_point_in_polygon(world_pos, poly)
