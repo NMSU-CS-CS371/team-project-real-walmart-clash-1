@@ -17,7 +17,7 @@ size = Vector2(125, 71)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2070724420]
 script = ExtResource("1_e34xa")
-crate_type = "Shop"
+crate_type = "TowerShop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1392329153]
 position = Vector2(1, 9.75)
@@ -42,6 +42,6 @@ physics_material_override = SubResource("PhysicsMaterial_e34xa")
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_p8q6l")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
