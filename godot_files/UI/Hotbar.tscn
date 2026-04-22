@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bjac6e1hbfxae"]
+
+[ext_resource type="Script" uid="uid://d2ha8igop284h" path="res://UI/hotbar.gd" id="1_wpvvi"]
+
+[node name="Control" type="Control" unique_id=1919410986]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_wpvvi")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1866231967]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=2056686340]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "x0"

@@ -2,11 +2,17 @@ extends CharacterBody2D
 
 @export var speed: float = 180.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+var can_move := true # keeps track of player movement 
 
 # Use your compass directions: N, S, E, W, NE, NW, SE, SW
 var last_dir: String = "S"
 
 func _physics_process(_delta: float) -> void:
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	var input_vec := Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")

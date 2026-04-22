@@ -7,7 +7,6 @@ extends CharacterBody2D
 @export var health := 50.0
 # On Read vars 
 @onready var attack_timer = $attack_timer
-@onready var goal_position = $"../Battleground".map_to_local(goal_tile)
 # Vars 
 var attacking = false
 var target = null
@@ -49,10 +48,20 @@ func _physics_process(delta: float) -> void:
 	if target and is_instance_valid(target):
 		target_position = target.global_position
 	else:
-		target_position = goal_position
+		target_position = get_closest_goal()
 
 	var direction = target_position - global_position
 	var distance = direction.length()
+	
+	# Check if ienemy is in store range 
+	if target == null and distance < 20:
+		velocity = Vector2.ZERO
+		
+		# Damage the base/store
+		GameState.take_damage(damage)  # or StoreManager
+		
+		queue_free()  # remove enemy after hitting base
+		return
 
 	if target and is_instance_valid(target) and distance <= attack_range:
 		velocity = Vector2.ZERO
@@ -129,3 +138,17 @@ func _on_attack_timer_timeout():
 	else:
 		stop_attacking()
 	
+func get_closest_goal():
+	var battleground = get_tree().current_scene
+	var goals = battleground.get_goal_positions()
+
+	var closest = null
+	var closest_dist = INF
+
+	for g in goals:
+		var dist = global_position.distance_to(g)
+		if dist < closest_dist:
+			closest_dist = dist
+			closest = g
+
+	return closest

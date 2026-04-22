@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bloojw0i6ssb3" path="res://Crates/Crate2.tscn" id="24_f1jbl"]
 [ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="25_i2p71"]
 [ext_resource type="PackedScene" uid="uid://bxtva87iix0dv" path="res://Crates/Crate3.tscn" id="25_vaj68"]
+[ext_resource type="PackedScene" uid="uid://bvf1uwy4tiwc5" path="res://ShopUI.tscn" id="26_i2p71"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vaj68"]
 font_size = 35
@@ -2613,5 +2614,9 @@ position = Vector2(442, 140)
 [node name="Crate3" parent="." unique_id=1495999845 instance=ExtResource("25_vaj68")]
 z_index = 2
 position = Vector2(-127, 24)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=631719245]
+
+[node name="ShopUI" parent="CanvasLayer" unique_id=875262449 instance=ExtResource("26_i2p71")]
 
 [connection signal="pressed" from="Menu/CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
