@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://dhahlsvje1yph" path="res://GDScript/Battleground_Script/battleground.gd" id="3_a0rqo"]
 [ext_resource type="Script" uid="uid://djlo6hfjtl8kb" path="res://builder.gd" id="4_lhvob"]
 [ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="4_q2k36"]
+[ext_resource type="Texture2D" uid="uid://n6pnuf425adr" path="res://Assets/Characters/Orc Warrior/Attacking/Orc_Attacking.png" id="7_jx5rp"]
+[ext_resource type="Texture2D" uid="uid://uxprt885hpne" path="res://Assets/Characters/Orc Warrior/Staying/Orc_Staying.png" id="8_id2hr"]
+[ext_resource type="Texture2D" uid="uid://dn0ua8qfcv3ay" path="res://Assets/Characters/Orc Warrior/Dying/Orc_Dying.png" id="9_m0vvl"]
+[ext_resource type="Texture2D" uid="uid://b1m7ht06gbwt7" path="res://Assets/Characters/Orc Warrior/Walking/Orc_Walking.png" id="10_ybwby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_st6r5"]
 texture = ExtResource("1_ykhue")
