@@ -2352,29 +2352,25 @@ script = ExtResource("1_n42ok")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285809894]
 sprite_frames = SubResource("SpriteFrames_nca1q")
-animation = &"Robot_shoot_s"
+animation = &"Robot_idle_ne"
 autoplay = "Robot_idle_nw"
+frame_progress = 0.82649666
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D (detection)" unique_id=1201551472]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_1v1ej")
 
 [node name="StaticBody2D (blockenemy))" type="StaticBody2D" parent="." unique_id=838125861 groups=["tower"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (blockenemy))" unique_id=805427762]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_hmg31")
 
 [node name="Timer" type="Timer" parent="." unique_id=1362710777]
 
 [node name="Laser" type="Line2D" parent="." unique_id=1423053933]
-visible = false
 width = 2.0
 default_color = Color(0.9002538, 0.29581353, 0.18997684, 1)
 
