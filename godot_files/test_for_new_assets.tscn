@@ -1,0 +1,155 @@
+[gd_scene format=4 uid="uid://b10j8utpfvkci"]
+
+[ext_resource type="Texture2D" path="res://New_Assets/Battleground_Assets/NewAssetTiles.png" id="1_eje6r"]
+[ext_resource type="Texture2D" uid="uid://t0edmx7m6rob" path="res://New_Assets/Battleground_Assets/GroundZtiles.png" id="2_rq8kv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5148"]
+texture = ExtResource("1_eje6r")
+texture_region_size = Vector2i(128, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 82)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 82)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 82)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 82)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wygr"]
+texture = ExtResource("2_rq8kv")
+texture_region_size = Vector2i(128, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 82)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 82)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 82)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 82)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 82)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 82)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, 82)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, 82)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 82)
+9:0/0 = 0
+9:0/0/texture_origin = Vector2i(0, 82)
+10:0/0 = 0
+10:0/0/texture_origin = Vector2i(0, 82)
+11:0/0 = 0
+11:0/0/texture_origin = Vector2i(0, 82)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 82)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 82)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 82)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 82)
+4:1/0 = 0
+4:1/0/texture_origin = Vector2i(0, 82)
+5:1/0 = 0
+5:1/0/texture_origin = Vector2i(0, 82)
+6:1/0 = 0
+6:1/0/texture_origin = Vector2i(0, 82)
+7:1/0 = 0
+7:1/0/texture_origin = Vector2i(0, 82)
+8:1/0 = 0
+8:1/0/texture_origin = Vector2i(0, 82)
+9:1/0 = 0
+9:1/0/texture_origin = Vector2i(0, 82)
+10:1/0 = 0
+10:1/0/texture_origin = Vector2i(0, 82)
+11:1/0 = 0
+11:1/0/texture_origin = Vector2i(0, 82)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, 82)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 82)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(0, 82)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, 82)
+4:2/0 = 0
+4:2/0/texture_origin = Vector2i(0, 82)
+5:2/0 = 0
+5:2/0/texture_origin = Vector2i(0, 82)
+6:2/0 = 0
+6:2/0/texture_origin = Vector2i(0, 82)
+7:2/0 = 0
+7:2/0/texture_origin = Vector2i(0, 82)
+8:2/0 = 0
+8:2/0/texture_origin = Vector2i(0, 82)
+9:2/0 = 0
+9:2/0/texture_origin = Vector2i(0, 82)
+10:2/0 = 0
+10:2/0/texture_origin = Vector2i(0, 82)
+11:2/0 = 0
+11:2/0/texture_origin = Vector2i(0, 82)
+0:3/0 = 0
+0:3/0/texture_origin = Vector2i(0, 82)
+1:3/0 = 0
+1:3/0/texture_origin = Vector2i(0, 82)
+2:3/0 = 0
+2:3/0/texture_origin = Vector2i(0, 82)
+3:3/0 = 0
+3:3/0/texture_origin = Vector2i(0, 82)
+4:3/0 = 0
+4:3/0/texture_origin = Vector2i(0, 82)
+5:3/0 = 0
+5:3/0/texture_origin = Vector2i(0, 82)
+6:3/0 = 0
+6:3/0/texture_origin = Vector2i(0, 82)
+7:3/0 = 0
+7:3/0/texture_origin = Vector2i(0, 82)
+8:3/0 = 0
+8:3/0/texture_origin = Vector2i(0, 82)
+9:3/0 = 0
+9:3/0/texture_origin = Vector2i(0, 82)
+10:3/0 = 0
+10:3/0/texture_origin = Vector2i(0, 82)
+11:3/0 = 0
+11:3/0/texture_origin = Vector2i(0, 82)
+0:4/0 = 0
+0:4/0/texture_origin = Vector2i(0, 82)
+1:4/0 = 0
+1:4/0/texture_origin = Vector2i(0, 82)
+2:4/0 = 0
+2:4/0/texture_origin = Vector2i(0, 82)
+3:4/0 = 0
+3:4/0/texture_origin = Vector2i(0, 82)
+4:4/0 = 0
+4:4/0/texture_origin = Vector2i(0, 82)
+5:4/0 = 0
+5:4/0/texture_origin = Vector2i(0, 82)
+6:4/0 = 0
+6:4/0/texture_origin = Vector2i(0, 82)
+7:4/0 = 0
+7:4/0/texture_origin = Vector2i(0, 82)
+8:4/0 = 0
+8:4/0/texture_origin = Vector2i(0, 82)
+9:4/0 = 0
+9:4/0/texture_origin = Vector2i(0, 82)
+10:4/0 = 0
+10:4/0/texture_origin = Vector2i(0, 82)
+11:4/0 = 0
+11:4/0/texture_origin = Vector2i(0, 82)
+
+[sub_resource type="TileSet" id="TileSet_s7jtw"]
+tile_shape = 1
+tile_size = Vector2i(128, 64)
+sources/120 = SubResource("TileSetAtlasSource_k5148")
+sources/241 = SubResource("TileSetAtlasSource_5wygr")
+tile_proxies/coords_level = [[60, Vector2i(0, 0)], [120, Vector2i(0, 0)], [61, Vector2i(0, 0)], [120, Vector2i(1, 0)], [63, Vector2i(0, 0)], [120, Vector2i(2, 0)], [115, Vector2i(0, 0)], [120, Vector2i(3, 0)], [181, Vector2i(0, 0)], [241, Vector2i(0, 0)], [182, Vector2i(0, 0)], [241, Vector2i(1, 0)], [183, Vector2i(0, 0)], [241, Vector2i(2, 0)], [184, Vector2i(0, 0)], [241, Vector2i(3, 0)], [185, Vector2i(0, 0)], [241, Vector2i(4, 0)], [186, Vector2i(0, 0)], [241, Vector2i(5, 0)], [187, Vector2i(0, 0)], [241, Vector2i(6, 0)], [188, Vector2i(0, 0)], [241, Vector2i(7, 0)], [189, Vector2i(0, 0)], [241, Vector2i(8, 0)], [190, Vector2i(0, 0)], [241, Vector2i(9, 0)], [191, Vector2i(0, 0)], [241, Vector2i(10, 0)], [192, Vector2i(0, 0)], [241, Vector2i(11, 0)], [193, Vector2i(0, 0)], [241, Vector2i(0, 1)], [194, Vector2i(0, 0)], [241, Vector2i(1, 1)], [195, Vector2i(0, 0)], [241, Vector2i(2, 1)], [196, Vector2i(0, 0)], [241, Vector2i(3, 1)], [197, Vector2i(0, 0)], [241, Vector2i(4, 1)], [198, Vector2i(0, 0)], [241, Vector2i(5, 1)], [199, Vector2i(0, 0)], [241, Vector2i(6, 1)], [200, Vector2i(0, 0)], [241, Vector2i(7, 1)], [201, Vector2i(0, 0)], [241, Vector2i(8, 1)], [202, Vector2i(0, 0)], [241, Vector2i(9, 1)], [203, Vector2i(0, 0)], [241, Vector2i(10, 1)], [204, Vector2i(0, 0)], [241, Vector2i(11, 1)], [205, Vector2i(0, 0)], [241, Vector2i(0, 2)], [206, Vector2i(0, 0)], [241, Vector2i(1, 2)], [207, Vector2i(0, 0)], [241, Vector2i(2, 2)], [208, Vector2i(0, 0)], [241, Vector2i(3, 2)], [209, Vector2i(0, 0)], [241, Vector2i(4, 2)], [210, Vector2i(0, 0)], [241, Vector2i(5, 2)], [211, Vector2i(0, 0)], [241, Vector2i(6, 2)], [212, Vector2i(0, 0)], [241, Vector2i(7, 2)], [213, Vector2i(0, 0)], [241, Vector2i(8, 2)], [214, Vector2i(0, 0)], [241, Vector2i(9, 2)], [215, Vector2i(0, 0)], [241, Vector2i(10, 2)], [216, Vector2i(0, 0)], [241, Vector2i(11, 2)], [217, Vector2i(0, 0)], [241, Vector2i(0, 3)], [218, Vector2i(0, 0)], [241, Vector2i(1, 3)], [219, Vector2i(0, 0)], [241, Vector2i(2, 3)], [220, Vector2i(0, 0)], [241, Vector2i(3, 3)], [221, Vector2i(0, 0)], [241, Vector2i(4, 3)], [222, Vector2i(0, 0)], [241, Vector2i(5, 3)], [223, Vector2i(0, 0)], [241, Vector2i(6, 3)], [224, Vector2i(0, 0)], [241, Vector2i(7, 3)], [225, Vector2i(0, 0)], [241, Vector2i(8, 3)], [226, Vector2i(0, 0)], [241, Vector2i(9, 3)], [227, Vector2i(0, 0)], [241, Vector2i(10, 3)], [228, Vector2i(0, 0)], [241, Vector2i(11, 3)], [229, Vector2i(0, 0)], [241, Vector2i(0, 4)], [230, Vector2i(0, 0)], [241, Vector2i(1, 4)], [231, Vector2i(0, 0)], [241, Vector2i(2, 4)], [232, Vector2i(0, 0)], [241, Vector2i(3, 4)], [233, Vector2i(0, 0)], [241, Vector2i(4, 4)], [234, Vector2i(0, 0)], [241, Vector2i(5, 4)], [235, Vector2i(0, 0)], [241, Vector2i(6, 4)], [236, Vector2i(0, 0)], [241, Vector2i(7, 4)], [237, Vector2i(0, 0)], [241, Vector2i(8, 4)], [238, Vector2i(0, 0)], [241, Vector2i(9, 4)], [239, Vector2i(0, 0)], [241, Vector2i(10, 4)], [240, Vector2i(0, 0)], [241, Vector2i(11, 4)]]
+
+[node name="test for new assets" type="Node2D" unique_id=2125930035]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1456900951]
+y_sort_enabled = true
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAD//wIA8QAIAAIAAAD+/wEA8QAIAAIAAAD//wAA8QAFAAIAAAD//wEA8QAFAAIAAAD+/wIA8QAFAAIAAAD+/wMA8QAFAAIAAAD//wQA8QAFAAIAAAAAAAIA8QAFAAIAAAD//wMA8QAIAAIAAAAAAAQA8QAIAAIAAAD//wUA8QAEAAIAAAAAAAYA8QAEAAIAAAAAAAcA8QAEAAIAAAABAAgA8QAEAAIAAAABAAkA8QAEAAIAAAACAAoA8QAEAAIAAAAAAAMA8QAEAAIAAAABAAQA8QAEAAIAAAABAAUA8QAEAAIAAAACAAYA8QAEAAIAAAABAAcA8QAIAAIAAAACAAcA8QAEAAIAAAACAAgA8QAIAAIAAAACAAkA8QAIAAIAAAADAAoA8QAIAAIAAAADAAkA8QAEAAIAAAADAAgA8QAEAAIAAAAAAAUA8QAIAAIAAAABAAYA8QAIAAIAAAA=")
+tile_set = SubResource("TileSet_s7jtw")
