@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df1iph30bbct3"
-path="res://.godot/imported/StoneTiles.png-1d64ab66effaa9d8d0e9cbccb6615ec0.ctex"
+uid="uid://bcgwih55hei8h"
+path="res://.godot/imported/GreyBrickztiles.png-900ceb7da5a858d8a99b7e8e72fa97b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New_Assets/Battleground_Assets/StoneTiles.png"
-dest_files=["res://.godot/imported/StoneTiles.png-1d64ab66effaa9d8d0e9cbccb6615ec0.ctex"]
+source_file="res://New_Assets/Battleground_Assets/GreyBrickztiles.png"
+dest_files=["res://.godot/imported/GreyBrickztiles.png-900ceb7da5a858d8a99b7e8e72fa97b1.ctex"]
 
 [params]
 

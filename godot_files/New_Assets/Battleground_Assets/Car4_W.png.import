@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df1iph30bbct3"
-path="res://.godot/imported/StoneTiles.png-1d64ab66effaa9d8d0e9cbccb6615ec0.ctex"
+uid="uid://ben6st5fgy4hw"
+path="res://.godot/imported/Car4_W.png-94fb33a39844215420340ec6f50bb1d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New_Assets/Battleground_Assets/StoneTiles.png"
-dest_files=["res://.godot/imported/StoneTiles.png-1d64ab66effaa9d8d0e9cbccb6615ec0.ctex"]
+source_file="res://New_Assets/Battleground_Assets/Car4_W.png"
+dest_files=["res://.godot/imported/Car4_W.png-94fb33a39844215420340ec6f50bb1d0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df1iph30bbct3"
-path="res://.godot/imported/StoneTiles.png-1d64ab66effaa9d8d0e9cbccb6615ec0.ctex"
+uid="uid://dv2csmxdo3aqh"
+path="res://.godot/imported/RoofzTiles.png-66ceaad7cc0a7b5c2b9be008e589e7d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New_Assets/Battleground_Assets/StoneTiles.png"
-dest_files=["res://.godot/imported/StoneTiles.png-1d64ab66effaa9d8d0e9cbccb6615ec0.ctex"]
+source_file="res://New_Assets/Battleground_Assets/RoofzTiles.png"
+dest_files=["res://.godot/imported/RoofzTiles.png-66ceaad7cc0a7b5c2b9be008e589e7d0.ctex"]
 
 [params]
 
