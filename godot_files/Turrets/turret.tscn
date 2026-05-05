@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://kq55ipyhvs6p" path="res://Assets/Turrets/HandgunFire_Body_sw.png" id="16_axpr2"]
 [ext_resource type="Texture2D" uid="uid://46a6sg62gee6" path="res://Assets/Turrets/HandgunFire_Body_w.png" id="17_16tps"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_om6wf"]
 atlas = ExtResource("2_rcf7x")
 region = Rect2(0, 0, 180, 180)
