@@ -202,6 +202,7 @@
 [ext_resource type="Texture2D" uid="uid://po7s1s1msylr" path="res://Assets/Enemys/zombie/WALK/W/0024.png" id="199_0sw6a"]
 [ext_resource type="Texture2D" uid="uid://bqeq7kfiubd58" path="res://Assets/Enemys/zombie/WALK/W/0025.png" id="200_eqdtk"]
 
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur4u1"]
 radius = 410.82358
 
