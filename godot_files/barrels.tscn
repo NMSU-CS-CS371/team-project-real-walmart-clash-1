@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d4cifm0l3vedb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be24x"]
+size = Vector2(115, 104)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gic5"]
+load_path = "res://.godot/imported/Object19_S.png-c00b9c8f5bdbcfc9b63350c98da24560.ctex"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2o06s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnrxk"]
+size = Vector2(125, 71)
+
+[node name="Barrels" type="Node2D" unique_id=1394670350]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2066760305]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=381212289]
+position = Vector2(-16, 8)
+shape = SubResource("RectangleShape2D_be24x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1972265946]
+position = Vector2(-6.0000005, -88.00001)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_1gic5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1127393235]
+position = Vector2(0, 2)
+physics_material_override = SubResource("PhysicsMaterial_2o06s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=900891543]
+position = Vector2(-16, -17)
+shape = SubResource("RectangleShape2D_cnrxk")

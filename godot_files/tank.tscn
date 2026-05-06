@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bjp7adlukn0wg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_how3p"]
+size = Vector2(115, 104)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6lwfj"]
+load_path = "res://.godot/imported/Object6_N.png-0b7bfc6dff155f5428aee6dcd93e277d.ctex"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1ealj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a62es"]
+size = Vector2(125, 71)
+
+[node name="Tank" type="Node2D" unique_id=207393780]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=121195374]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987944038]
+position = Vector2(-16, 8)
+shape = SubResource("RectangleShape2D_how3p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=6586942]
+position = Vector2(-7, -100)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_6lwfj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1303534504]
+position = Vector2(0, 2)
+physics_material_override = SubResource("PhysicsMaterial_1ealj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=487392926]
+position = Vector2(-16, 6)
+shape = SubResource("RectangleShape2D_a62es")

@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://bloojw0i6ssb3"]
 
 [ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/Game_Script/area_2d.gd" id="1_5mbob"]
-[ext_resource type="Texture2D" uid="uid://cey5yyxr26dse" path="res://New_Assets/Crate_Assets/crate_slice_2_3.png" id="2_32snd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(143, 162.5)
+size = Vector2(274.25, 162.5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3hqyk"]
+load_path = "res://.godot/imported/Car8_S.png-1c509270ed3846699a2bcaeb05e11688.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6r6c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e34xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8q6l"]
-size = Vector2(125, 71)
+size = Vector2(193, 95)
 
 [node name="Crate" type="Node2D" unique_id=1485478183]
 
@@ -20,11 +22,13 @@ script = ExtResource("1_5mbob")
 crate_type = "Start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1392329153]
-position = Vector2(1, 9.75)
+position = Vector2(-3.125, 14.25)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1108400975]
-texture = ExtResource("2_32snd")
+position = Vector2(-8, -192)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_3hqyk")
 
 [node name="Label" type="Label" parent="Area2D" unique_id=1680118926]
 offset_left = -116.0
@@ -40,9 +44,9 @@ position = Vector2(0, 2)
 physics_material_override = SubResource("PhysicsMaterial_e34xa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=695091758]
-position = Vector2(0.5, 26.5)
+position = Vector2(-17, 40)
 shape = SubResource("RectangleShape2D_p8q6l")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bxtva87iix0dv"]
 
 [ext_resource type="Script" uid="uid://b6sngjljur1sd" path="res://GDScript/Game_Script/area_2d.gd" id="1_r162y"]
-[ext_resource type="Texture2D" uid="uid://bxt314j3okpg5" path="res://New_Assets/Crate_Assets/crate_slice_3_5.png" id="2_r162y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(143, 162.5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3uxw"]
+load_path = "res://.godot/imported/Object4_N.png-911931c6eec0f07f041daaeffca11488.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6r6c"]
 
@@ -24,14 +26,16 @@ position = Vector2(1, 9.75)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1108400975]
-texture = ExtResource("2_r162y")
+position = Vector2(-2, -69)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_e3uxw")
 
 [node name="Label" type="Label" parent="Area2D" unique_id=1680118926]
-offset_left = -23.0
-offset_top = -153.0
-offset_right = 32.0
-offset_bottom = -130.0
-text = "Press E"
+offset_left = -89.0
+offset_top = -152.0
+offset_right = 117.0
+offset_bottom = -129.0
+text = "Press E to purchase troops"
 label_settings = SubResource("LabelSettings_q6r6c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=548316784]
@@ -42,6 +46,6 @@ physics_material_override = SubResource("PhysicsMaterial_e34xa")
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_p8q6l")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]

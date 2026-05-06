@@ -203,7 +203,7 @@ func end_round():
 	if GameState.is_game_over:
 		return
 
-	var reward = 100 + GameState.round_counter * 50
+	var reward = 50 + GameState.round_counter * 50
 	GameState.currency += reward
 
 	save_towers()

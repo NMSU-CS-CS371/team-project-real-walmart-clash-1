@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cth4qv21vx0f5" path="res://GDScript/Game_Script/game.gd" id="1_x5p1p"]
 [ext_resource type="PackedScene" uid="uid://dylewia6dwf1k" path="res://_leader_.tscn" id="3_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://csy8mqvp1so0k" path="res://object.tscn" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://bjp7adlukn0wg" path="res://tank.tscn" id="11_iotsf"]
 [ext_resource type="TileSet" uid="uid://c0k0udkhqh6hl" path="res://New_Assets/Battleground_tileset/new_tile_set.tres" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://d4cifm0l3vedb" path="res://barrels.tscn" id="12_iotsf"]
 [ext_resource type="Script" uid="uid://j3uywtnvnlec" path="res://GDScript/Game_Script/camera_2d.gd" id="21_hb5m1"]
 [ext_resource type="PackedScene" uid="uid://crn8d6cptqmwa" path="res://Crates/Crate.tscn" id="23_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://bloojw0i6ssb3" path="res://Crates/Crate2.tscn" id="24_f1jbl"]
@@ -61,17 +64,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Crate" parent="." unique_id=1485478183 instance=ExtResource("23_f1jbl")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(325, -178)
+position = Vector2(-68, -218)
 
 [node name="Crate2" parent="." unique_id=1101982303 instance=ExtResource("24_f1jbl")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(442, 140)
+position = Vector2(455, 191)
 
 [node name="Crate3" parent="." unique_id=1495999845 instance=ExtResource("25_vaj68")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(-127, 24)
+position = Vector2(-328, -97)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=631719245]
 
@@ -124,6 +127,23 @@ tile_set = ExtResource("11_mfdv2")
 [node name="_Leader_" parent="." unique_id=369898635 instance=ExtResource("3_j5wjh")]
 z_index = 2
 y_sort_enabled = false
-position = Vector2(134, -84)
+position = Vector2(99, 13)
+
+[node name="Objects" type="Node" parent="." unique_id=1412877808]
+
+[node name="Object" parent="Objects" unique_id=1309312209 instance=ExtResource("10_hve3p")]
+z_index = 1
+position = Vector2(-51, 89)
+
+[node name="Object2" parent="Objects" unique_id=1915811877 instance=ExtResource("10_hve3p")]
+z_index = 1
+position = Vector2(275, -211)
+
+[node name="Tank" parent="Objects" unique_id=207393780 instance=ExtResource("11_iotsf")]
+z_index = 2
+position = Vector2(167, -320)
+
+[node name="Barrels" parent="Objects" unique_id=1394670350 instance=ExtResource("12_iotsf")]
+position = Vector2(-392, 129)
 
 [connection signal="pressed" from="Menu/CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
