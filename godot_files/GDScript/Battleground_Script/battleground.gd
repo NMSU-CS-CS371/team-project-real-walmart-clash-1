@@ -24,23 +24,24 @@ var round_time := 0.0
 var round_running := false
 var goal_positions: Array = []
 var spawn_tiles = [
-	Vector2i(1,11),
-	Vector2i(2,10),
-	Vector2i(2,9),
-	Vector2i(3,8),
-	Vector2i(3,7),
-	Vector2i(4,6),
-	Vector2i(4,5),
-	Vector2i(5,4),
-	Vector2i(5,3)
+	Vector2i(-2,25),
+	Vector2i(0,24),
+	Vector2i(1,23),
+	Vector2i(3,20),
+	Vector2i(6,12),
+	Vector2i(8,5),
+	Vector2i(10,3),
+	Vector2i(11,1)
+
+
 ]
 var goal_tiles = [
-	Vector2i(-5,0), Vector2i(-5,-1),
-	Vector2i(-4,-2), Vector2i(-4,-3),
-	Vector2i(-3,-4), Vector2i(-3,-5),
-	Vector2i(-2,-6), Vector2i(-2,-7),
-	Vector2i(-1,-8), Vector2i(-1,-9),
-	Vector2i(0,-10)
+	Vector2i(-8,-21),
+	Vector2i(-14,-9),
+	Vector2i(-11,-14),
+	Vector2i(-10,-17),
+	Vector2i(-7,-23),
+	Vector2i(-6,-24)
 ]
 
 
@@ -56,7 +57,7 @@ func _ready():
 	round_label.visible = false 
 	
 	for tile in goal_tiles:
-		goal_positions.append(tilemap.map_to_local(tile))
+		goal_positions.append(tilemap.to_global(tilemap.map_to_local(tile)))
 	
 	if mode == "build": 
 		enter_build_mode()
@@ -72,6 +73,16 @@ func _process(delta):
 
 	round_time += delta
 	update_round_label()
+	
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		var mouse_pos = get_global_mouse_position()
+		var tile = tilemap.local_to_map(tilemap.to_local(mouse_pos))
+		print("Clicked tile: ", tile)
+	
+	
+	
+	
 	
 # Restore towers 
 func restore_towers():
@@ -212,16 +223,15 @@ func get_goal_positions() -> Array:
 func spawn_enemy(): 
 	var enemy = enemy_scene.instantiate()
 	var tile = get_random_spawn_tile()
-	var world_pos = grid_to_world(tile.x, tile.y)
+	var world_pos = tilemap.to_global(tilemap.map_to_local(tile))
+
+	# Adjust enemy feet position
+	world_pos += Vector2(0, -20)
 
 	enemy.global_position = world_pos
 	
-	# Track enemy count
 	enemies_alive += 1
-	
-	# Connect death signal
 	enemy.connect("tree_exited", Callable(self, "_on_enemy_died"))
-	
 	add_child(enemy)
 	
 # Decrement whe enemy dies 
