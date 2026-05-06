@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cey5yyxr26dse" path="res://New_Assets/Crate_Assets/crate_slice_2_3.png" id="2_32snd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(133, 136.5)
+size = Vector2(143, 162.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_q6r6c"]
 
@@ -20,7 +20,7 @@ script = ExtResource("1_5mbob")
 crate_type = "Start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1392329153]
-position = Vector2(-0.5, -3.25)
+position = Vector2(1, 9.75)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1108400975]
@@ -43,6 +43,6 @@ physics_material_override = SubResource("PhysicsMaterial_e34xa")
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_p8q6l")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]

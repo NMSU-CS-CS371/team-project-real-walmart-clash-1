@@ -29,8 +29,7 @@ func open(category: String):
 	var root = get_tree().current_scene
 	root.menu_open = true 
 	# Stop player movement 
-	var player = root.get_node("_Leader_")
-	
+	var player = root.get_node("CharacterBody2D")
 	player.can_move = false
 
 func close():
@@ -41,7 +40,7 @@ func close():
 	root.menu_open = false
 	
 	# Resume player movement 
-	var player = root.get_node("_Leader_")
+	var player = root.get_node("CharacterBody2D")
 	player.can_move = true
 
 func populate_shop():
