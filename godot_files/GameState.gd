@@ -64,5 +64,5 @@ func game_over():
 	saved_towers.clear()
 
 	# Go back to main scene
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://menu.tscn")
 	
