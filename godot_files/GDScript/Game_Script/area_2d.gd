@@ -26,12 +26,12 @@ func _process(_delta):
 		
 		
 func _on_Area2D_body_entered(body):
-	if body.name == "CharacterBody2D":
+	if body.name == "_Leader_":
 		player_in_area = true
 		$Label.visible = true
 
 func _on_Area2D_body_exited(body):
-	if body.name == "CharacterBody2D":
+	if body.name == "_Leader_":
 		player_in_area = false
 		$Label.visible = false
 
