@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://csy8mqvp1so0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfk7t"]
+size = Vector2(115, 104)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rfk7t"]
+load_path = "res://.godot/imported/Object12_E.png-9f84dcef7fc9dd68f7271ee4d0df75f1.ctex"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2ofb"]
+
+[node name="Object" type="Node2D" unique_id=1309312209]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1463774920]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=811700994]
+position = Vector2(-16, 8)
+shape = SubResource("RectangleShape2D_rfk7t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=273803536]
+position = Vector2(-7, -100)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_rfk7t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1368587729]
+position = Vector2(0, 2)
+physics_material_override = SubResource("PhysicsMaterial_l2ofb")

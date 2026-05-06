@@ -158,10 +158,10 @@ func get_closest_goal():
 func apply_scaling(round: int):
 	# -------- HEALTH SCALING --------
 	# +0.2% per round (0.002)
-	var health_multiplier = 1.0 + (round * 0.002)
+	var health_multiplier = 1.0 + (round * 0.005)
 	health *= health_multiplier
 
 	# -------- SPEED SCALING --------
 	# Increase every 3 rounds
-	var speed_increase_steps = int(round / 3)
-	speed += speed_increase_steps * 5   # tweak 5 → whatever feels good
+	var speed_increase_steps = int(round / 2)
+	speed += speed_increase_steps * 10# tweak

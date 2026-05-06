@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://8eqbk4bnw8sa"]
 
 [ext_resource type="Script" uid="uid://3cumxul1l2h4" path="res://GDScript/Menu_Script/menu.gd" id="1_lti8b"]
-[ext_resource type="Texture2D" uid="uid://ba8vx80hy6kp1" path="res://Assets/Sample.png" id="2_ouk20"]
 [ext_resource type="FontFile" uid="uid://cw4hhsjsgh37h" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="3_mae5d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ouk20"]
+load_path = "res://.godot/imported/menu.png-3bd2e24dba5fc9210684e365ca99ea3c.ctex"
 
 [node name="Menu" type="Control" unique_id=67099285]
 layout_mode = 3
@@ -22,14 +24,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -690.0
-offset_top = -374.5
-offset_right = 690.0
-offset_bottom = 374.5
+offset_left = -576.0
+offset_top = -360.0
+offset_right = 1066.8572
+offset_bottom = 664.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_ouk20")
+scale = Vector2(0.7, 0.7)
+texture = SubResource("CompressedTexture2D_ouk20")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=1512004865]
 layout_mode = 0
