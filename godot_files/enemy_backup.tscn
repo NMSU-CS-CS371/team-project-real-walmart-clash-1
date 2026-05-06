@@ -3757,6 +3757,8 @@ animations = [{
 height = 24.0
 
 [node name="enemy_backup" type="CharacterBody2D" unique_id=1304036524 groups=["enemy"]]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(1300, 750)
 scale = Vector2(2, 2)
 script = ExtResource("1_jfcce")
