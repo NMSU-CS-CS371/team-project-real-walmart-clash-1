@@ -4,11 +4,11 @@ var enemies_in_range = []
 var last_direction = ""
 var max_health = 100.0
 var health = max_health
-var damage = 20.0
+var damage = 50.0
 var attacking = false
 var target = null
 
-@export var attack_radius := 500.0
+@export var attack_radius := 300.0
 
 @onready var attack_timer = $Timer
 @onready var anim_sprite = $AnimatedSprite2D

@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Exported Vars 
 @export var speed := 100.0
 @export var attack_range := 100.0
-@export var damage := 30.0
+@export var damage := 20.0
 @export var health := 50.0
 # On Read vars 
 @onready var attack_timer = $attack_timer
@@ -14,6 +14,7 @@ var last_direction := "s"
 var goal_tile := Vector2i(-3,-5) # Ultimate enemy goal 
 
 func _ready():
+	add_to_group("enemy")
 	target = get_closest_tower()
 
 #finds closest target
@@ -97,10 +98,11 @@ func take_damage(amount):
 	print("Enemy health: ", health)
 	
 	if health <= 0:
-		is_dead()
+		die()
 
-func is_dead():
-	play_anim("nohp_" + last_direction)
+func die():
+	print("Enemy died")
+	#play_anim("nohp_" + last_direction)
 	queue_free()
 
 func update_animation(direction: Vector2):

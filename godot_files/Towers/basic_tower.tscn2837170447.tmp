@@ -2654,6 +2654,10 @@ animations = [{
 [node name="Bat_Troop" type="Node2D" unique_id=473470540]
 scale = Vector2(2, 2)
 script = ExtResource("1_ufgmy")
+speed = null
+attack_range = null
+damage = null
+health = null
 
 [node name="Area2D" type="Area2D" parent="." unique_id=175264568]
 

@@ -1783,7 +1783,7 @@ z_index = 1
 y_sort_enabled = true
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nca1q")
-animation = &"shoot_w"
+animation = &"shoot_ne"
 speed_scale = 2.0
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
