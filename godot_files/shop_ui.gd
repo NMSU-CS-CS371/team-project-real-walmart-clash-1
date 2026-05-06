@@ -8,7 +8,8 @@ var current_category = "turrets" # or "towers"
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
+	visible = false
+	error_label.visible = false
 
 #  Handle input 
 func _input(event):
@@ -55,7 +56,7 @@ func populate_shop():
 		var data = data_set[id]
 
 		var btn = Button.new()
-		btn.text = data.name + " ($" + str(data.cost) + ")"
+		btn.text = data["name"] + " ($" + str(data["cost"]) + ")"
 
 		btn.pressed.connect(func():
 			buy_item(id)
@@ -67,17 +68,18 @@ func populate_shop():
 func get_data_set():
 	if current_category == "turrets":
 		return TowerDatabase.turrets
-	else:
-		return TowerDatabase.towers
+	elif current_category == "troops":
+		return TowerDatabase.troops
+	return {}
 
 # Buy item function 
 func buy_item(item_id: String):
 	var data = get_data_set()[item_id]
 
-	if GameState.currency >= data.cost:
-		GameState.currency -= data.cost
+	if GameState.currency >= data["cost"]:
+		GameState.currency -= data["cost"]
 		GameState.add_item(item_id, 1)
-		print("Bought:", data.name)
+		print("Bought:", data["name"])
 		# Hide no money label if there is money 
 		error_label.visible = false 
 		# Update money label
@@ -91,5 +93,6 @@ func buy_item(item_id: String):
 # Function to prevent label from showing infinetly 
 func show_error():
 	error_label.visible = true
-	await get_tree().create_timer(0.5).timeout
+	var timer = get_tree().create_timer(0.5, true)
+	await timer.timeout
 	error_label.visible = false

@@ -20,9 +20,9 @@ func _process(_delta):
 		"TurretShop": 
 			if Input.is_action_just_pressed("Interact"): 
 				shop_ui.open("turrets")
-		"TowerShop": 
+		"TroopShop": 
 			if Input.is_action_just_pressed("Interact"): 
-				shop_ui.open("towers")
+				shop_ui.open("troops")
 		
 		
 func _on_Area2D_body_entered(body):
@@ -60,8 +60,8 @@ func open_turret_shop():
 		
 # Tower shop function 
 func open_tower_shop():
-	var item_id = "blocker_basic"
-	var data = TowerDatabase.towers[item_id]
+	var item_id = "troop_basic"
+	var data = TowerDatabase.troops[item_id]
 
 	if GameState.currency >= data.cost:
 		GameState.currency -= data.cost

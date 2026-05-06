@@ -1,17 +1,132 @@
 [gd_scene format=3 uid="uid://bg4paa8kpj8i2"]
 
-[ext_resource type="Texture2D" uid="uid://clcetna7ooa36" path="res://New_Assets/Towers/tile_0_2.png" id="1_0832n"]
+[ext_resource type="Texture2D" uid="uid://7ov5k0pbgnsa" path="res://Assets/troops/bat_troop/Idle.png" id="1_qv87q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6ucs"]
 size = Vector2(143, 93)
 
-[node name="Tower" type="Node2D" unique_id=473470540]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufgmy"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rreo"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uhwj"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l8tq"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02ij7"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(512, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fagj"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(640, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kksfj"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(768, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx4hj"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(896, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwr6e"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1024, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lby6"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1152, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2wq6"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1280, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2udhi"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1408, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbddi"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1536, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjikw"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1664, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rllli"]
+atlas = ExtResource("1_qv87q")
+region = Rect2(1792, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8uxd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufgmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rreo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uhwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l8tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02ij7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fagj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kksfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx4hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwr6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lby6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2wq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2udhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbddi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjikw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rllli")
+}],
+"loop": true,
+"name": &"idle_s",
+"speed": 5.0
+}]
+
+[node name="Bat_Troop" type="Node2D" unique_id=473470540]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=175264568]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1361224893]
-texture = ExtResource("1_0832n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1846235868]
 position = Vector2(1.5, -2.5)
 shape = SubResource("RectangleShape2D_b6ucs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=525585842]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8uxd8")
+animation = &"idle_s"

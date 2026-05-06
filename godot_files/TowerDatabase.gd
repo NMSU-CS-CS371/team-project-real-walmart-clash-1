@@ -1,4 +1,5 @@
 extends Node
+
 # Holds turrets 
 var turrets = {
 	"turret_basic": {
@@ -8,11 +9,11 @@ var turrets = {
 	}
 }
 # Holds towers as
-var towers = {
-	"blocker_basic": {
+var troops = {
+	"troop_basic": {
 		"scene": preload("res://Towers/basic_tower.tscn"),
 		"cost": 50,
-		"name": "Block Tower"
+		"name": "Bat Troop"
 	}
 }
 

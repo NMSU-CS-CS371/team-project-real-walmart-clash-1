@@ -69,7 +69,7 @@ func update_direction_animation(target_pos: Vector2):
 	if dir != last_direction and not anim_sprite.animation.begins_with("Robot_shoot_"):
 		last_direction = dir
 		anim_sprite.scale = Vector2(1.0, 1.0)  # idle scale
-		anim_sprite.play("Robot_idle_" + last_direction)
+		anim_sprite.play("sidle_" + last_direction)
 
 func take_damage(amount):
 	health -= amount
@@ -121,7 +121,7 @@ func _on_timer_timeout():
 			stop_attacking()
 func play_shoot_anim():
 	# last_direction already holds e, ne, n, nw
-	var anim = "Robot_shoot_" + last_direction
+	var anim = "shoot_" + last_direction
 	anim_sprite.play(anim)
 
 func _on_area_2d_detection_body_entered(body):
