@@ -20,6 +20,11 @@ GameState="*uid://db387siin735r"
 TowerDatabase="*uid://c4716j5u7y280"
 StoreManager="*uid://dj2mbjckchjy"
 
+[display]
+
+window/size/viewport_width=1164
+window/stretch/scale=2.0300000000000002
+
 [input]
 
 move_up={
