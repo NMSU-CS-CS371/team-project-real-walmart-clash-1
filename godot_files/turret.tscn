@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://darb571mu30ll" path="res://Assets/Turrets/Idle_Body_S.png" id="6_glt8u"]
 [ext_resource type="Texture2D" uid="uid://bm5q1nb88yna" path="res://Assets/Turrets/Idle_Body_W.png" id="7_22ar4"]
 [ext_resource type="Texture2D" uid="uid://c6am11bef7a53" path="res://Assets/Turrets/Idle_Body_SW.png" id="8_glt8u"]
+<<<<<<< HEAD
+=======
 [ext_resource type="Texture2D" uid="uid://ca766w8py7m2h" path="res://Assets/Turrets/Handgunfire_Body_e.png" id="10_qmhlq"]
 [ext_resource type="Texture2D" uid="uid://nvgvdym2ncpb" path="res://Assets/Turrets/HandgunFire_Body_n.png" id="11_1v1ej"]
 [ext_resource type="Texture2D" uid="uid://dfauw721ytfyh" path="res://Assets/Turrets/HandgunFire_Body_ne.png" id="12_tfp1m"]
@@ -17,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cst8jr37r3yd2" path="res://Assets/Turrets/HandgunFire_Body_SE.png" id="15_c757h"]
 [ext_resource type="Texture2D" uid="uid://kq55ipyhvs6p" path="res://Assets/Turrets/HandgunFire_Body_sw.png" id="16_axpr2"]
 [ext_resource type="Texture2D" uid="uid://46a6sg62gee6" path="res://Assets/Turrets/HandgunFire_Body_w.png" id="17_16tps"]
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om6wf"]
 atlas = ExtResource("2_rcf7x")
@@ -530,6 +533,8 @@ region = Rect2(180, 540, 180, 180)
 atlas = ExtResource("7_22ar4")
 region = Rect2(0, 540, 180, 180)
 
+<<<<<<< HEAD
+=======
 [sub_resource type="AtlasTexture" id="AtlasTexture_v60jm"]
 atlas = ExtResource("10_qmhlq")
 region = Rect2(0, 0, 320, 320)
@@ -1298,6 +1303,7 @@ region = Rect2(1280, 960, 320, 320)
 atlas = ExtResource("17_16tps")
 region = Rect2(1600, 960, 320, 320)
 
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 [sub_resource type="SpriteFrames" id="SpriteFrames_nca1q"]
 animations = [{
 "frames": [{
@@ -1350,7 +1356,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_i64jd")
 }],
 "loop": true,
+<<<<<<< HEAD
+"name": &"Robot_Idle_e",
+=======
 "name": &"Robot_idle_e",
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 "speed": 15.0
 }, {
 "frames": [{
@@ -1722,6 +1732,9 @@ animations = [{
 }],
 "loop": true,
 "name": &"Robot_idle_w",
+<<<<<<< HEAD
+"speed": 31.0
+=======
 "speed": 15.0
 }, {
 "frames": [{
@@ -2339,6 +2352,7 @@ animations = [{
 "loop": true,
 "name": &"Robot_shoot_w",
 "speed": 23.0
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1v1ej"]
@@ -2351,15 +2365,25 @@ size = Vector2(70, 154)
 script = ExtResource("1_n42ok")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285809894]
+<<<<<<< HEAD
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nca1q")
+animation = &"Robot_Idle_e"
+autoplay = "Robot_idle_nw"
+=======
 sprite_frames = SubResource("SpriteFrames_nca1q")
 animation = &"Robot_idle_ne"
 autoplay = "Robot_idle_nw"
 frame_progress = 0.82649666
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D (detection)" unique_id=1201551472]
+<<<<<<< HEAD
+=======
 position = Vector2(0, 1)
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 shape = SubResource("CircleShape2D_1v1ej")
 
 [node name="StaticBody2D (blockenemy))" type="StaticBody2D" parent="." unique_id=838125861 groups=["tower"]]
@@ -2370,10 +2394,13 @@ shape = SubResource("RectangleShape2D_hmg31")
 
 [node name="Timer" type="Timer" parent="." unique_id=1362710777]
 
+<<<<<<< HEAD
+=======
 [node name="Laser" type="Line2D" parent="." unique_id=1423053933]
 width = 2.0
 default_color = Color(0.9002538, 0.29581353, 0.18997684, 1)
 
+>>>>>>> 9564e76ce277be73045f26c4119cf613c67c8541
 [connection signal="body_entered" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_entered"]
 [connection signal="body_exited" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

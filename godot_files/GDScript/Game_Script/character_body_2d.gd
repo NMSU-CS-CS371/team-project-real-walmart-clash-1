@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 var can_move := true # keeps track of player movement 
 
+	
 # Use your compass directions: N, S, E, W, NE, NW, SE, SW
 var last_dir: String = "S"
 
