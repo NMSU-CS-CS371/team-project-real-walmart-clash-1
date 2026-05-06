@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddcbx35eqtii0"]
 
-[ext_resource type="Script" uid="uid://db88x2fcinrmn" path="res://Towers/third_tower.gd" id="1_pknoc"]
+[ext_resource type="Script" path="res://Towers/third_tower.gd" id="1_pknoc"]
 [ext_resource type="Texture2D" uid="uid://b8lbcxmf5k76o" path="res://Assets/troops/chainsaw_troop/main_attack.png" id="2_hnxd0"]
 [ext_resource type="Texture2D" uid="uid://3oixq6nlnu6r" path="res://Assets/troops/chainsaw_troop/Idle.png" id="3_hyh3j"]
 [ext_resource type="Texture2D" uid="uid://dxq7uw2pikpxt" path="res://Assets/troops/chainsaw_troop/Run.png" id="4_1e1gb"]
@@ -2651,7 +2651,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ThirdTower" type="Node2D" unique_id=1725383029]
+[node name="ThirdTower" type="Node2D" unique_id=1725383029 groups=["tower"]]
 script = ExtResource("1_pknoc")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1742541586]
@@ -2664,6 +2664,7 @@ shape = SubResource("RectangleShape2D_rw5fa")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_w0v5m")
 animation = &"walk_w"
+speed_scale = 2.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1754891440]
 

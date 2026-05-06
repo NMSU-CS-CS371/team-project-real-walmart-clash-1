@@ -2651,13 +2651,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_da5un"]
-size = Vector2(70, 154)
-
-[node name="FourthTower" type="Node2D" unique_id=1428900485]
+[node name="FourthTower" type="Node2D" unique_id=1428900485 groups=["tower"]]
 script = ExtResource("1_um24i")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=877416688 groups=["tower"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=877416688]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=626087218]
 position = Vector2(1.5, -2.5)
@@ -2667,17 +2664,8 @@ shape = SubResource("CircleShape2D_da5un")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4a4t2")
 animation = &"attack_e"
+speed_scale = 2.0
 
 [node name="Timer" type="Timer" parent="." unique_id=914477046]
 
-[node name="StaticBody2D (blockenemy))" type="StaticBody2D" parent="." unique_id=531808543 groups=["tower"]]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (blockenemy))" unique_id=1402454207]
-visible = false
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_da5un")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
