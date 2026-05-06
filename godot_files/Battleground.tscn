@@ -90,6 +90,8 @@ visible = false
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180188100]
+visible = false
+position = Vector2(-157, -820)
 zoom = Vector2(0.4, 0.342)
 drag_horizontal_offset = 1.0
 drag_vertical_offset = 1.0
