@@ -13,6 +13,7 @@ var available_items: Array = []
 var selected_index := 0
 var selected_item := ""
 
+
 var current_tile := Vector2i.ZERO
 
 # Placement bounds
@@ -81,7 +82,7 @@ func update_tile_under_mouse():
 
 func move_cursor_preview():
 	var world_pos = tilemap.to_global(tilemap.map_to_local(current_tile))
-	cursor_preview.global_position = world_pos
+	cursor_preview.global_position = world_pos + Vector2(0, -16)
 
 	if can_place_at(current_tile):
 		cursor_preview.modulate = Color(0, 1, 0, 0.5)
@@ -92,8 +93,8 @@ func can_place_at(tile: Vector2i) -> bool:
 	if tilemap.get_cell_tile_data(tile) == null:
 		return false
 
-	if not is_within_bounds(tile):
-		return false
+	#if not is_within_bounds(tile):
+	#	return false
 
 	var world_pos = tilemap.to_global(tilemap.map_to_local(tile))
 
@@ -123,9 +124,14 @@ func place_tower():
 	if scene == null:
 		print("Invalid item:", selected_item)
 		return
+	print("Placing item:", selected_item)
+	print("Scene returned:", scene)
+	
 
 	var t = scene.instantiate()
-	t.global_position = cursor_preview.global_position
+	t.global_position = tilemap.to_global(tilemap.map_to_local(current_tile))
+	
+	t.set_meta("id", selected_item)
 	towers.add_child(t)
 
 	assign_group(t, selected_item)

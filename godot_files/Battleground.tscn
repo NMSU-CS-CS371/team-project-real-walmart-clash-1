@@ -5,11 +5,14 @@
 [ext_resource type="Script" uid="uid://djlo6hfjtl8kb" path="res://builder.gd" id="4_lhvob"]
 [ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="4_q2k36"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_q2k36"]
+font_size = 35
+
 [sub_resource type="LabelSettings" id="LabelSettings_6g4ul"]
 font_size = 38
 
 [sub_resource type="LabelSettings" id="LabelSettings_lhvob"]
-font_size = 49
+font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2k36"]
 size = Vector2(2957.7327, 332.30887)
@@ -25,6 +28,118 @@ process_mode = 3
 y_sort_enabled = true
 script = ExtResource("3_a0rqo")
 metadata/_edit_horizontal_guides_ = [54.0]
+
+[node name="Menu" type="Node" parent="." unique_id=1081587146]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Menu" unique_id=1989505785]
+process_mode = 3
+
+[node name="Panel" type="Panel" parent="Menu/CanvasLayer" unique_id=1235016786]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu/CanvasLayer/Panel" unique_id=1513519808]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.26041666
+anchor_top = -0.22839506
+anchor_right = -0.20399305
+anchor_bottom = -0.18827161
+offset_left = 800.0
+offset_top = 178.0
+offset_right = 840.0
+offset_bottom = 201.0
+text = "MENU"
+label_settings = SubResource("LabelSettings_q2k36")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Menu/CanvasLayer/Panel" unique_id=1209938798]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 31.0
+offset_right = 1098.0
+offset_bottom = 112.0
+focus_mode = 0
+text = "Menu"
+script = ExtResource("4_q2k36")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="Menu/CanvasLayer" unique_id=747118404]
+anchors_preset = -1
+anchor_right = 2.3697917
+anchor_bottom = 2.7175925
+offset_left = -1327.0
+offset_top = -1797.0
+offset_right = -1327.0
+offset_bottom = -1797.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu/CanvasLayer/Panel2" unique_id=1468506511]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.3315972
+anchor_top = -0.23765433
+anchor_right = -0.025173612
+anchor_bottom = -0.13271604
+offset_left = 800.0
+offset_top = 178.0
+offset_right = 840.0
+offset_bottom = 201.0
+text = "MENU"
+label_settings = SubResource("LabelSettings_6g4ul")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Menu/CanvasLayer/Panel2" unique_id=127103776]
+visible = false
+layout_mode = 0
+offset_left = 894.0
+offset_top = 31.0
+offset_right = 1098.0
+offset_bottom = 112.0
+focus_mode = 0
+text = "Back to hub"
+script = ExtResource("4_q2k36")
+metadata/_edit_use_anchors_ = true
+
+[node name="RoundLabel" type="Label" parent="Menu/CanvasLayer" unique_id=1232053087]
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+
+[node name="Hotbar" type="Control" parent="Menu/CanvasLayer" unique_id=2027579541 groups=["hotbar"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/CanvasLayer/Hotbar" unique_id=298900473]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaseHPLabel" type="Label" parent="Menu/CanvasLayer" unique_id=664979621]
+offset_top = 20.0
+offset_right = 73.0
+offset_bottom = 43.0
+text = "Base: 500"
+
+[node name="HordeLabel" type="Label" parent="Menu/CanvasLayer" unique_id=644433281]
+visible = false
+modulate = Color(1, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(2.5, 2.5)
+text = "HORDE MODE"
+label_settings = SubResource("LabelSettings_lhvob")
 
 [node name="Battleground" type="TileMapLayer" parent="." unique_id=1365884302]
 y_sort_enabled = true
@@ -80,15 +195,13 @@ tile_map_data = PackedByteArray("AAD7/xoA2wECAAEAAAAMAPf/2wEDAAgAAAANAPP/2wEHAAc
 tile_set = ExtResource("2_q2k36")
 
 [node name="Towers" type="Node2D" parent="." unique_id=1015469850]
-visible = false
+z_index = 5
 y_sort_enabled = true
 
 [node name="Builder" type="Node2D" parent="." unique_id=1705154912 groups=["builder"]]
-visible = false
 script = ExtResource("4_lhvob")
 
 [node name="CursorPreview" type="Node2D" parent="Builder" unique_id=188334531]
-visible = false
 position = Vector2(0, 3)
 scale = Vector2(2, 2)
 
@@ -99,80 +212,13 @@ scale = Vector2(2, 2)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=180188100]
 position = Vector2(-209, -951.99994)
 scale = Vector2(16.450396, 5.1600003)
-zoom = Vector2(0.3, 0.257)
+zoom = Vector2(0.3, 0.3)
 drag_horizontal_offset = 1.0
 drag_vertical_offset = 1.0
 drag_left_margin = 0.62
 drag_top_margin = 0.14
 drag_right_margin = 0.29
 drag_bottom_margin = 0.44
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=635158485]
-process_mode = 3
-visible = false
-
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=747118404]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1468506511]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.3315972
-anchor_top = -0.23765433
-anchor_right = -0.025173612
-anchor_bottom = -0.13271604
-offset_left = 800.0
-offset_top = 178.0
-offset_right = 840.0
-offset_bottom = 201.0
-text = "MENU"
-label_settings = SubResource("LabelSettings_6g4ul")
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="CanvasLayer/Panel" unique_id=127103776]
-visible = false
-layout_mode = 0
-offset_left = 894.0
-offset_top = 31.0
-offset_right = 1098.0
-offset_bottom = 112.0
-focus_mode = 0
-text = "Back to hub"
-script = ExtResource("4_q2k36")
-metadata/_edit_use_anchors_ = true
-
-[node name="RoundLabel" type="Label" parent="CanvasLayer" unique_id=1232053087]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-horizontal_alignment = 1
-
-[node name="Hotbar" type="Control" parent="CanvasLayer" unique_id=2027579541 groups=["hotbar"]]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Hotbar" unique_id=298900473]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BaseHPLabel" type="Label" parent="CanvasLayer" unique_id=514463652]
-offset_left = 464.0
-offset_top = 10.0
-offset_right = 687.0
-offset_bottom = 78.0
-text = "Base: 500"
-label_settings = SubResource("LabelSettings_lhvob")
 
 [node name="RoundTimer" type="Timer" parent="." unique_id=270391861]
 process_mode = 1
@@ -192,9 +238,11 @@ rotation = 0.44505897
 shape = SubResource("RectangleShape2D_lhvob")
 
 [node name="TopBarrier" type="CollisionShape2D" parent="StaticBody2D" unique_id=365743600]
+visible = false
 position = Vector2(-978.9686, -1358.8115)
 rotation = 1.0995574
 shape = SubResource("RectangleShape2D_6g4ul")
 
-[connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/CanvasLayer/Panel2/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
