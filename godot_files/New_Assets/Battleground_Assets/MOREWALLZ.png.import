@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2xipf1f8lh1b"
-path="res://.godot/imported/game_ground.png-92d0040df7c781ed47f450550652831d.ctex"
+uid="uid://n44smcgpu6tp"
+path="res://.godot/imported/MOREWALLZ.png-236bffeff111a2d26bfff6eefb64f63a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game_ground.png"
-dest_files=["res://.godot/imported/game_ground.png-92d0040df7c781ed47f450550652831d.ctex"]
+source_file="res://New_Assets/Battleground_Assets/MOREWALLZ.png"
+dest_files=["res://.godot/imported/MOREWALLZ.png-236bffeff111a2d26bfff6eefb64f63a.ctex"]
 
 [params]
 
