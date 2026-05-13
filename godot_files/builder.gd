@@ -153,6 +153,7 @@ func place_tower():
 	assign_group(t, selected_item)
 
 	GameState.remove_item(selected_item, 1)
+	GameState.save_game()
 	update_available_items()
 
 	print("Placed:", selected_item)
@@ -163,6 +164,7 @@ func try_remove_tower():
 		if t.global_position.distance_to(cursor_preview.global_position) < 1:
 			print("Removed at:", current_tile)
 			t.queue_free()
+			GameState.save_game()
 			
 			update_available_items()
 			get_tree().call_group("hotbar", "refresh")

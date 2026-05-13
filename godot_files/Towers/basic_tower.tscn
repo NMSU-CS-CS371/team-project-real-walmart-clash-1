@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bg4paa8kpj8i2"]
 
 [ext_resource type="Texture2D" uid="uid://7ov5k0pbgnsa" path="res://Assets/troops/bat_troop/Idle.png" id="1_qv87q"]
-[ext_resource type="Script" path="res://Towers/basic_tower.gd" id="1_ufgmy"]
+[ext_resource type="Script" uid="uid://cytq5ya1ddm0" path="res://Towers/basic_tower.gd" id="1_ufgmy"]
 [ext_resource type="Texture2D" uid="uid://dm1fi2iixxhcw" path="res://Assets/troops/bat_troop/main_attack.png" id="2_3uhwj"]
 [ext_resource type="Texture2D" uid="uid://bhirj3orou0ft" path="res://Assets/troops/bat_troop/Run.png" id="4_5l8tq"]
 

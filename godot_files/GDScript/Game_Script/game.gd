@@ -2,12 +2,17 @@ extends Node2D
 # Vars
 var menu := false
 var escCount = 0 
+@onready var money_label := $Money/MoneyLabel
 var menu_open = false
 func _ready():
 	for crate in get_tree().get_nodes_in_group("interactable"):
 		crate.connect("interacted", Callable(self, "_on_crate_interacted"))
+	update_money()
 	$"Menu/CanvasLayer/Panel".visible = false
 	$CanvasLayer/ShopUI.visible = false
+	
+func _process(delta):
+	money_label.text = "$" + str(GameState.currency)
 
 # Handle Scene 
 func _on_crate_interacted(type, scene_to_open):
@@ -22,7 +27,11 @@ func _unhandled_input(event):
 		if menu_open:
 			return  
 		toggle_menu()
-
+# UPdate the money label
+func update_money():
+	money_label.text = "$" + str(GameState.currency)
+	
+	
 func toggle_menu():
 	menu = !menu
 	if(escCount == 0):
@@ -43,5 +52,7 @@ func toggle_menu():
 # Button menu pressed 
 func _on_button_pressed():
 	print("Button pressed")
+	GameState.save_game()
+
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menu.tscn")
