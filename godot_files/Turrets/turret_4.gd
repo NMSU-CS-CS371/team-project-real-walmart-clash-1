@@ -2,28 +2,31 @@ extends Node2D
 
 var enemies_in_range = []
 var last_direction = ""
-var max_health = 100.0
+var max_health = 200.0
 var health = max_health
-var damage = 60.0
+var damage = 50.0
 var attacking = false
 var target = null
 
-@export var attack_radius := 350.0
+@export var attack_radius := 400.0
 
 @onready var attack_timer = $Timer
 @onready var anim_sprite = $AnimatedSprite2D
-@onready var laser = $Laser
 @onready var detection_shape = $"Area2D (detection)/CollisionShape2D"
 
 func _ready():
 	add_to_group("tower")
+	last_direction = "s"
+	anim_sprite.play("idle_s")
 	
 	if detection_shape.shape is CircleShape2D:
 		detection_shape.shape.radius = attack_radius
 	
 
 func _process(delta):
-	enemies_in_range = enemies_in_range.filter(func(e): return is_instance_valid(e))
+	enemies_in_range = enemies_in_range.filter(func(e): 
+		return is_instance_valid(e) and e.health > 0
+	)
 	if enemies_in_range.size() > 0:
 		var closest = get_closest_enemy()
 		if closest:
@@ -32,7 +35,6 @@ func _process(delta):
 				start_attacking(target)
 			update_direction_animation(target.global_position)
 	else:
-		# No enemies left, stop attacking
 		target = null
 		stop_attacking()
 		
@@ -43,7 +45,9 @@ func get_closest_enemy():
 	for e in enemies_in_range:
 		if not is_instance_valid(e):
 			continue
-
+		if e.health <= 0:
+			continue
+			
 		var dist = global_position.distance_to(e.global_position)
 		if dist < closest_dist:
 			closest_dist = dist
@@ -73,9 +77,10 @@ func update_direction_animation(target_pos: Vector2):
 	elif angle >= -67.5 and angle < -22.5:
 		dir = "ne"
 
-	if dir != last_direction and not anim_sprite.animation.begins_with("Robot_shoot_"):
+	if dir != last_direction:
 		last_direction = dir
-		anim_sprite.play("idle_" + last_direction)
+		if not anim_sprite.animation.begins_with("shoot_"):
+			anim_sprite.play("idle_" + last_direction)
 
 func take_damage(amount):
 	health -= amount
@@ -95,36 +100,49 @@ func stop_attacking():
 	attacking = false
 	target = null
 	attack_timer.stop()
-	laser.visible = false
+	return_to_idle()
 	
-func flash_laser():
-	if not is_instance_valid(target):
-		return
-	# Draw line from turret to enemy
-	laser.clear_points()
-	laser.add_point(Vector2.ZERO)
-	laser.add_point(to_local(target.global_position))
-	laser.visible = true
-	# Hide it again after a short moment
-	await get_tree().create_timer(0.08).timeout
-	laser.visible = false
-
+func return_to_idle():
+	if last_direction == "":
+		last_direction = "s"
+	anim_sprite.stop()
+	anim_sprite.play("idle_" + last_direction)
+	
 func _on_timer_timeout():
-	# Clean dead enemies first
-	enemies_in_range = enemies_in_range.filter(func(e): return is_instance_valid(e))
-	
-	if target and is_instance_valid(target):
-		target.take_damage(damage)
-		flash_laser()
-		#this plays atack animation in the current direction
-		play_shoot_anim()
-	else:
-		# Target is gone, grab the next closest
+	# Clean invalid/dead enemies first
+	enemies_in_range = enemies_in_range.filter(func(e): 
+		return is_instance_valid(e) and e.health > 0
+	)
+
+	# If target is gone or dead, find a new one
+	if target == null or not is_instance_valid(target) or target.health <= 0:
 		target = get_closest_enemy()
 		if target:
 			start_attacking(target)
 		else:
 			stop_attacking()
+		return
+
+	# Damage target
+	target.take_damage(damage)
+
+	# After damaging, check if that hit killed the enemy
+	if not is_instance_valid(target) or target.health <= 0:
+		target = null
+		return_to_idle()
+		
+		var new_target = get_closest_enemy()
+		if new_target:
+			target = new_target
+			start_attacking(new_target)
+		else:
+			stop_attacking()
+		
+		return
+
+	# Only play shoot animation if enemy is still alive
+	play_shoot_anim()
+	
 func play_shoot_anim():
 	# last_direction already holds e, ne, n, nw
 	var anim = "shoot_" + last_direction

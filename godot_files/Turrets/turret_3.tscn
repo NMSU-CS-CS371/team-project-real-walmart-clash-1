@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_36y3j"]
 radius = 359.02228
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsaea"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obdui"]
 size = Vector2(70, 154)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nmi7"]
@@ -1778,10 +1778,8 @@ scale = Vector2(2, 2)
 script = ExtResource("1_obdui")
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=931718106]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D (detection)" unique_id=1993886258]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_36y3j")
 
@@ -1791,16 +1789,12 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (blockenemy))" unique_id=1815257954]
 visible = false
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_tsaea")
+shape = SubResource("RectangleShape2D_obdui")
 
 [node name="Timer" type="Timer" parent="." unique_id=1040985973]
 
-[node name="Laser" type="Line2D" parent="." unique_id=1196429348]
-visible = false
-width = 2.0
-default_color = Color(0.9002538, 0.29581353, 0.18997684, 1)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1272790058]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_avdnr")
 animation = &"shoot_w"
 speed_scale = 2.0

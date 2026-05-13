@@ -1770,8 +1770,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_eo2vj"]
 radius = 359.02228
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt45v"]
-size = Vector2(70, 154)
+[sub_resource type="CircleShape2D" id="CircleShape2D_56agl"]
 
 [node name="Turret4" type="Node2D" unique_id=435467613 groups=["tower"]]
 script = ExtResource("1_56agl")
@@ -1796,14 +1795,9 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D (blockenemy))" unique_id=998273673]
 visible = false
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_mt45v")
+shape = SubResource("CircleShape2D_56agl")
 
 [node name="Timer" type="Timer" parent="." unique_id=1778051306]
-
-[node name="Laser" type="Line2D" parent="." unique_id=1862427831]
-visible = false
-width = 2.0
-default_color = Color(0.9002538, 0.29581353, 0.18997684, 1)
 
 [connection signal="body_entered" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_entered"]
 [connection signal="body_exited" from="Area2D (detection)" to="." method="_on_area_2d_detection_body_exited"]

@@ -1,5 +1,12 @@
 extends Node2D
 
+@export var show_preview_radius := true
+@export var radius_fill_color := Color(0.2, 0.7, 1.0, 0.12)
+@export var radius_outline_color := Color(0.2, 0.7, 1.0, 0.55)
+
+var current_preview_radius := 0.0
+var preview_radius_center := Vector2.ZERO
+
 # References 
 @onready var tilemap := $"../Battleground"
 @onready var towers := $"../Towers"
@@ -82,13 +89,22 @@ func update_tile_under_mouse():
 
 func move_cursor_preview():
 	var world_pos = tilemap.to_global(tilemap.map_to_local(current_tile))
+	preview_radius_center = world_pos
 	cursor_preview.global_position = world_pos + Vector2(0, -16)
 
 	if can_place_at(current_tile):
 		cursor_preview.modulate = Color(0, 1, 0, 0.5)
 	else:
 		cursor_preview.modulate = Color(1, 0, 0, 0.5)
+	queue_redraw()
 
+func _draw():
+	if show_preview_radius and cursor_preview.visible and current_preview_radius > 0:
+		var center = to_local(preview_radius_center)
+		
+		draw_circle(center, current_preview_radius, radius_fill_color)
+		draw_arc(center, current_preview_radius, 0, TAU, 96, radius_outline_color, 3.0)
+		
 func can_place_at(tile: Vector2i) -> bool:
 	if tilemap.get_cell_tile_data(tile) == null:
 		return false
@@ -170,15 +186,24 @@ func assign_group(node: Node, id: String):
 func update_preview_sprite():
 	if selected_item == "":
 		cursor_preview.visible = false
+		current_preview_radius = 0.0
+		queue_redraw()
 		return
 
 	cursor_preview.visible = true
 
 	var scene = get_scene_from_id(selected_item)
 	if scene == null:
+		current_preview_radius = 0.0
+		queue_redraw()
 		return
 
 	var temp = scene.instantiate()
+
+	current_preview_radius = 0.0
+
+	if temp.get("attack_radius") != null:
+		current_preview_radius = temp.attack_radius
 
 	var anim_sprite = temp.find_child("AnimatedSprite2D", true, false)
 	var static_sprite = temp.find_child("Sprite2D", true, false)
@@ -202,6 +227,8 @@ func update_preview_sprite():
 		print("No valid sprite found in scene:", selected_item)
 
 	temp.queue_free()
+
+	queue_redraw()
 
 	print("Preview:", selected_item)
 	get_tree().call_group("hotbar", "update_selection")
