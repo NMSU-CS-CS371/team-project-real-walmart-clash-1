@@ -2,7 +2,7 @@ extends Node2D
 
 var enemies_in_range = []
 var last_direction = ""
-var max_health = 150.0
+var max_health = 125.0
 var health = max_health
 var damage = 50.0
 var attacking = false

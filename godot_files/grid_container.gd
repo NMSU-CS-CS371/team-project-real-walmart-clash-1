@@ -3,18 +3,10 @@ extends GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	randomize()
-	
-	var num = randi_range(0001, 1000)
-	var num1 = randi_range(0001, 1000)
-	var num2 = randi_range(0001, 1000)
-	var num3 = randi_range(0001, 1000)
-	
-	var values =[ {"name": "Nathan", "score": num},
-					{"name": "Eddy", "score": num1},
-					{"name": "Hakeem", "score": num2},
-					{"name": "Key", "score": num3}]
+	var values = GameState.leaderboard
+
 	sort_leader(values)
+
 	for i in range(values.size()):
 		var player = values[i]
 		add_row(i + 1, player["name"], player["score"])

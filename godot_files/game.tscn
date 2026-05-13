@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cth4qv21vx0f5" path="res://GDScript/Game_Script/game.gd" id="1_x5p1p"]
 [ext_resource type="PackedScene" uid="uid://dylewia6dwf1k" path="res://_leader_.tscn" id="3_j5wjh"]
-[ext_resource type="PackedScene" path="res://object.tscn" id="10_hve3p"]
-[ext_resource type="PackedScene" path="res://tank.tscn" id="11_iotsf"]
+[ext_resource type="PackedScene" uid="uid://csy8mqvp1so0k" path="res://object.tscn" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://bjp7adlukn0wg" path="res://tank.tscn" id="11_iotsf"]
 [ext_resource type="TileSet" uid="uid://c0k0udkhqh6hl" path="res://New_Assets/Battleground_tileset/new_tile_set.tres" id="11_mfdv2"]
-[ext_resource type="PackedScene" path="res://barrels.tscn" id="12_iotsf"]
+[ext_resource type="PackedScene" uid="uid://d4cifm0l3vedb" path="res://barrels.tscn" id="12_iotsf"]
 [ext_resource type="Script" uid="uid://j3uywtnvnlec" path="res://GDScript/Game_Script/camera_2d.gd" id="21_hb5m1"]
 [ext_resource type="PackedScene" uid="uid://crn8d6cptqmwa" path="res://Crates/Crate.tscn" id="23_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://bloojw0i6ssb3" path="res://Crates/Crate2.tscn" id="24_f1jbl"]
@@ -20,6 +20,16 @@ font_size = 35
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_x5p1p")
+
+[node name="Money" type="CanvasLayer" parent="." unique_id=1020842956]
+
+[node name="MoneyLabel" type="Label" parent="Money" unique_id=1066960722]
+offset_left = 972.0
+offset_top = 14.0
+offset_right = 1094.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 28
+text = "Money: 0"
 
 [node name="Menu" type="Node" parent="." unique_id=798079058]
 
@@ -127,7 +137,7 @@ tile_set = ExtResource("11_mfdv2")
 [node name="_Leader_" parent="." unique_id=369898635 instance=ExtResource("3_j5wjh")]
 z_index = 2
 y_sort_enabled = false
-position = Vector2(99, 13)
+position = Vector2(442, -191)
 
 [node name="Objects" type="Node" parent="." unique_id=1412877808]
 

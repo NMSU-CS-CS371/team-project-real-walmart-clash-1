@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://wqkqnasy6e71"]
 
-[ext_resource type="Texture2D" uid="uid://bgf4b1epe188m" path="res://Assets/leaderscreen.png" id="1_2t7te"]
 [ext_resource type="FontFile" uid="uid://bneryani77li1" path="res://Assets/Fonts/MedievalSharp-Regular.ttf" id="1_3ilyb"]
+[ext_resource type="Script" uid="uid://dx0u0xfwdluvd" path="res://leaderboard.gd" id="1_y1kwj"]
 [ext_resource type="Script" uid="uid://cy4y1u4la7n07" path="res://grid_container.gd" id="2_oli24"]
+[ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="3_oli24"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2t7te"]
+load_path = "res://.godot/imported/menu1.png-da67259b63bbd95711a7093b3b4879a6.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1kwj"]
+font_size = 35
 
 [node name="Control" type="Control" unique_id=551663971]
 layout_mode = 3
@@ -15,13 +22,14 @@ offset_right = 3.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y1kwj")
 metadata/_edit_vertical_guides_ = [1000.0, 250.0, 750.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=816523232]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_2t7te")
+texture = SubResource("CompressedTexture2D_2t7te")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1977171511]
 layout_mode = 1
@@ -59,7 +67,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 45
-text = "Score"
+text = "Rounds"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=266512011]
 layout_mode = 1
@@ -76,3 +84,45 @@ theme_override_fonts/font = ExtResource("1_3ilyb")
 theme_override_font_sizes/font_size = 55
 text = "Leaderboard"
 horizontal_alignment = 1
+
+[node name="Menu" type="Node" parent="." unique_id=2020252837]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Menu" unique_id=1549931662]
+process_mode = 3
+
+[node name="Panel" type="Panel" parent="Menu/CanvasLayer" unique_id=282952002]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Menu/CanvasLayer/Panel" unique_id=1405418923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.26041666
+anchor_top = -0.22839506
+anchor_right = -0.20399305
+anchor_bottom = -0.18827161
+offset_left = 800.0
+offset_top = 178.0
+offset_right = 840.0
+offset_bottom = 201.0
+text = "MENU"
+label_settings = SubResource("LabelSettings_y1kwj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Menu/CanvasLayer/Panel" unique_id=413679565]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 31.0
+offset_right = 1098.0
+offset_bottom = 112.0
+focus_mode = 0
+text = "Menu"
+script = ExtResource("3_oli24")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Menu/CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
