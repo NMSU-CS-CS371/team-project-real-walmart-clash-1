@@ -2651,7 +2651,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FourthTower" type="Node2D" unique_id=1428900485 groups=["tower"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xn6u"]
+radius = 21.023796
+
+[node name="FourthTower" type="CharacterBody2D" unique_id=1733248235 groups=["tower"]]
 script = ExtResource("1_um24i")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=877416688]
@@ -2667,5 +2670,9 @@ animation = &"attack_e"
 speed_scale = 2.0
 
 [node name="Timer" type="Timer" parent="." unique_id=914477046]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=742217645]
+position = Vector2(13, 0)
+shape = SubResource("CircleShape2D_7xn6u")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

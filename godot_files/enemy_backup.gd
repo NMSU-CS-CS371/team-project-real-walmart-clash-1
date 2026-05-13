@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var attack_range := 100.0
 @export var damage := 20.0
 @export var health := 50.0
+@export var retarget_interval := 0.2
 # On Read vars 
 @onready var attack_timer = $attack_timer
 # Vars 
@@ -12,6 +13,7 @@ var attacking = false
 var target = null
 var last_direction := "s"
 var goal_tile := Vector2i(-3,-5) # Ultimate enemy goal 
+var retarget_time := 0
 
 func _ready():
 	add_to_group("enemy")
@@ -39,11 +41,15 @@ func _physics_process(delta: float) -> void:
 	if not root.has_method("is_round_mode") or not root.is_round_mode():
 		velocity = Vector2.ZERO
 		return
-
+	
+	# Recheck closet target ever small interval
+	retarget_time -= delta
+	if retarget_time <= 0:
+		target = get_closest_tower()
+	retarget_time = retarget_interval
+	
 	var target_position: Vector2
 
-	if target == null or not is_instance_valid(target):
-		target = get_closest_tower()
 
 	# Decide what to move toward
 	if target and is_instance_valid(target):

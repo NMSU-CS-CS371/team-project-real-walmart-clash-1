@@ -1,9 +1,10 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed := 120.0
 @export var attack_range := 40.0
 @export var damage := 20.0
 @export var health := 50.0
+@export var retarget_interval := 0.2
 
 @onready var attack_timer = $Timer
 @onready var anim_sprite = $Area2D/AnimatedSprite2D
@@ -12,9 +13,12 @@ extends Node2D
 var attacking := false
 var target = null
 var last_direction := "s"
+var retarget_time := 0
+var placement_position : Vector2
 
 func _ready():
 	add_to_group("troop")
+	placement_position = global_position
 	target = get_closest_enemy()
 
 func _process(delta):
@@ -22,7 +26,12 @@ func _process(delta):
 	if not root.has_method("is_round_mode") or not root.is_round_mode():
 		play_anim("idle_" + last_direction)
 		return
-
+	
+	retarget_time -= delta
+	if retarget_time <= 0:
+		target = get_closest_enemy()
+		retarget_time = retarget_interval
+		
 	if target == null or not is_instance_valid(target):
 		target = get_closest_enemy()
 
@@ -37,7 +46,8 @@ func _process(delta):
 		attack_target()
 	else:
 		stop_attacking()
-		global_position += direction.normalized() * speed * delta
+		velocity = direction.normalized() * speed
+		move_and_slide()
 		update_animation(direction.normalized())
 
 func get_closest_enemy():
@@ -124,3 +134,13 @@ func _on_timer_timeout():
 	else:
 		stop_attacking()
 		target = get_closest_enemy()
+
+func reset_to_placement_position():
+	global_position = placement_position
+	target = null
+	attacking = false
+	
+	if not attack_timer.is_stopped():
+		attack_timer.stop()
+	
+	play_anim("idle_" + last_direction)

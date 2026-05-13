@@ -53,8 +53,10 @@ func _ready():
 
 	if mode == "build":
 		enter_build_mode()
+		get_tree().call_group("tower", "set_radius_visible", true)
 	else:
 		enter_round_mode()
+		get_tree().call_group("tower", "set_radius_visible", false)
 	print(base_hp_label)
 
 
@@ -206,8 +208,10 @@ func end_round():
 	var reward = 50 + GameState.round_counter * 50
 	GameState.currency += reward
 
+	get_tree().call_group("troop", "reset_to_placement_position")
+	
 	save_towers()
-
+	
 	get_tree().change_scene_to_file("res://game.tscn")
 
 ########## HELPERS ##########

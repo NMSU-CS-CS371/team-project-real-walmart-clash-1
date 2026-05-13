@@ -1775,11 +1775,15 @@ size = Vector2(70, 154)
 
 [node name="Turret2" type="Node2D" unique_id=1132798216 groups=["tower"]]
 script = ExtResource("1_812k0")
+show_radius = null
+radius_fill_color = null
+radius_outline_color = null
+attack_radius = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1258078537]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yqmvj")
-animation = &"shoot_w"
+animation = &"idle_e"
 speed_scale = 2.0
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=727482510]

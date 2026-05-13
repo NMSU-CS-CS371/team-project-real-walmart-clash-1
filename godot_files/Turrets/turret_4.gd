@@ -1,5 +1,9 @@
 extends Node2D
 
+@export var show_radius := true
+@export var radius_fill_color := Color(0.2, 0.7, 1.0, 0.12)
+@export var radius_outline_color := Color(0.2, 0.7, 1.0, 0.55)
+
 var enemies_in_range = []
 var last_direction = ""
 var max_health = 200.0
@@ -22,6 +26,7 @@ func _ready():
 	if detection_shape.shape is CircleShape2D:
 		detection_shape.shape.radius = attack_radius
 	
+	queue_redraw()
 
 func _process(delta):
 	enemies_in_range = enemies_in_range.filter(func(e): 
@@ -92,8 +97,15 @@ func take_damage(amount):
 func start_attacking(new_target):
 	target = new_target
 	attacking = true
+	
+	if target != null and is_instance_valid(target):
+		update_direction_animation(target.global_position)
+		
 	if not attack_timer.is_stopped():
 		attack_timer.stop()
+	
+	_on_timer_timeout()
+	
 	attack_timer.start()
 
 func stop_attacking():
@@ -141,6 +153,7 @@ func _on_timer_timeout():
 		return
 
 	# Only play shoot animation if enemy is still alive
+	update_direction_animation(target.global_position)
 	play_shoot_anim()
 	
 func play_shoot_anim():
@@ -163,3 +176,19 @@ func _on_area_2d_detection_body_exited(body):
 				start_attacking(target)
 			else:
 				stop_attacking()
+
+func _draw():
+	if show_radius and detection_shape and detection_shape.shape is CircleShape2D:
+		var center = to_local(detection_shape.global_position)
+		
+		var circle_shape := detection_shape.shape as CircleShape2D
+		var edge_global = detection_shape.global_position + Vector2(circle_shape.radius * detection_shape.global_scale.x, 0)
+		var edge_local = to_local(edge_global)
+		var visual_radius = center.distance_to(edge_local)
+		
+		draw_circle(center, visual_radius, radius_fill_color)
+		draw_arc(center, visual_radius, 0, TAU, 96, radius_outline_color, 3.0)
+
+func set_radius_visible(value: bool):
+	show_radius = value
+	queue_redraw()

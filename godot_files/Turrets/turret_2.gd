@@ -188,3 +188,7 @@ func _draw():
 		
 		draw_circle(center, visual_radius, radius_fill_color)
 		draw_arc(center, visual_radius, 0, TAU, 96, radius_outline_color, 3.0)
+
+func set_radius_visible(value: bool):
+	show_radius = value
+	queue_redraw()

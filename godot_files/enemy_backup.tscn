@@ -3529,8 +3529,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jx5rp"]
-height = 24.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfcce"]
 
 [node name="enemy_backup" type="CharacterBody2D" unique_id=1304036524 groups=["enemy"]]
 z_index = 1
@@ -3541,11 +3540,11 @@ script = ExtResource("1_jfcce")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1482362703]
 sprite_frames = SubResource("SpriteFrames_2btf8")
-animation = &"attack_sw"
+animation = &"nohp_e"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=34766756]
-position = Vector2(0, 29)
-shape = SubResource("CapsuleShape2D_jx5rp")
+position = Vector2(3.5, 5)
+shape = SubResource("CircleShape2D_jfcce")
 
 [node name="attack_timer" type="Timer" parent="." unique_id=761101191]
 

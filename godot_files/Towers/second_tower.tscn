@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmusd26f4nai5"]
 
-[ext_resource type="Script" path="res://Towers/second_tower.gd" id="1_56ba8"]
+[ext_resource type="Script" uid="uid://cwsf4uiyamg4l" path="res://Towers/second_tower.gd" id="1_56ba8"]
 [ext_resource type="Texture2D" uid="uid://bpspn6ru22a86" path="res://Assets/troops/hammer_troop/main_atttack.png" id="1_pxcet"]
 [ext_resource type="Texture2D" uid="uid://cbn01p7y3v7kj" path="res://Assets/troops/hammer_troop/Idle.png" id="2_56ba8"]
 [ext_resource type="Texture2D" uid="uid://ct8q71s15psmd" path="res://Assets/troops/hammer_troop/Run.png" id="3_rojsv"]
@@ -2651,7 +2651,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SecondTower" type="Node2D" unique_id=1705879261 groups=["tower"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_56ba8"]
+radius = 14.0
+
+[node name="SecondTower" type="CharacterBody2D" unique_id=1401857612 groups=["tower"]]
 script = ExtResource("1_56ba8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1620580161]
@@ -2667,5 +2670,10 @@ animation = &"walk_w"
 speed_scale = 2.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1183141129]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=533168920]
+z_index = 1
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_56ba8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

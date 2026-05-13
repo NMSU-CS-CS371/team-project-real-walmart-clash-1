@@ -1774,7 +1774,6 @@ animations = [{
 }]
 
 [node name="Turret3" type="Node2D" unique_id=590961320 groups=["tower"]]
-scale = Vector2(2, 2)
 script = ExtResource("1_obdui")
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=931718106]
