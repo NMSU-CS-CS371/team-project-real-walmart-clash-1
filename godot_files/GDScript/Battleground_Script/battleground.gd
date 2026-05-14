@@ -1,4 +1,5 @@
-extends Node2D
+\
+get_tree\(\).call_group\(\"troop\"\,\ \"reset_to_placement_position\"extends Node2D
 
 ########## NODE REFERENCES ##########
 @onready var towers := $Towers
@@ -6,6 +7,10 @@ extends Node2D
 @onready var round_label := $"Menu/CanvasLayer/RoundLabel"
 @onready var base_hp_label := $"Menu/CanvasLayer/BaseHPLabel"
 @onready var horde_label := $Menu/CanvasLayer/HordeLabel
+@onready var round_counter_label := $"Menu/CanvasLayer/RoundCounterLabel"
+@onready var reward_label := $"Menu/CanvasLayer/RewardLabel"
+@onready var speed_button := $"Menu/CanvasLayer/SpeedButton"
+
 
 # MENU (UPDATED PATH)
 @onready var menu_panel := $Menu/CanvasLayer/Panel
@@ -21,6 +26,8 @@ var base_enemy_count := 3
 var enemies_alive := 0
 var round_time := 0.0
 var round_running := false
+var game_speed := 1
+var ending_round := false
 
 var goal_positions: Array = []
 
@@ -46,6 +53,7 @@ func _ready():
 
 	menu_panel.visible = false
 	round_label.visible = false 
+	round_counter_label.visible = true
 
 	# Precompute goal positions
 	for tile in goal_tiles:
@@ -103,22 +111,19 @@ func start_round():
 	get_tree().paused = false 
 	base_hp_label.visible = true 
 	GameState.round_counter += 1
+	update_round_counter()
 	round_time = 0.0
 	round_running = true
-	## Horde mode 
-	if GameState.round_counter == 5:
-		print("HORDE MODE ACTIVATED")
-		await show_horde_label()   # 🔥 ADD THIS
-		await run_horde_mode()
-		return
 	round_label.visible = true
 	update_round_label()
 	
 	# HORDE mode
-	if GameState.round_counter == 5:
+	if GameState.round_counter % 5 == 0:
 		print("HORDE MODE ACTIVATED")
+		await show_horde_label()
 		await run_horde_mode()
 		return
+		
 	var enemy_count = base_enemy_count + GameState.round_counter * 2
 
 	for i in range(enemy_count):
@@ -137,6 +142,14 @@ func _process(delta):
 
 func update_round_label():
 	round_label.text = "Time: " + str(round(round_time))
+
+func update_round_counter():
+	if GameState.round_counter %  5 == 0:
+		round_counter_label.text = "HORDE ROUND"
+		round_counter_label.modulate = Color.RED
+	else:
+		round_counter_label.text = "Round: " + str(GameState.round_counter)
+		round_counter_label.modulate = Color.WHITE
 
 ########## ENEMIES ##########
 func spawn_enemy():
@@ -164,27 +177,36 @@ func _on_enemy_died():
 		end_round()
 		
 func run_horde_mode():
+	var round_scale = int(GameState.round_counter / 5)
+
+	var wave1 = 5 + round_scale * 2
+	var wave2 = 8 + round_scale * 3
+	var wave3 = 12 + round_scale * 4
+
 	print("Wave 1")
-	await spawn_wave(5)
+	await spawn_wave(wave1)
 	await wait_for_wave_clear()
 
 	await safe_wait(1.5)
 
-	if not is_valid_tree(): return
+	if not is_valid_tree():
+		return
 
 	print("Wave 2")
-	await spawn_wave(5)
+	await spawn_wave(wave2)
 	await wait_for_wave_clear()
 
 	await safe_wait(1.5)
 
-	if not is_valid_tree(): return
+	if not is_valid_tree():
+		return
 
 	print("FINAL WAVE")
-	await spawn_wave(10)
+	await spawn_wave(wave3)
 	await wait_for_wave_clear()
 
-	if not is_valid_tree(): return
+	if not is_valid_tree():
+		return
 
 	print("HORDE COMPLETE")
 	end_round()
@@ -202,38 +224,69 @@ func wait_for_wave_clear():
 
 ########## END ROUND ##########
 func end_round():
+
+	if ending_round:
+		return
+
+	ending_round = true
+
 	if GameState.is_game_over:
 		return
 
 	var reward = 50 + GameState.round_counter * 50
 	GameState.currency += reward
+	GameState.save_game()
+
+	await show_reward(reward)
 
 	get_tree().call_group("troop", "reset_to_placement_position")
 	
 	save_towers()
+<<<<<<< HEAD
 	
+=======
+
+	Engine.time_scale = 1.0
+
+>>>>>>> cf5a36fb3152d79bb58fbaf85df56e88437a230b
 	get_tree().change_scene_to_file("res://game.tscn")
 
 ########## HELPERS ##########
 func restore_towers():
 	var saved = GameState.get_saved_towers()
 
+	print(saved)
+
 	for t_data in saved:
-		var pos = t_data["pos"]
-		var id = t_data["id"]
+		print("Tower Data:", t_data)
+
+		var raw_pos = t_data.get("pos")
+		var pos: Vector2
+
+		# Handle old string saves AND new Vector2 saves
+		if typeof(raw_pos) == TYPE_STRING:
+			pos = str_to_var("Vector2" + raw_pos)
+		else:
+			pos = raw_pos
+
+		var id = t_data.get("id")
+
+		if pos == null:
+			print("Missing position!")
+			continue
 
 		var scene = get_scene_from_id(id)
+
 		if scene == null:
 			print("Invalid tower id:", id)
 			continue
 
 		var tower = scene.instantiate()
+
 		tower.global_position = pos
 
-		# Restore ID for future saves
 		tower.set_meta("id", id)
 
-		# Assign correct group (VERY important for enemy targeting)
 		assign_group(tower, id)
 
 		towers.add_child(tower)
@@ -250,6 +303,7 @@ func save_towers():
 		})
 
 	GameState.save_towers(data)
+	GameState.save_game()
 
 func update_base_hp():
 	if not base_hp_label:
@@ -279,7 +333,8 @@ func _on_button_pressed() -> void:
 
 	# Save towers before leaving
 	save_towers()
-
+	GameState.save_game()
+	Engine.time_scale = 1.0
 	# Go back to main menu / hub
 	get_tree().change_scene_to_file("res://game.tscn")
 
@@ -322,3 +377,36 @@ func assign_group(node: Node, id: String):
 		node.add_to_group("tower")   # blockers
 	elif TowerDatabase.turrets.has(id):
 		node.add_to_group("turret")  # shooters
+
+func show_reward(amount: int):
+	reward_label.visible = true
+	reward_label.text = "+$" + str(amount)
+
+	reward_label.modulate.a = 1.0
+	reward_label.scale = Vector2(1.5, 1.5)
+
+	# Pop animation
+	var tween = create_tween()
+	tween.tween_property(reward_label, "scale", Vector2(2, 2), 0.3)
+
+	await get_tree().create_timer(1.0).timeout
+
+	# Fade out
+	var fade = create_tween()
+	fade.tween_property(reward_label, "modulate:a", 0.0, 0.5)
+
+	await fade.finished
+	reward_label.visible = false
+
+
+func _on_speed_button_pressed():
+
+	if game_speed == 1:
+		game_speed = 2
+		Engine.time_scale = 2.0
+		speed_button.text = "2x"
+
+	else:
+		game_speed = 1
+		Engine.time_scale = 1.0
+		speed_button.text = "1x"

@@ -1793,7 +1793,7 @@ shape = SubResource("RectangleShape2D_obdui")
 [node name="Timer" type="Timer" parent="." unique_id=1040985973]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1272790058]
-scale = Vector2(2, 2)
+position = Vector2(-8.5, 8)
 sprite_frames = SubResource("SpriteFrames_avdnr")
 animation = &"shoot_w"
 speed_scale = 2.0
