@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c1d86bkyk2bay"]
 
 [ext_resource type="Script" uid="uid://5775v7l8rx2c" path="res://enemy_8.gd" id="1_uq04l"]
-[ext_resource type="Texture2D" uid="uid://j074d8rnogns" path="res://Assets/new_enemy/ZombieHulk1/Attack3.png" id="2_rm85h"]
-[ext_resource type="Texture2D" uid="uid://d1gf1e0vng6jl" path="res://Assets/new_enemy/ZombieHulk1/Idle.png" id="3_sfevm"]
-[ext_resource type="Texture2D" uid="uid://wg0rf8yxgw0b" path="res://Assets/new_enemy/ZombieHulk1/Die.png" id="4_b4ad3"]
-[ext_resource type="Texture2D" uid="uid://ydsydgl481t4" path="res://Assets/new_enemy/ZombieHulk1/Run.png" id="5_dvqta"]
+[ext_resource type="Texture2D" uid="uid://j074d8rnogns" path="res://Assets/ENEMYASSETS/ZombieHulk1/Attack3.png" id="2_rm85h"]
+[ext_resource type="Texture2D" uid="uid://d1gf1e0vng6jl" path="res://Assets/ENEMYASSETS/ZombieHulk1/Idle.png" id="3_sfevm"]
+[ext_resource type="Texture2D" uid="uid://wg0rf8yxgw0b" path="res://Assets/ENEMYASSETS/ZombieHulk1/Die.png" id="4_b4ad3"]
+[ext_resource type="Texture2D" uid="uid://ydsydgl481t4" path="res://Assets/ENEMYASSETS/ZombieHulk1/Run.png" id="5_dvqta"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1hd0y"]
 radius = 20.524376
@@ -2777,9 +2777,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g0s4m")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_e",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2827,9 +2827,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ys5vt")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_n",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2877,9 +2877,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hbaru")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_ne",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2927,9 +2927,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4517y")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_nw",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2977,9 +2977,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ajeub")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_s",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3027,9 +3027,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ahrdv")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_se",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3077,9 +3077,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4xowa")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_sw",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3127,9 +3127,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ipjjg")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_w",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3546,6 +3546,6 @@ shape = SubResource("CircleShape2D_1hd0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=369339798]
 sprite_frames = SubResource("SpriteFrames_xbykv")
-animation = &"walk_se"
+animation = &"nohp_sw"
 
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

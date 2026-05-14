@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dhei156pbg0qm"]
 
 [ext_resource type="Script" uid="uid://bhb1kaekuj8pl" path="res://enemy_7.gd" id="1_hdjr2"]
-[ext_resource type="Texture2D" uid="uid://xvfdciwurwrr" path="res://Assets/new_enemy/ZombieHulk2/Attack1.png" id="2_m0hhc"]
-[ext_resource type="Texture2D" uid="uid://dsfhfyjq3i2vt" path="res://Assets/new_enemy/ZombieHulk2/Idle.png" id="3_8cvgh"]
-[ext_resource type="Texture2D" uid="uid://dygci4uu5h1cc" path="res://Assets/new_enemy/ZombieHulk2/Die.png" id="4_08q80"]
-[ext_resource type="Texture2D" uid="uid://dss5jqa3t02dg" path="res://Assets/new_enemy/ZombieHulk2/Run.png" id="5_lronh"]
+[ext_resource type="Texture2D" uid="uid://xvfdciwurwrr" path="res://Assets/ENEMYASSETS/ZombieHulk2/Attack1.png" id="2_m0hhc"]
+[ext_resource type="Texture2D" uid="uid://dsfhfyjq3i2vt" path="res://Assets/ENEMYASSETS/ZombieHulk2/Idle.png" id="3_8cvgh"]
+[ext_resource type="Texture2D" uid="uid://dygci4uu5h1cc" path="res://Assets/ENEMYASSETS/ZombieHulk2/Die.png" id="4_08q80"]
+[ext_resource type="Texture2D" uid="uid://dss5jqa3t02dg" path="res://Assets/ENEMYASSETS/ZombieHulk2/Run.png" id="5_lronh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eq1m0"]
 atlas = ExtResource("2_m0hhc")
@@ -2774,9 +2774,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fq13o")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_e",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2824,9 +2824,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lgrka")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_n",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2874,9 +2874,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2eugh")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_ne",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2924,9 +2924,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lbd1r")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_nw",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2974,9 +2974,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o18f2")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_s",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3024,9 +3024,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p5gtp")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_se",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3074,9 +3074,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eere4")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_sw",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3124,9 +3124,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqaa0")
 }],
-"loop": true,
+"loop": false,
 "name": &"nohp_w",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3542,7 +3542,7 @@ script = ExtResource("1_hdjr2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1698938298]
 sprite_frames = SubResource("SpriteFrames_t0w4j")
-animation = &"walk_w"
+animation = &"nohp_w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=934355921]
 position = Vector2(-5.5, -5.5)

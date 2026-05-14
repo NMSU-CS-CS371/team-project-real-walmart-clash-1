@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bjvajgnbwfdv4"]
 
 [ext_resource type="Script" uid="uid://dp24jl7lhe6xo" path="res://enemy_3.gd" id="1_h2kam"]
-[ext_resource type="Texture2D" uid="uid://4jm578hx68vc" path="res://Assets/new_enemy/ZombieCop1/Attack1.png" id="2_c1bkt"]
-[ext_resource type="Texture2D" uid="uid://j6lwpqeyc4de" path="res://Assets/new_enemy/ZombieCop1/Attack4.png" id="3_3tot4"]
-[ext_resource type="Texture2D" uid="uid://b7tne1t0aa4k7" path="res://Assets/new_enemy/ZombieCop1/Idle.png" id="4_j66hg"]
-[ext_resource type="Texture2D" uid="uid://chykwrqtxlfje" path="res://Assets/new_enemy/ZombieCop1/Die2.png" id="5_4c84r"]
-[ext_resource type="Texture2D" uid="uid://cmeng5c0pibj5" path="res://Assets/new_enemy/ZombieCop1/Walk.png" id="6_0okr3"]
+[ext_resource type="Texture2D" uid="uid://4jm578hx68vc" path="res://Assets/ENEMYASSETS/ZombieCop1/Attack1.png" id="2_c1bkt"]
+[ext_resource type="Texture2D" uid="uid://j6lwpqeyc4de" path="res://Assets/ENEMYASSETS/ZombieCop1/Attack4.png" id="3_3tot4"]
+[ext_resource type="Texture2D" uid="uid://b7tne1t0aa4k7" path="res://Assets/ENEMYASSETS/ZombieCop1/Idle.png" id="4_j66hg"]
+[ext_resource type="Texture2D" uid="uid://chykwrqtxlfje" path="res://Assets/ENEMYASSETS/ZombieCop1/Die2.png" id="5_4c84r"]
+[ext_resource type="Texture2D" uid="uid://cmeng5c0pibj5" path="res://Assets/ENEMYASSETS/ZombieCop1/Walk.png" id="6_0okr3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tg1tv"]
 radius = 10.111875

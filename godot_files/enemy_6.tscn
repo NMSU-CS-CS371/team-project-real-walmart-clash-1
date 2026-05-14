@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bt8xsrp0xjjpg"]
 
 [ext_resource type="Script" uid="uid://cxf4v5ifggp5m" path="res://enemy_6.gd" id="1_gtram"]
-[ext_resource type="Texture2D" uid="uid://d1jcmm66ignp" path="res://Assets/new_enemy/ZombieMonster2/Attack3.png" id="2_4v0vm"]
-[ext_resource type="Texture2D" uid="uid://2832dtgotg4y" path="res://Assets/new_enemy/ZombieMonster2/Idle.png" id="3_m2xwg"]
-[ext_resource type="Texture2D" uid="uid://6531x58a5e7" path="res://Assets/new_enemy/ZombieMonster2/Die.png" id="4_d33fx"]
-[ext_resource type="Texture2D" uid="uid://um4pq4u8j1nf" path="res://Assets/new_enemy/ZombieMonster2/Run.png" id="5_rs0ki"]
+[ext_resource type="Texture2D" uid="uid://d1jcmm66ignp" path="res://Assets/ENEMYASSETS/ZombieMonster2/Attack3.png" id="2_4v0vm"]
+[ext_resource type="Texture2D" uid="uid://2832dtgotg4y" path="res://Assets/ENEMYASSETS/ZombieMonster2/Idle.png" id="3_m2xwg"]
+[ext_resource type="Texture2D" uid="uid://6531x58a5e7" path="res://Assets/ENEMYASSETS/ZombieMonster2/Die.png" id="4_d33fx"]
+[ext_resource type="Texture2D" uid="uid://um4pq4u8j1nf" path="res://Assets/ENEMYASSETS/ZombieMonster2/Run.png" id="5_rs0ki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wk3w2"]
 radius = 18.006943

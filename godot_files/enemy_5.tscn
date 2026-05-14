@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bvlswg7070qig"]
 
 [ext_resource type="Script" uid="uid://4j6bnxd2dfxd" path="res://enemy_5.gd" id="1_sj7uj"]
-[ext_resource type="Texture2D" uid="uid://c1w6g0f4myvtg" path="res://Assets/new_enemy/ZombieRadioactive1/Attack4.png" id="2_grs5s"]
-[ext_resource type="Texture2D" uid="uid://cplomchr58tak" path="res://Assets/new_enemy/ZombieRadioactive1/Idle.png" id="3_2yka5"]
-[ext_resource type="Texture2D" uid="uid://bp3wxrmpjhuny" path="res://Assets/new_enemy/ZombieRadioactive1/Die.png" id="4_qeled"]
-[ext_resource type="Texture2D" uid="uid://ckbtt45yv81rt" path="res://Assets/new_enemy/ZombieRadioactive1/Run.png" id="5_ea20e"]
+[ext_resource type="Texture2D" uid="uid://c1w6g0f4myvtg" path="res://Assets/ENEMYASSETS/ZombieRadioactive1/Attack4.png" id="2_grs5s"]
+[ext_resource type="Texture2D" uid="uid://cplomchr58tak" path="res://Assets/ENEMYASSETS/ZombieRadioactive1/Idle.png" id="3_2yka5"]
+[ext_resource type="Texture2D" uid="uid://bp3wxrmpjhuny" path="res://Assets/ENEMYASSETS/ZombieRadioactive1/Die.png" id="4_qeled"]
+[ext_resource type="Texture2D" uid="uid://ckbtt45yv81rt" path="res://Assets/ENEMYASSETS/ZombieRadioactive1/Run.png" id="5_ea20e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6ow8"]
 radius = 21.0

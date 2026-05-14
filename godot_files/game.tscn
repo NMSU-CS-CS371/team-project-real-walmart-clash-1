@@ -7,11 +7,11 @@
 [ext_resource type="TileSet" uid="uid://c0k0udkhqh6hl" path="res://New_Assets/Battleground_tileset/new_tile_set.tres" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://d4cifm0l3vedb" path="res://barrels.tscn" id="12_iotsf"]
 [ext_resource type="Script" uid="uid://j3uywtnvnlec" path="res://GDScript/Game_Script/camera_2d.gd" id="21_hb5m1"]
-[ext_resource type="PackedScene" uid="uid://crn8d6cptqmwa" path="res://Crates/Crate.tscn" id="23_f1jbl"]
-[ext_resource type="PackedScene" uid="uid://bloojw0i6ssb3" path="res://Crates/Crate2.tscn" id="24_f1jbl"]
+[ext_resource type="PackedScene" uid="uid://crn8d6cptqmwa" path="res://BASEUI/Crate.tscn" id="23_f1jbl"]
+[ext_resource type="PackedScene" uid="uid://bloojw0i6ssb3" path="res://BASEUI/Crate2.tscn" id="24_f1jbl"]
 [ext_resource type="Script" uid="uid://10b6k2r8cdfw" path="res://GDScript/button.gd" id="25_i2p71"]
-[ext_resource type="PackedScene" uid="uid://bxtva87iix0dv" path="res://Crates/Crate3.tscn" id="25_vaj68"]
-[ext_resource type="PackedScene" uid="uid://bvf1uwy4tiwc5" path="res://ShopUI.tscn" id="26_i2p71"]
+[ext_resource type="PackedScene" uid="uid://bxtva87iix0dv" path="res://BASEUI/Crate3.tscn" id="25_vaj68"]
+[ext_resource type="PackedScene" path="res://ShopUI.tscn" id="26_i2p71"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vaj68"]
 font_size = 35
