@@ -1,5 +1,4 @@
-\
-get_tree\(\).call_group\(\"troop\"\,\ \"reset_to_placement_position\"extends Node2D
+extends Node2D
 
 ########## NODE REFERENCES ##########
 @onready var towers := $Towers
@@ -242,13 +241,9 @@ func end_round():
 	get_tree().call_group("troop", "reset_to_placement_position")
 	
 	save_towers()
-<<<<<<< HEAD
-	
-=======
 
 	Engine.time_scale = 1.0
 
->>>>>>> cf5a36fb3152d79bb58fbaf85df56e88437a230b
 	get_tree().change_scene_to_file("res://game.tscn")
 
 ########## HELPERS ##########
