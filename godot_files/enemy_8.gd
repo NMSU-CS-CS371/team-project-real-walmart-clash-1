@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var damage := 200.0
 @export var health := 500.0
 @export var retarget_interval := 0.2
-@export var base_hit_radius := 500.0
+@export var base_hit_radius := 100.0
 
 # On Ready vars 
 @onready var attack_timer = $attack_timer
@@ -112,9 +112,9 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# If enemy reaches the base/store
-	if target == null and distance < 20:
-		velocity = Vector2.ZERO
-		move_and_slide()
+	if target == null and distance <= base_hit_radius:
+		attack_base()
+		return
 
 		GameState.take_damage(damage)
 		queue_free()
@@ -131,7 +131,23 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		update_animation(direction.normalized())
 
+func attack_base():
+	if dying:
+		return
 
+	print("Enemy reached base and dealt damage: ", damage)
+
+	velocity = Vector2.ZERO
+	target = null
+	stop_attacking()
+
+	GameState.take_damage(damage)
+
+	if is_in_group("enemy"):
+		remove_from_group("enemy")
+
+	queue_free()
+	
 func attack_target():
 	if is_valid_target(target) and target.has_method("take_damage"):
 		start_attacking(target)

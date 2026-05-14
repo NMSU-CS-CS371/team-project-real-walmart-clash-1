@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # Exported Vars 
 @export var speed := 65.0
-@export var attack_range := 125.0
+@export var attack_range := 150.0
 @export var damage := 100.0
 @export var health := 500.0
 @export var retarget_interval := 0.2

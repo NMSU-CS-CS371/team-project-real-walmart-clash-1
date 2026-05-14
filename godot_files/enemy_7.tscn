@@ -3542,7 +3542,7 @@ script = ExtResource("1_hdjr2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1698938298]
 sprite_frames = SubResource("SpriteFrames_t0w4j")
-animation = &"nohp_w"
+animation = &"nohp_e"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=934355921]
 position = Vector2(-5.5, -5.5)
