@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed := 120.0
 @export var attack_range := 40.0
@@ -30,10 +30,12 @@ func _process(delta):
 	if retarget_time <= 0:
 		target = get_closest_enemy()
 		retarget_time = retarget_interval
+	
 	if target == null or not is_instance_valid(target):
 		target = get_closest_enemy()
 
-	if target == null:
+	if target == null or not is_instance_valid(target):
+		stop_attacking()
 		play_anim("idle_" + last_direction)
 		return
 

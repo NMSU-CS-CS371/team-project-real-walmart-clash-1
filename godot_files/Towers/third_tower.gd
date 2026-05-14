@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed := 120.0
 @export var attack_range := 40.0

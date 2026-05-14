@@ -38,7 +38,8 @@ func _process(delta):
 			if not is_instance_valid(target) or closest != target:
 				target = closest
 				start_attacking(target)
-			update_direction_animation(target.global_position)
+			if target != null and is_instance_valid(target):
+				update_direction_animation(target.global_position)
 	else:
 		target = null
 		stop_attacking()

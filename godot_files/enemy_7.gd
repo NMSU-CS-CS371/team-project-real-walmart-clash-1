@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 # Exported Vars 
-@export var speed := 100.0
-@export var attack_range := 100.0
-@export var damage := 20.0
-@export var health := 50.0
+@export var speed := 65.0
+@export var attack_range := 125.0
+@export var damage := 100.0
+@export var health := 400.0
 @export var retarget_interval := 0.2
-@export var base_hit_radius := 100.0
+@export var base_hit_radius := 200.0
 
 # On Ready vars 
 @onready var attack_timer = $attack_timer

@@ -10,13 +10,23 @@ extends Node2D
 @onready var reward_label := $"Menu/CanvasLayer/RewardLabel"
 @onready var speed_button := $"Menu/CanvasLayer/SpeedButton"
 
-
 # MENU (UPDATED PATH)
 @onready var menu_panel := $Menu/CanvasLayer/Panel
 
-@onready var enemy_scene = preload("res://enemy_backup.tscn")
+@onready var enemy_scenes := {
+	1: preload("res://enemy_backup.tscn"),
+	2: preload("res://enemy_2.tscn"),
+	3: preload("res://enemy_3.tscn"),
+	4: preload("res://enemy_4.tscn"),
+	5: preload("res://enemy_5.tscn"),
+	6: preload("res://enemy_6.tscn"),
+	7: preload("res://enemy_7.tscn"),
+	8: preload("res://enemy_8.tscn")
+}
+
 @onready var tower_scene = preload("res://Turrets/turret.tscn")
 @onready var tilemap := $Battleground
+@onready var store_goal := $Goal
 
 ########## VARIABLES ##########
 var menu_open := false
@@ -36,11 +46,6 @@ var spawn_tiles = [
 	Vector2i(10,3), Vector2i(11,1)
 ]
 
-var goal_tiles = [
-	Vector2i(-8,-21), Vector2i(-14,-9),
-	Vector2i(-11,-14), Vector2i(-10,-17),
-	Vector2i(-7,-23), Vector2i(-6,-24)
-]
 
 ########## READY ##########
 func _ready():
@@ -54,9 +59,9 @@ func _ready():
 	round_label.visible = false 
 	round_counter_label.visible = true
 
-	# Precompute goal positions
-	for tile in goal_tiles:
-		goal_positions.append(tilemap.to_global(tilemap.map_to_local(tile)))
+	goal_positions.clear()
+	goal_positions.append(store_goal.global_position)
+	print("GOAL POSITION SET TO: ", store_goal.global_position)
 
 	if mode == "build":
 		enter_build_mode()
@@ -64,8 +69,8 @@ func _ready():
 	else:
 		enter_round_mode()
 		get_tree().call_group("tower", "set_radius_visible", false)
-	print(base_hp_label)
 
+	print(base_hp_label)
 
 
 ########## INPUT (FIXED) ##########
@@ -116,18 +121,14 @@ func start_round():
 	round_label.visible = true
 	update_round_label()
 	
-	# HORDE mode
+	# HORDE mode every 5 rounds
 	if GameState.round_counter % 5 == 0:
 		print("HORDE MODE ACTIVATED")
 		await show_horde_label()
 		await run_horde_mode()
 		return
-		
-	var enemy_count = base_enemy_count + GameState.round_counter * 2
-
-	for i in range(enemy_count):
-		spawn_enemy()
-		await get_tree().create_timer(0.5).timeout
+	
+	await spawn_normal_round_enemies(GameState.round_counter)
 
 func _process(delta):
 	if base_hp_label:
@@ -151,15 +152,22 @@ func update_round_counter():
 		round_counter_label.modulate = Color.WHITE
 
 ########## ENEMIES ##########
-func spawn_enemy():
-	var enemy = enemy_scene.instantiate()
+func spawn_enemy(enemy_type: int = 1):
+	if not enemy_scenes.has(enemy_type):
+		print("Missing enemy scene for enemy type: ", enemy_type)
+		return
+
+	var enemy = enemy_scenes[enemy_type].instantiate()
 	var tile = spawn_tiles.pick_random()
 
 	var world_pos = tilemap.to_global(tilemap.map_to_local(tile))
 	world_pos += Vector2(0, -20)
 
 	enemy.global_position = world_pos
-	enemy.apply_scaling(GameState.round_counter)
+
+	if enemy.has_method("apply_scaling"):
+		enemy.apply_scaling(GameState.round_counter)
+
 	enemies_alive += 1
 	enemy.connect("tree_exited", Callable(self, "_on_enemy_died"))
 
@@ -175,6 +183,69 @@ func _on_enemy_died():
 	if enemies_alive <= 0 and GameState.round_counter != 5:
 		end_round()
 		
+func get_enemy_pool_for_round(round_num: int) -> Array:
+	var pool := []
+
+	# Round 1 introduces enemy 1 and 2
+	if round_num >= 1:
+		pool.append(1)
+		pool.append(2)
+
+	# Round 2 introduces enemy 3 and 4
+	if round_num >= 2:
+		pool.append(3)
+		pool.append(4)
+
+	# Round 3 introduces enemy 5
+	if round_num >= 3:
+		pool.append(5)
+
+	return pool
+
+
+func get_spawn_boost(round_num: int) -> int:
+	# Round 1-4 = 1x
+	# Round 5-9 = 2x
+	# Round 10-14 = 3x
+	# Round 15-19 = 4x
+	return 1 + int(round_num / 5)
+
+
+func get_special_enemy_amount(round_num: int) -> int:
+	# Enemy 6 and 7 start on round 4
+	if round_num < 4:
+		return 0
+
+	# Round 4 = 1 each
+	# Round 5-9 = 2 each
+	# Round 10-14 = 3 each
+	# Round 15-19 = 4 each
+	return 1 + int(round_num / 5)
+
+
+func spawn_normal_round_enemies(round_num: int):
+	var enemy_list := []
+	var spawn_boost = get_spawn_boost(round_num)
+	var enemy_pool = get_enemy_pool_for_round(round_num)
+
+	# Normal enemies: previous types spawn in greater numbers over time
+	for enemy_type in enemy_pool:
+		for i in range(spawn_boost):
+			enemy_list.append(enemy_type)
+
+	# Enemy 6 and 7: limited special enemies starting on round 4
+	var special_amount = get_special_enemy_amount(round_num)
+
+	for i in range(special_amount):
+		enemy_list.append(6)
+		enemy_list.append(7)
+
+	enemy_list.shuffle()
+
+	for enemy_type in enemy_list:
+		spawn_enemy(enemy_type)
+		await get_tree().create_timer(0.5).timeout
+
 func run_horde_mode():
 	var round_scale = int(GameState.round_counter / 5)
 
@@ -183,7 +254,7 @@ func run_horde_mode():
 	var wave3 = 12 + round_scale * 4
 
 	print("Wave 1")
-	await spawn_wave(wave1)
+	await spawn_wave(wave1, false)
 	await wait_for_wave_clear()
 
 	await safe_wait(1.5)
@@ -192,7 +263,7 @@ func run_horde_mode():
 		return
 
 	print("Wave 2")
-	await spawn_wave(wave2)
+	await spawn_wave(wave2, false)
 	await wait_for_wave_clear()
 
 	await safe_wait(1.5)
@@ -201,7 +272,7 @@ func run_horde_mode():
 		return
 
 	print("FINAL WAVE")
-	await spawn_wave(wave3)
+	await spawn_wave(wave3, true)
 	await wait_for_wave_clear()
 
 	if not is_valid_tree():
@@ -210,10 +281,22 @@ func run_horde_mode():
 	print("HORDE COMPLETE")
 	end_round()
 	
-func spawn_wave(count: int):
+func spawn_wave(count: int, final_wave: bool = false):
+	var round_num = GameState.round_counter
+	var enemy_pool = get_enemy_pool_for_round(round_num)
+
 	for i in range(count):
-		spawn_enemy()
+		var enemy_type = enemy_pool.pick_random()
+		spawn_enemy(enemy_type)
 		await get_tree().create_timer(0.3).timeout
+
+	# Enemy 8 only spawns during the final horde wave
+	if final_wave:
+		var enemy_8_amount = int(round_num / 5)
+
+		for i in range(enemy_8_amount):
+			spawn_enemy(8)
+			await get_tree().create_timer(0.4).timeout
 		
 func wait_for_wave_clear():
 	while enemies_alive > 0:

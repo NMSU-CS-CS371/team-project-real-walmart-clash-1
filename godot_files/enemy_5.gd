@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 # Exported Vars 
-@export var speed := 100.0
+@export var speed := 80.0
 @export var attack_range := 100.0
 @export var damage := 20.0
-@export var health := 50.0
+@export var health := 200.0
+@export var death_damage := 80.0
+@export var death_damage_radius := 200.0
 @export var retarget_interval := 0.2
 @export var base_hit_radius := 100.0
 
@@ -116,6 +118,10 @@ func _physics_process(delta: float) -> void:
 		attack_base()
 		return
 
+		GameState.take_damage(damage)
+		queue_free()
+		return
+
 	# Attack tower
 	if is_valid_target(target) and distance <= attack_range:
 		velocity = Vector2.ZERO
@@ -195,7 +201,7 @@ func die():
 		return
 
 	dying = true
-	print("Enemy died")
+	print("Enemy 5 died and exploded")
 
 	# Stop everything
 	velocity = Vector2.ZERO
@@ -206,7 +212,10 @@ func die():
 	if is_in_group("enemy"):
 		remove_from_group("enemy")
 
-	# Optional: disable collision so it does not block anything while dying
+	# Damage nearby towers and troops once
+	damage_nearby_allies_on_death()
+
+	# Disable collision so it does not block anything while dying
 	set_collision_layer(0)
 	set_collision_mask(0)
 
@@ -218,7 +227,29 @@ func die():
 
 	queue_free()
 
+func damage_nearby_allies_on_death():
+	var affected_groups = ["towers"]
 
+	for group_name in affected_groups:
+		var nearby_nodes = get_tree().get_nodes_in_group(group_name)
+
+		for node in nearby_nodes:
+			if node == self:
+				continue
+
+			if not is_instance_valid(node):
+				continue
+
+			if node.is_queued_for_deletion():
+				continue
+
+			var dist = global_position.distance_to(node.global_position)
+
+			if dist <= death_damage_radius:
+				if node.has_method("take_damage"):
+					print("Enemy 5 death hit: ", node.name, " for ", death_damage, " damage")
+					node.take_damage(death_damage)
+					
 func update_animation(direction: Vector2):
 	var angle = rad_to_deg(direction.angle())
 	var dir = "s"

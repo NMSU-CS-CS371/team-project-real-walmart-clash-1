@@ -224,6 +224,9 @@ position = Vector2(-978.9686, -1358.8115)
 rotation = 1.0995574
 shape = SubResource("RectangleShape2D_6g4ul")
 
+[node name="Goal" type="Marker2D" parent="." unique_id=1234861693]
+position = Vector2(-350, -1396)
+
 [connection signal="pressed" from="Menu/CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Menu/CanvasLayer/SpeedButton" to="." method="_on_speed_button_pressed"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]

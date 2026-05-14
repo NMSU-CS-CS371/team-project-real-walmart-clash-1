@@ -1414,7 +1414,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_e",
-"speed": 23.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1464,7 +1464,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_n",
-"speed": 23.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1514,7 +1514,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_ne",
-"speed": 23.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1564,7 +1564,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_nw",
-"speed": 23.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1614,7 +1614,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_s",
-"speed": 23.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1664,7 +1664,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_se",
-"speed": 23.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1714,7 +1714,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_sw",
-"speed": 23.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1764,7 +1764,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_w",
-"speed": 23.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1v1ej"]
@@ -1783,7 +1783,7 @@ z_index = 1
 y_sort_enabled = true
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nca1q")
-animation = &"shoot_ne"
+animation = &"shoot_e"
 speed_scale = 2.0
 
 [node name="Area2D (detection)" type="Area2D" parent="." unique_id=2119399550]
