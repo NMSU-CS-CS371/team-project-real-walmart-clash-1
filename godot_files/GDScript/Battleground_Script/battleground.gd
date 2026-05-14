@@ -37,6 +37,7 @@ var round_time := 0.0
 var round_running := false
 var game_speed := 1
 var ending_round := false
+var horde_running := false
 
 var goal_positions: Array = []
 
@@ -113,6 +114,9 @@ func is_round_mode():
 ########## ROUND ##########
 func start_round():
 	get_tree().paused = false 
+	ending_round = false
+	horde_running = false
+	
 	base_hp_label.visible = true 
 	GameState.round_counter += 1
 	update_round_counter()
@@ -178,9 +182,13 @@ func _on_enemy_died():
 		return
 
 	enemies_alive -= 1
+	print("Enemy died. Enemies alive: ", enemies_alive, " Horde running: ", horde_running)
 
-	#  Don't auto-end during horde
-	if enemies_alive <= 0 and GameState.round_counter != 5:
+	# Do not end the round automatically while horde mode is controlling waves
+	if horde_running:
+		return
+
+	if enemies_alive <= 0:
 		end_round()
 		
 func get_enemy_pool_for_round(round_num: int) -> Array:
@@ -247,6 +255,8 @@ func spawn_normal_round_enemies(round_num: int):
 		await get_tree().create_timer(0.5).timeout
 
 func run_horde_mode():
+	horde_running = true
+
 	var round_scale = int(GameState.round_counter / 5)
 
 	var wave1 = 5 + round_scale * 2
@@ -256,6 +266,7 @@ func run_horde_mode():
 	print("Wave 1")
 	await spawn_wave(wave1, false)
 	await wait_for_wave_clear()
+	print("Wave 1 cleared")
 
 	await safe_wait(1.5)
 
@@ -265,6 +276,7 @@ func run_horde_mode():
 	print("Wave 2")
 	await spawn_wave(wave2, false)
 	await wait_for_wave_clear()
+	print("Wave 2 cleared")
 
 	await safe_wait(1.5)
 
@@ -274,11 +286,14 @@ func run_horde_mode():
 	print("FINAL WAVE")
 	await spawn_wave(wave3, true)
 	await wait_for_wave_clear()
+	print("Final wave cleared")
 
 	if not is_valid_tree():
 		return
 
 	print("HORDE COMPLETE")
+
+	horde_running = false
 	end_round()
 	
 func spawn_wave(count: int, final_wave: bool = false):

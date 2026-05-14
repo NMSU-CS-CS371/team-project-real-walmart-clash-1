@@ -3546,6 +3546,6 @@ shape = SubResource("CircleShape2D_wk3w2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1271696805]
 sprite_frames = SubResource("SpriteFrames_qdjml")
-animation = &"walk_e"
+animation = &"nohp_e"
 
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

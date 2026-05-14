@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var damage := 20.0
 @export var health := 200.0
 @export var death_damage := 80.0
-@export var death_damage_radius := 200.0
+@export var death_damage_radius := 350.0
 @export var retarget_interval := 0.2
 @export var base_hit_radius := 100.0
 
